@@ -1,0 +1,56 @@
+{
+  "name": "PostgreSQL",
+  "slug": "postgresql",
+  "description": "Powerful open-source relational database with advanced features, extensibility, and strong SQL compliance.",
+  "icon": "icon.png",
+  "category": "databases",
+  "version": "16",
+  "website": "https://www.postgresql.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "POSTGRES_USER",
+      "label": "Database User",
+      "default": "postgres",
+      "required": true,
+      "type": "text",
+      "description": "PostgreSQL superuser username"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "PostgreSQL superuser password"
+    },
+    {
+      "key": "POSTGRES_DB",
+      "label": "Default Database",
+      "default": "postgres",
+      "required": false,
+      "type": "text",
+      "description": "Name of the default database to create"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 5432,
+      "default_host_port": 5432,
+      "protocol": "tcp",
+      "label": "PostgreSQL",
+      "configurable": true
+    }
+  ]
+}

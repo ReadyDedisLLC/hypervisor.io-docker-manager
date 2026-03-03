@@ -1,0 +1,16 @@
+services:
+  adguardhome:
+    image: adguard/adguardhome:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3000}:3000"
+      - "${HOST_PORT_80:-8080}:80"
+      - "${HOST_PORT_53:-53}:53/tcp"
+      - "${HOST_PORT_53:-53}:53/udp"
+    volumes:
+      - adguard_work:/opt/adguardhome/work
+      - adguard_conf:/opt/adguardhome/conf
+
+volumes:
+  adguard_work:
+  adguard_conf:

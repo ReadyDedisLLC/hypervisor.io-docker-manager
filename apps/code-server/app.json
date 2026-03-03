@@ -1,0 +1,49 @@
+{
+  "name": "code-server",
+  "slug": "code-server",
+  "description": "Run VS Code in the browser, enabling remote development from any device with a web browser.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://github.com/coder/code-server",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "PASSWORD",
+      "label": "Access Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password to access the code-server web interface"
+    },
+    {
+      "key": "SUDO_PASSWORD",
+      "label": "Sudo Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Password for sudo access inside the container"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8443,
+      "default_host_port": 8443,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

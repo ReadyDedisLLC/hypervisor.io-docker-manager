@@ -1,0 +1,55 @@
+{
+  "name": "Plausible Analytics",
+  "slug": "plausible",
+  "description": "Lightweight, privacy-friendly web analytics — a simple alternative to Google Analytics without cookies.",
+  "icon": "icon.png",
+  "category": "analytics",
+  "version": "v2.1",
+  "website": "https://plausible.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "BASE_URL",
+      "label": "Base URL",
+      "default": "http://localhost:8000",
+      "required": true,
+      "type": "text",
+      "description": "Public URL where Plausible will be accessible"
+    },
+    {
+      "key": "SECRET_KEY_BASE",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for session encryption (min 64 characters)"
+    },
+    {
+      "key": "TOTP_VAULT_KEY",
+      "label": "TOTP Vault Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Encryption key for TOTP secrets"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8000,
+      "default_host_port": 8000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

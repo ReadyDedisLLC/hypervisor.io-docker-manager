@@ -1,0 +1,30 @@
+{
+  "name": "Uptime Kuma",
+  "slug": "uptime-kuma",
+  "description": "Self-hosted monitoring tool for tracking uptime of websites, APIs, and services with a beautiful UI.",
+  "icon": "icon.png",
+  "category": "monitoring",
+  "version": "1",
+  "website": "https://github.com/louislam/uptime-kuma",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 3001,
+      "default_host_port": 3001,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

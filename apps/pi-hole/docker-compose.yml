@@ -1,0 +1,17 @@
+services:
+  pihole:
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-8080}:80"
+      - "${HOST_PORT_53:-53}:53/tcp"
+      - "${HOST_PORT_53:-53}:53/udp"
+    env_file:
+      - .env
+    volumes:
+      - pihole_data:/etc/pihole
+      - dnsmasq_data:/etc/dnsmasq.d
+
+volumes:
+  pihole_data:
+  dnsmasq_data:

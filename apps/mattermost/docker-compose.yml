@@ -1,0 +1,36 @@
+services:
+  mattermost:
+    image: mattermost/mattermost-team-edition:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8065:-8065}:8065"
+    environment:
+      MM_SQLSETTINGS_DRIVERNAME: postgres
+      MM_SQLSETTINGS_DATASOURCE: postgres://mattermost:${MM_SQLSETTINGS_DATASOURCE_PASSWORD}@db:5432/mattermost?sslmode=disable
+      MM_BLEVESETTINGS_INDEXDIR: /mattermost/bleve-indexes
+    volumes:
+      - mattermost_config:/mattermost/config
+      - mattermost_data:/mattermost/data
+      - mattermost_logs:/mattermost/logs
+      - mattermost_plugins:/mattermost/plugins
+      - mattermost_bleve:/mattermost/bleve-indexes
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mattermost
+      POSTGRES_PASSWORD: ${MM_SQLSETTINGS_DATASOURCE_PASSWORD}
+      POSTGRES_DB: mattermost
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  mattermost_config:
+  mattermost_data:
+  mattermost_logs:
+  mattermost_plugins:
+  mattermost_bleve:
+  pgdata:

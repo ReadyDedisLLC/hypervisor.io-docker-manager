@@ -1,0 +1,48 @@
+{
+  "name": "Ghost",
+  "slug": "ghost",
+  "description": "Professional publishing platform for creating blogs, newsletters, and paid memberships.",
+  "icon": "icon.png",
+  "category": "cms",
+  "version": "5",
+  "website": "https://ghost.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "GHOST_URL",
+      "label": "Site URL",
+      "default": "http://localhost:2368",
+      "required": true,
+      "type": "text",
+      "description": "Public URL of your Ghost site (e.g. https://blog.example.com)"
+    },
+    {
+      "key": "MYSQL_ROOT_PASSWORD",
+      "label": "MySQL Root Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Root password for the MySQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 2368,
+      "default_host_port": 2368,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Jellyfin",
+  "slug": "jellyfin",
+  "description": "Free and open-source media server for streaming movies, TV shows, music, and photos to any device.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://jellyfin.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 20,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8096,
+      "default_host_port": 8096,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

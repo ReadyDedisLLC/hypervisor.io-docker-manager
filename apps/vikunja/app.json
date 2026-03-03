@@ -1,0 +1,40 @@
+{
+  "name": "Vikunja",
+  "slug": "vikunja",
+  "description": "Open-source task and project management tool with kanban boards, calendars, and team collaboration.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://vikunja.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "VIKUNJA_SERVICE_JWTSECRET",
+      "label": "JWT Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for JWT token signing"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3456,
+      "default_host_port": 3456,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

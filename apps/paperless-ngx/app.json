@@ -1,0 +1,56 @@
+{
+  "name": "Paperless-ngx",
+  "slug": "paperless-ngx",
+  "description": "Document management system that transforms physical documents into a searchable digital archive with OCR.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://docs.paperless-ngx.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "PAPERLESS_SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for Django session management"
+    },
+    {
+      "key": "PAPERLESS_ADMIN_USER",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": true,
+      "type": "text",
+      "description": "Initial admin username"
+    },
+    {
+      "key": "PAPERLESS_ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Initial admin password"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8000,
+      "default_host_port": 8000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

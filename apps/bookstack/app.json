@@ -1,0 +1,48 @@
+{
+  "name": "BookStack",
+  "slug": "bookstack",
+  "description": "Simple and free wiki system for organizing and storing information in a structured book-like format.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://www.bookstackapp.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "APP_URL",
+      "label": "Application URL",
+      "default": "http://localhost:6875",
+      "required": true,
+      "type": "text",
+      "description": "Public URL of your BookStack instance"
+    },
+    {
+      "key": "DB_PASS",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the MariaDB database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 6875,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

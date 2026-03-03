@@ -1,0 +1,40 @@
+{
+  "name": "Mattermost",
+  "slug": "mattermost",
+  "description": "Open-source team messaging platform — a self-hosted alternative to Slack with channels, threads, and integrations.",
+  "icon": "icon.png",
+  "category": "communication",
+  "version": "latest",
+  "website": "https://mattermost.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "MM_SQLSETTINGS_DATASOURCE_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Mattermost PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8065,
+      "default_host_port": 8065,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

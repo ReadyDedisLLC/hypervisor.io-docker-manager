@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_27017:-27017}:27017"
+    env_file:
+      - .env
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

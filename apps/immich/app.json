@@ -1,0 +1,46 @@
+{
+  "name": "Immich",
+  "slug": "immich",
+  "description": "High-performance self-hosted photo and video management solution with AI-powered search and mobile apps.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "release",
+  "website": "https://immich.app",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "DB_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Immich PostgreSQL database"
+    },
+    {
+      "key": "UPLOAD_LOCATION",
+      "label": "Upload Location",
+      "default": "/data/immich/upload",
+      "required": true,
+      "type": "text",
+      "description": "Path where uploaded photos and videos are stored"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 2283,
+      "default_host_port": 2283,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

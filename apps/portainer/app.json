@@ -1,0 +1,37 @@
+{
+  "name": "Portainer",
+  "slug": "portainer",
+  "description": "Web-based Docker management UI for deploying, troubleshooting, and managing containers, images, and volumes.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://www.portainer.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 9443,
+      "default_host_port": 9443,
+      "protocol": "tcp",
+      "label": "Web UI (HTTPS)",
+      "configurable": true
+    },
+    {
+      "container_port": 8000,
+      "default_host_port": 8000,
+      "protocol": "tcp",
+      "label": "Edge Agent",
+      "configurable": true
+    }
+  ]
+}

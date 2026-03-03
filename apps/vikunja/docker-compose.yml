@@ -1,0 +1,17 @@
+services:
+  vikunja:
+    image: vikunja/vikunja:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3456:-3456}:3456"
+    env_file:
+      - .env
+    environment:
+      VIKUNJA_DATABASE_TYPE: sqlite
+    volumes:
+      - vikunja_data:/app/vikunja/files
+      - vikunja_db:/app/vikunja/db
+
+volumes:
+  vikunja_data:
+  vikunja_db:

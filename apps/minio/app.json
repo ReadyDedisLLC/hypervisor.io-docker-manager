@@ -1,0 +1,55 @@
+{
+  "name": "MinIO",
+  "slug": "minio",
+  "description": "High-performance S3-compatible object storage for building cloud-native data infrastructure.",
+  "icon": "icon.png",
+  "category": "file-storage",
+  "version": "latest",
+  "website": "https://min.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "MINIO_ROOT_USER",
+      "label": "Root Username",
+      "default": "minioadmin",
+      "required": true,
+      "type": "text",
+      "description": "MinIO root user (access key)"
+    },
+    {
+      "key": "MINIO_ROOT_PASSWORD",
+      "label": "Root Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "MinIO root password (secret key, minimum 8 characters)"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 9000,
+      "default_host_port": 9000,
+      "protocol": "tcp",
+      "label": "S3 API",
+      "configurable": true
+    },
+    {
+      "container_port": 9001,
+      "default_host_port": 9001,
+      "protocol": "tcp",
+      "label": "Web Console",
+      "configurable": true
+    }
+  ]
+}

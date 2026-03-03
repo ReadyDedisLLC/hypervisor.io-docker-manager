@@ -1,0 +1,30 @@
+{
+  "name": "Navidrome",
+  "slug": "navidrome",
+  "description": "Modern music server and streamer compatible with Subsonic/Airsonic clients, with a sleek web UI.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://www.navidrome.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 10,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 4533,
+      "default_host_port": 4533,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

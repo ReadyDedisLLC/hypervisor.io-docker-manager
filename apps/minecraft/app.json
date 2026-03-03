@@ -1,0 +1,92 @@
+{
+  "name": "Minecraft Server",
+  "slug": "minecraft",
+  "description": "Dedicated Minecraft Java Edition server with automatic version management and easy configuration.",
+  "icon": "icon.png",
+  "category": "gaming",
+  "version": "latest",
+  "website": "https://github.com/itzg/docker-minecraft-server",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "EULA",
+      "label": "Accept EULA",
+      "default": "TRUE",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "Accept", "value": "TRUE" }
+      ],
+      "description": "You must accept the Minecraft EULA to run the server"
+    },
+    {
+      "key": "TYPE",
+      "label": "Server Type",
+      "default": "VANILLA",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "Vanilla", "value": "VANILLA" },
+        { "label": "Paper", "value": "PAPER" },
+        { "label": "Fabric", "value": "FABRIC" },
+        { "label": "Forge", "value": "FORGE" }
+      ],
+      "description": "Minecraft server implementation"
+    },
+    {
+      "key": "MEMORY",
+      "label": "Server Memory",
+      "default": "2G",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "1 GB", "value": "1G" },
+        { "label": "2 GB", "value": "2G" },
+        { "label": "4 GB", "value": "4G" },
+        { "label": "8 GB", "value": "8G" }
+      ],
+      "description": "Amount of RAM allocated to the Minecraft server"
+    },
+    {
+      "key": "DIFFICULTY",
+      "label": "Difficulty",
+      "default": "normal",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Peaceful", "value": "peaceful" },
+        { "label": "Easy", "value": "easy" },
+        { "label": "Normal", "value": "normal" },
+        { "label": "Hard", "value": "hard" }
+      ],
+      "description": "Game difficulty level"
+    },
+    {
+      "key": "MAX_PLAYERS",
+      "label": "Max Players",
+      "default": "20",
+      "required": false,
+      "type": "number",
+      "description": "Maximum number of players that can join"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 25565,
+      "default_host_port": 25565,
+      "protocol": "tcp",
+      "label": "Minecraft Server",
+      "configurable": true
+    }
+  ]
+}

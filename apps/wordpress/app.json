@@ -1,0 +1,65 @@
+{
+  "name": "WordPress",
+  "slug": "wordpress",
+  "description": "The world's most popular content management system, powering over 40% of all websites on the internet.",
+  "icon": "icon.png",
+  "category": "cms",
+  "version": "latest",
+  "website": "https://wordpress.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "MYSQL_ROOT_PASSWORD",
+      "label": "MySQL Root Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Root password for the MySQL database"
+    },
+    {
+      "key": "MYSQL_DATABASE",
+      "label": "Database Name",
+      "default": "wordpress",
+      "required": true,
+      "type": "text",
+      "description": "Name of the WordPress database"
+    },
+    {
+      "key": "MYSQL_USER",
+      "label": "Database User",
+      "default": "wordpress",
+      "required": true,
+      "type": "text",
+      "description": "MySQL user for WordPress"
+    },
+    {
+      "key": "MYSQL_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the WordPress database user"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

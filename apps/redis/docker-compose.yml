@@ -1,0 +1,15 @@
+services:
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    command: >
+      sh -c '[ -n "$REDIS_PASSWORD" ] && exec redis-server --requirepass "$REDIS_PASSWORD" || exec redis-server'
+    ports:
+      - "${HOST_PORT_6379:-6379}:6379"
+    env_file:
+      - .env
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:

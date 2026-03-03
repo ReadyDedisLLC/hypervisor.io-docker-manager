@@ -1,0 +1,48 @@
+{
+  "name": "n8n",
+  "slug": "n8n",
+  "description": "Workflow automation platform with 400+ integrations for connecting apps, APIs, and services with a visual editor.",
+  "icon": "icon.png",
+  "category": "automation",
+  "version": "latest",
+  "website": "https://n8n.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "N8N_BASIC_AUTH_USER",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": true,
+      "type": "text",
+      "description": "Username for basic auth on the web interface"
+    },
+    {
+      "key": "N8N_BASIC_AUTH_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for basic auth on the web interface"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 5678,
+      "default_host_port": 5678,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

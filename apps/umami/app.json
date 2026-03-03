@@ -1,0 +1,49 @@
+{
+  "name": "Umami",
+  "slug": "umami",
+  "description": "Simple, fast, and privacy-focused open-source web analytics alternative to Google Analytics.",
+  "icon": "icon.png",
+  "category": "analytics",
+  "version": "latest",
+  "website": "https://umami.is",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "APP_SECRET",
+      "label": "App Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Random string used to generate unique values"
+    },
+    {
+      "key": "DB_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Umami PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

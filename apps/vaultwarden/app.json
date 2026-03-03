@@ -1,0 +1,52 @@
+{
+  "name": "Vaultwarden",
+  "slug": "vaultwarden",
+  "description": "Lightweight Bitwarden-compatible password manager server for securely storing and syncing credentials across devices.",
+  "icon": "icon.png",
+  "category": "security",
+  "version": "latest",
+  "website": "https://github.com/dani-garcia/vaultwarden",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 128,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "ADMIN_TOKEN",
+      "label": "Admin Token",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Token for accessing the Vaultwarden admin panel at /admin"
+    },
+    {
+      "key": "SIGNUPS_ALLOWED",
+      "label": "Allow Signups",
+      "default": "true",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Whether new users can register accounts"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

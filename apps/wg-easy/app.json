@@ -1,0 +1,53 @@
+{
+  "name": "WireGuard Easy",
+  "slug": "wg-easy",
+  "description": "Simple web UI for managing a WireGuard VPN server with one-click client configuration.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "latest",
+  "website": "https://github.com/wg-easy/wg-easy",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 128,
+  "min_storage_gb": 1,
+  "env": [
+    {
+      "key": "WG_HOST",
+      "label": "Server Public IP/Hostname",
+      "default": "",
+      "required": true,
+      "type": "text",
+      "description": "Public IP address or hostname clients will connect to"
+    },
+    {
+      "key": "PASSWORD_HASH",
+      "label": "Admin Password Hash",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "description": "Bcrypt password hash for the web UI (generate with: htpasswd -nbBC 10 '' 'yourpassword' | cut -d: -f2)"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 51820,
+      "default_host_port": 51820,
+      "protocol": "udp",
+      "label": "WireGuard VPN",
+      "configurable": false
+    },
+    {
+      "container_port": 51821,
+      "default_host_port": 51821,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

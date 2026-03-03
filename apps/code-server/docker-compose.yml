@@ -1,0 +1,17 @@
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8443:-8443}:8443"
+    env_file:
+      - .env
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+    volumes:
+      - code_server_config:/config
+
+volumes:
+  code_server_config:
