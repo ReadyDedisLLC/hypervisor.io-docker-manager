@@ -1,0 +1,64 @@
+{
+  "name": "Documenso",
+  "slug": "documenso",
+  "description": "Open-source DocuSign alternative for digital document signing with a beautiful, modern interface.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://documenso.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "NEXTAUTH_SECRET",
+      "label": "Auth Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for NextAuth session encryption"
+    },
+    {
+      "key": "NEXTAUTH_URL",
+      "label": "Application URL",
+      "default": "http://localhost:3000",
+      "required": true,
+      "type": "text",
+      "description": "Public URL of your Documenso instance"
+    },
+    {
+      "key": "NEXT_PRIVATE_ENCRYPTION_KEY",
+      "label": "Encryption Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Key used to encrypt sensitive document data"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

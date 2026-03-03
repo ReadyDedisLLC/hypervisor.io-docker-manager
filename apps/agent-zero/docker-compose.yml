@@ -1,0 +1,19 @@
+services:
+  agent-zero:
+    image: agent0ai/agent-zero:latest
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "${HOST_PORT_80:-50001}:80"
+    env_file:
+      - .env
+    environment:
+      PYTHONUNBUFFERED: 1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - agent_zero_work:/root/work
+      - agent_zero_memory:/root/memory
+
+volumes:
+  agent_zero_work:
+  agent_zero_memory:

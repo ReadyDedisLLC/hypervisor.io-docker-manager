@@ -1,0 +1,56 @@
+{
+  "name": "OpenClaw",
+  "slug": "openclaw",
+  "description": "Self-hosted AI agent framework that can manage calendars, browse the web, organize files, and run terminal commands via any LLM.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://docs.openclaw.ai",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "OPENCLAW_GATEWAY_PORT",
+      "label": "Gateway Port",
+      "default": "18789",
+      "required": false,
+      "type": "number",
+      "description": "Port for the OpenClaw web UI and API gateway"
+    },
+    {
+      "key": "OPENCLAW_GATEWAY_BIND",
+      "label": "Bind Mode",
+      "default": "lan",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "LAN only", "value": "lan" },
+        { "label": "Public", "value": "public" }
+      ],
+      "description": "Network bind mode for the gateway"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 18789,
+      "default_host_port": 18789,
+      "protocol": "tcp",
+      "label": "Web UI / API Gateway",
+      "configurable": true
+    },
+    {
+      "container_port": 18790,
+      "default_host_port": 18790,
+      "protocol": "tcp",
+      "label": "Bridge",
+      "configurable": true
+    }
+  ]
+}

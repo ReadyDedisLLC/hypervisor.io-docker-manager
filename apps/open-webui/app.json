@@ -1,0 +1,45 @@
+{
+  "name": "Open WebUI",
+  "slug": "open-webui",
+  "description": "Feature-rich ChatGPT-like web interface for Ollama and OpenAI-compatible LLMs, designed to run entirely offline.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://openwebui.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 4096,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "WEBUI_SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for session encryption"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    },
+    {
+      "container_port": 11434,
+      "default_host_port": 11434,
+      "protocol": "tcp",
+      "label": "Ollama API",
+      "configurable": true
+    }
+  ]
+}

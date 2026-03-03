@@ -1,0 +1,39 @@
+{
+  "name": "Home Assistant",
+  "slug": "home-assistant",
+  "description": "Open-source home automation platform with 2000+ integrations for controlling smart home devices locally.",
+  "icon": "icon.png",
+  "category": "automation",
+  "version": "stable",
+  "website": "https://www.home-assistant.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "America/New_York",
+      "required": true,
+      "type": "text",
+      "description": "Timezone (e.g. America/New_York, Europe/London)"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8123,
+      "default_host_port": 8123,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Watchtower",
+  "slug": "watchtower",
+  "description": "Automatically updates running Docker containers when new images are available. Set it and forget it.",
+  "icon": "icon.png",
+  "category": "automation",
+  "version": "latest",
+  "website": "https://containrrr.dev/watchtower",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 64,
+  "min_storage_gb": 1,
+  "env": [
+    {
+      "key": "WATCHTOWER_CLEANUP",
+      "label": "Remove Old Images",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Automatically remove old images after updating"
+    },
+    {
+      "key": "WATCHTOWER_POLL_INTERVAL",
+      "label": "Check Interval (seconds)",
+      "default": "86400",
+      "required": false,
+      "type": "number",
+      "description": "How often to check for updates in seconds (default: 24 hours)"
+    }
+  ],
+  "ports": [],
+  "env_note": "Watchtower runs as a background service with no web UI."
+}

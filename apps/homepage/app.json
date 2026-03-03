@@ -1,0 +1,30 @@
+{
+  "name": "Homepage",
+  "slug": "homepage",
+  "description": "Modern, fully static, and highly customizable application dashboard with integrations for 100+ services.",
+  "icon": "icon.png",
+  "category": "monitoring",
+  "version": "latest",
+  "website": "https://gethomepage.dev",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 128,
+  "min_storage_gb": 1,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

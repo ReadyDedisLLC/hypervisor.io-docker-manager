@@ -1,0 +1,64 @@
+{
+  "name": "Cal.com",
+  "slug": "cal-com",
+  "description": "Open-source Calendly alternative for scheduling meetings, appointments, and events with calendar integrations.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://cal.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "NEXTAUTH_SECRET",
+      "label": "Auth Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for session encryption"
+    },
+    {
+      "key": "CALENDSO_ENCRYPTION_KEY",
+      "label": "Encryption Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Encryption key for sensitive data"
+    },
+    {
+      "key": "NEXT_PUBLIC_WEBAPP_URL",
+      "label": "Application URL",
+      "default": "http://localhost:3000",
+      "required": true,
+      "type": "text",
+      "description": "Public URL of your Cal.com instance"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+services:
+  palworld:
+    image: thijsvanloef/palworld-server-docker:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8211:-8211}:8211/udp"
+      - "${HOST_PORT_25575:-25575}:25575/tcp"
+    env_file:
+      - .env
+    environment:
+      PUID: 1000
+      PGID: 1000
+      PORT: 8211
+      COMMUNITY: "false"
+      UPDATE_ON_BOOT: "true"
+      BACKUP_ENABLED: "true"
+    volumes:
+      - palworld_data:/palworld
+
+volumes:
+  palworld_data:

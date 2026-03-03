@@ -1,0 +1,51 @@
+{
+  "name": "ZeroClaw",
+  "slug": "zeroclaw",
+  "description": "Ultra-lightweight AI agent framework written in Rust with sub-10ms cold starts and under 5MB memory footprint.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://github.com/zeroclaw-labs/zeroclaw",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "API_KEY",
+      "label": "LLM API Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "description": "API key for your LLM provider (OpenRouter, OpenAI, Anthropic, etc.)"
+    },
+    {
+      "key": "PROVIDER",
+      "label": "LLM Provider",
+      "default": "openrouter",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "OpenRouter", "value": "openrouter" },
+        { "label": "OpenAI", "value": "openai" },
+        { "label": "Anthropic", "value": "anthropic" },
+        { "label": "Ollama (local)", "value": "ollama" }
+      ],
+      "description": "LLM provider to use for agent inference"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 42617,
+      "default_host_port": 42617,
+      "protocol": "tcp",
+      "label": "API Gateway",
+      "configurable": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Traefik",
+  "slug": "traefik",
+  "description": "Cloud-native reverse proxy and load balancer with automatic HTTPS, Docker integration, and a real-time dashboard.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "v3.0",
+  "website": "https://traefik.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 128,
+  "min_storage_gb": 1,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 80,
+      "protocol": "tcp",
+      "label": "HTTP",
+      "configurable": false
+    },
+    {
+      "container_port": 443,
+      "default_host_port": 443,
+      "protocol": "tcp",
+      "label": "HTTPS",
+      "configurable": false
+    },
+    {
+      "container_port": 8080,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Dashboard",
+      "configurable": true
+    }
+  ]
+}

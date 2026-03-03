@@ -1,0 +1,21 @@
+services:
+  valheim:
+    image: lloesche/valheim-server:latest
+    restart: unless-stopped
+    cap_add:
+      - SYS_NICE
+    ports:
+      - "${HOST_PORT_2456:-2456}:2456/udp"
+      - "${HOST_PORT_2457:-2457}:2457/udp"
+    env_file:
+      - .env
+    environment:
+      BACKUPS_MAX_AGE: 3
+      BACKUPS_DIRECTORY: /config/backups
+    volumes:
+      - valheim_config:/config
+      - valheim_data:/opt/valheim
+
+volumes:
+  valheim_config:
+  valheim_data:

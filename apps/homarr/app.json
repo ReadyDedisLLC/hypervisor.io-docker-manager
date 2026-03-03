@@ -1,0 +1,30 @@
+{
+  "name": "Homarr",
+  "slug": "homarr",
+  "description": "Sleek, modern dashboard for managing and monitoring your self-hosted services with rich Docker integration.",
+  "icon": "icon.png",
+  "category": "monitoring",
+  "version": "latest",
+  "website": "https://homarr.dev",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 7575,
+      "default_host_port": 7575,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Hoarder",
+  "slug": "hoarder",
+  "description": "AI-powered bookmark manager with automatic tagging, full-text search, and mobile apps for iOS and Android.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "release",
+  "website": "https://hoarder.app",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "NEXTAUTH_SECRET",
+      "label": "Auth Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for authentication"
+    },
+    {
+      "key": "NEXTAUTH_URL",
+      "label": "Application URL",
+      "default": "http://localhost:3000",
+      "required": true,
+      "type": "text",
+      "description": "Public URL where Hoarder will be accessible"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Optional OpenAI key for AI-powered tagging (or use local Ollama)"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

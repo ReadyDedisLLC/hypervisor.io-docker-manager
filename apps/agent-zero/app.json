@@ -1,0 +1,67 @@
+{
+  "name": "Agent Zero",
+  "slug": "agent-zero",
+  "description": "Autonomous AI assistant with full Linux access, persistent memory, web browsing, and multi-agent task delegation.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://www.agent-zero.ai",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "A0_SET_CHAT_MODEL_PROVIDER",
+      "label": "Chat Model Provider",
+      "default": "openai",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "OpenAI", "value": "openai" },
+        { "label": "Anthropic", "value": "anthropic" },
+        { "label": "Ollama (local)", "value": "ollama" },
+        { "label": "Google", "value": "google" }
+      ],
+      "description": "LLM provider for the chat model"
+    },
+    {
+      "key": "A0_SET_CHAT_MODEL_NAME",
+      "label": "Chat Model Name",
+      "default": "gpt-4o",
+      "required": true,
+      "type": "text",
+      "description": "Model name to use (e.g. gpt-4o, claude-sonnet-4-20250514, llama3)"
+    },
+    {
+      "key": "API_KEY_OPENAI",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "OpenAI API key (required if using OpenAI provider)"
+    },
+    {
+      "key": "API_KEY_ANTHROPIC",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Anthropic API key (required if using Anthropic provider)"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 50001,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

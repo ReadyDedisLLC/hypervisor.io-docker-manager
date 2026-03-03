@@ -1,0 +1,15 @@
+services:
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-80}:80"
+      - "${HOST_PORT_443:-443}:443"
+      - "${HOST_PORT_81:-81}:81"
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+
+volumes:
+  npm_data:
+  npm_letsencrypt:

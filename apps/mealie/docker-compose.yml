@@ -1,0 +1,17 @@
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_9000:-9925}:9000"
+    env_file:
+      - .env
+    environment:
+      ALLOW_SIGNUP: "true"
+      TZ: Etc/UTC
+      BASE_URL: http://localhost:9925
+    volumes:
+      - mealie_data:/app/data
+
+volumes:
+  mealie_data:

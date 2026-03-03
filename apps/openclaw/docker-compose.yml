@@ -1,0 +1,16 @@
+services:
+  openclaw:
+    image: alpine/openclaw:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_18789:-18789}:18789"
+      - "${HOST_PORT_18790:-18790}:18790"
+    env_file:
+      - .env
+    volumes:
+      - openclaw_config:/root/.openclaw
+      - openclaw_workspace:/root/openclaw/workspace
+
+volumes:
+  openclaw_config:
+  openclaw_workspace:

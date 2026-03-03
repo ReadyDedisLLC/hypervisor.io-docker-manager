@@ -1,0 +1,30 @@
+{
+  "name": "Duplicati",
+  "slug": "duplicati",
+  "description": "Free backup software to store encrypted backups to cloud storage services and remote file servers.",
+  "icon": "icon.png",
+  "category": "file-storage",
+  "version": "latest",
+  "website": "https://www.duplicati.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 5,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8200,
+      "default_host_port": 8200,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

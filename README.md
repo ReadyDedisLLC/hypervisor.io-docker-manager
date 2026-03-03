@@ -24,6 +24,7 @@ The VM must have Docker Engine installed (enabled during instance creation).
 
 ```
 apps/
+├── index.json                # Full catalog (array of all app objects)
 ├── grafana/
 │   ├── app.json              # App metadata and configuration schema
 │   ├── docker-compose.yml    # Compose file deployed to the VM
@@ -33,6 +34,17 @@ apps/
 │   ├── docker-compose.yml
 │   └── icon.png
 └── ...
+```
+
+### `index.json`
+
+This file contains the full app catalog as a JSON array. It must be updated whenever an app is added, removed, or modified. Each entry is the complete `app.json` content for that app.
+
+```json
+[
+  { "name": "Grafana", "slug": "grafana", "description": "...", "category": "monitoring", ... },
+  { "name": "WordPress", "slug": "wordpress", "description": "...", "category": "cms", ... }
+]
 ```
 
 ---
@@ -164,8 +176,9 @@ Use one of these categories. If your app doesn't fit, suggest a new one in your 
 
 | Category | Examples |
 |---|---|
+| `ai` | Ollama, Open WebUI, OpenClaw, Agent Zero |
 | `analytics` | Plausible, Umami, Matomo |
-| `automation` | n8n, Huginn, Node-RED |
+| `automation` | n8n, Huginn, Node-RED, Home Assistant |
 | `cms` | WordPress, Ghost, Strapi |
 | `communication` | Rocket.Chat, Mattermost |
 | `databases` | PostgreSQL, MySQL, Redis, MongoDB |

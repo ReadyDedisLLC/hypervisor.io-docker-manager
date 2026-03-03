@@ -1,0 +1,13 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_11434:-11434}:11434"
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  ollama_data:

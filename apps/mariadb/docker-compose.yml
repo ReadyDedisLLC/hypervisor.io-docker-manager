@@ -1,0 +1,13 @@
+services:
+  mariadb:
+    image: mariadb:11
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3306:-3306}:3306"
+    env_file:
+      - .env
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  mariadb_data:

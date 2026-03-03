@@ -1,0 +1,30 @@
+{
+  "name": "Dozzle",
+  "slug": "dozzle",
+  "description": "Lightweight real-time Docker log viewer with a clean web interface. No log storage — live monitoring only.",
+  "icon": "icon.png",
+  "category": "monitoring",
+  "version": "latest",
+  "website": "https://dozzle.dev",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 64,
+  "min_storage_gb": 1,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

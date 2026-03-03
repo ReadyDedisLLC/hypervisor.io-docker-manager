@@ -1,0 +1,15 @@
+services:
+  zeroclaw:
+    image: ghcr.io/zeroclaw-labs/zeroclaw:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_42617:-42617}:42617"
+    env_file:
+      - .env
+    environment:
+      ZEROCLAW_ALLOW_PUBLIC_BIND: "true"
+    volumes:
+      - zeroclaw_data:/data
+
+volumes:
+  zeroclaw_data:

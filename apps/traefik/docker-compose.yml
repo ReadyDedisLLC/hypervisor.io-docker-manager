@@ -1,0 +1,20 @@
+services:
+  traefik:
+    image: traefik:v3.0
+    restart: unless-stopped
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+    ports:
+      - "${HOST_PORT_80:-80}:80"
+      - "${HOST_PORT_443:-443}:443"
+      - "${HOST_PORT_8080:-8080}:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik_certs:/certs
+
+volumes:
+  traefik_certs:

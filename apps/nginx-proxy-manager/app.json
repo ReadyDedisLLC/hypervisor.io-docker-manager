@@ -1,0 +1,44 @@
+{
+  "name": "Nginx Proxy Manager",
+  "slug": "nginx-proxy-manager",
+  "description": "Easy-to-use reverse proxy with a web UI for managing SSL certificates, proxy hosts, and access lists.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "latest",
+  "website": "https://nginxproxymanager.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 80,
+      "protocol": "tcp",
+      "label": "HTTP",
+      "configurable": false
+    },
+    {
+      "container_port": 443,
+      "default_host_port": 443,
+      "protocol": "tcp",
+      "label": "HTTPS",
+      "configurable": false
+    },
+    {
+      "container_port": 81,
+      "default_host_port": 81,
+      "protocol": "tcp",
+      "label": "Admin UI",
+      "configurable": true
+    }
+  ]
+}
