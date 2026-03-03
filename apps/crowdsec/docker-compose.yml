@@ -1,0 +1,15 @@
+services:
+  crowdsec:
+    image: crowdsecurity/crowdsec:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8080:-8080}:8080"
+      - "${HOST_PORT_6060:-6060}:6060"
+    volumes:
+      - crowdsec_config:/etc/crowdsec
+      - crowdsec_data:/var/lib/crowdsec/data
+      - /var/log:/var/log:ro
+
+volumes:
+  crowdsec_config:
+  crowdsec_data:

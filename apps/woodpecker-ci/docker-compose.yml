@@ -1,0 +1,27 @@
+services:
+  woodpecker-server:
+    image: woodpeckerci/woodpecker-server:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8000:-8000}:8000"
+    env_file:
+      - .env
+    environment:
+      WOODPECKER_HOST: http://localhost:8000
+    volumes:
+      - woodpecker_data:/var/lib/woodpecker
+
+  woodpecker-agent:
+    image: woodpeckerci/woodpecker-agent:latest
+    restart: unless-stopped
+    command: agent
+    environment:
+      WOODPECKER_SERVER: woodpecker-server:9000
+      WOODPECKER_AGENT_SECRET: ${WOODPECKER_AGENT_SECRET}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - woodpecker-server
+
+volumes:
+  woodpecker_data:

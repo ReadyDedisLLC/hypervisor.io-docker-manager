@@ -1,0 +1,14 @@
+{
+  "name": "Actual Budget",
+  "slug": "actual-budget",
+  "description": "Fast and privacy-focused personal finance app with envelope budgeting, bank sync, and a beautiful local-first UI.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://actualbudget.org",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [{"container_port":5006,"default_host_port":5006,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "LLDAP",
+  "slug": "lldap",
+  "description": "Lightweight LDAP server with a simple web UI for managing users and groups across your self-hosted services.",
+  "icon": "icon.png",
+  "category": "security",
+  "version": "stable",
+  "website": "https://github.com/lldap/lldap",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 64,
+  "min_storage_gb": 1,
+  "env": [
+    {"key":"LLDAP_JWT_SECRET","label":"JWT Secret","default":"","required":true,"type":"password","generate":true,"description":"Secret key for JWT authentication"},
+    {"key":"LLDAP_LDAP_USER_PASS","label":"Admin Password","default":"","required":true,"type":"password","generate":true,"description":"Password for the default admin user"},
+    {"key":"LLDAP_LDAP_BASE_DN","label":"Base DN","default":"dc=example,dc=com","required":true,"type":"text","description":"LDAP base distinguished name"}
+  ],
+  "ports": [
+    {"container_port":17170,"default_host_port":17170,"protocol":"tcp","label":"Web UI","configurable":true},
+    {"container_port":3890,"default_host_port":3890,"protocol":"tcp","label":"LDAP","configurable":true}
+  ]
+}

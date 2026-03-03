@@ -1,0 +1,17 @@
+{
+  "name": "PhotoPrism",
+  "slug": "photoprism",
+  "description": "AI-powered photo management app with automatic face recognition, object detection, and location tagging.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://www.photoprism.app",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 20,
+  "env": [
+    {"key":"PHOTOPRISM_ADMIN_PASSWORD","label":"Admin Password","default":"","required":true,"type":"password","generate":true,"description":"Initial admin account password"},
+    {"key":"PHOTOPRISM_SITE_URL","label":"Site URL","default":"http://localhost:2342/","required":true,"type":"text","description":"Public URL of your PhotoPrism instance"}
+  ],
+  "ports": [{"container_port":2342,"default_host_port":2342,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

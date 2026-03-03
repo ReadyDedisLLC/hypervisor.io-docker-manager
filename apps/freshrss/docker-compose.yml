@@ -1,0 +1,16 @@
+services:
+  freshrss:
+    image: freshrss/freshrss:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-8080}:80"
+    environment:
+      TZ: Etc/UTC
+      CRON_MIN: "2,32"
+    volumes:
+      - freshrss_data:/var/www/FreshRSS/data
+      - freshrss_extensions:/var/www/FreshRSS/extensions
+
+volumes:
+  freshrss_data:
+  freshrss_extensions:

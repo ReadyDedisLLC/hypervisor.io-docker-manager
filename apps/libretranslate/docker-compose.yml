@@ -1,0 +1,11 @@
+services:
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_5000:-5000}:5000"
+    volumes:
+      - lt_data:/home/libretranslate/.local
+
+volumes:
+  lt_data:

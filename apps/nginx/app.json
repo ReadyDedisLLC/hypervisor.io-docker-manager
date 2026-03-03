@@ -1,0 +1,17 @@
+{
+  "name": "Nginx",
+  "slug": "nginx",
+  "description": "High-performance web server, reverse proxy, and load balancer — the backbone of modern web infrastructure.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "stable",
+  "website": "https://nginx.org",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 64,
+  "min_storage_gb": 1,
+  "env": [],
+  "ports": [
+    {"container_port":80,"default_host_port":80,"protocol":"tcp","label":"HTTP","configurable":true},
+    {"container_port":443,"default_host_port":443,"protocol":"tcp","label":"HTTPS","configurable":true}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Netdata",
+  "slug": "netdata",
+  "description": "Real-time system monitoring with per-second granularity for CPU, memory, disks, network, and Docker containers.",
+  "icon": "icon.png",
+  "category": "monitoring",
+  "version": "stable",
+  "website": "https://www.netdata.cloud",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [{"container_port":19999,"default_host_port":19999,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

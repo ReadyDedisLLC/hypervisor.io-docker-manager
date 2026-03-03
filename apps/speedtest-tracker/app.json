@@ -1,0 +1,16 @@
+{
+  "name": "Speedtest Tracker",
+  "slug": "speedtest-tracker",
+  "description": "Self-hosted internet speed tracking app that runs scheduled Ookla speedtests and displays historical results.",
+  "icon": "icon.png",
+  "category": "monitoring",
+  "version": "latest",
+  "website": "https://github.com/alexjustesen/speedtest-tracker",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [
+    {"key":"APP_KEY","label":"App Key","default":"","required":true,"type":"password","generate":true,"description":"Laravel application key"}
+  ],
+  "ports": [{"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

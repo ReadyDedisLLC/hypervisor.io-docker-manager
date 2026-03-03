@@ -1,0 +1,13 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-8080}:80"
+    volumes:
+      - filebrowser_data:/srv
+      - filebrowser_db:/database
+
+volumes:
+  filebrowser_data:
+  filebrowser_db:

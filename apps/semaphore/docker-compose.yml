@@ -1,0 +1,20 @@
+services:
+  semaphore:
+    image: semaphoreui/semaphore:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
+    environment:
+      SEMAPHORE_DB_DIALECT: bolt
+      SEMAPHORE_ADMIN: ${SEMAPHORE_ADMIN_NAME:-admin}
+      SEMAPHORE_ADMIN_PASSWORD: ${SEMAPHORE_ADMIN_PASSWORD}
+      SEMAPHORE_ADMIN_NAME: ${SEMAPHORE_ADMIN_NAME:-admin}
+      SEMAPHORE_ADMIN_EMAIL: ${SEMAPHORE_ADMIN_EMAIL:-admin@localhost}
+      SEMAPHORE_ACCESS_KEY_ENCRYPTION: ${SEMAPHORE_ACCESS_KEY_ENCRYPTION}
+    volumes:
+      - semaphore_data:/var/lib/semaphore
+
+volumes:
+  semaphore_data:

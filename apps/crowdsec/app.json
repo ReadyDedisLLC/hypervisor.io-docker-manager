@@ -1,0 +1,17 @@
+{
+  "name": "CrowdSec",
+  "slug": "crowdsec",
+  "description": "Open-source intrusion prevention system with crowd-sourced threat intelligence and real-time attack detection.",
+  "icon": "icon.png",
+  "category": "security",
+  "version": "latest",
+  "website": "https://www.crowdsec.net",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {"container_port":8080,"default_host_port":8080,"protocol":"tcp","label":"API","configurable":true},
+    {"container_port":6060,"default_host_port":6060,"protocol":"tcp","label":"Prometheus Metrics","configurable":true}
+  ]
+}

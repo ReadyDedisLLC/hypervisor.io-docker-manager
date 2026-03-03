@@ -1,0 +1,52 @@
+services:
+  appwrite:
+    image: appwrite/appwrite:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-8080}:80"
+      - "${HOST_PORT_443:-8443}:443"
+    env_file:
+      - .env
+    environment:
+      _APP_ENV: production
+      _APP_REDIS_HOST: redis
+      _APP_DB_HOST: mariadb
+      _APP_DB_PORT: 3306
+      _APP_DB_SCHEMA: appwrite
+      _APP_DB_USER: appwrite
+      _APP_DB_PASS: password
+    volumes:
+      - appwrite_uploads:/storage/uploads
+      - appwrite_cache:/storage/cache
+      - appwrite_config:/storage/config
+      - appwrite_certs:/storage/certificates
+      - appwrite_functions:/storage/functions
+    depends_on:
+      - redis
+      - mariadb
+
+  mariadb:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: appwrite
+      MYSQL_USER: appwrite
+      MYSQL_PASSWORD: password
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+volumes:
+  appwrite_uploads:
+  appwrite_cache:
+  appwrite_config:
+  appwrite_certs:
+  appwrite_functions:
+  mariadb_data:
+  redis_data:

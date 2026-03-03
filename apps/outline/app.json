@@ -1,0 +1,19 @@
+{
+  "name": "Outline",
+  "slug": "outline",
+  "description": "Beautiful team wiki and knowledge base with real-time collaboration, markdown, and Slack/API integrations.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://www.getoutline.com",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 5,
+  "env": [
+    {"key":"SECRET_KEY","label":"Secret Key","default":"","required":true,"type":"password","generate":true,"description":"Secret key for session encryption"},
+    {"key":"UTILS_SECRET","label":"Utils Secret","default":"","required":true,"type":"password","generate":true,"description":"Secret for utility functions"},
+    {"key":"POSTGRES_PASSWORD","label":"Database Password","default":"","required":true,"type":"password","generate":true,"description":"PostgreSQL database password"},
+    {"key":"URL","label":"Application URL","default":"http://localhost:3000","required":true,"type":"text","description":"Public URL of your Outline instance"}
+  ],
+  "ports": [{"container_port":3000,"default_host_port":3000,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "IT Tools",
+  "slug": "it-tools",
+  "description": "Collection of 100+ handy developer utilities — JSON formatter, Base64, UUID, hash generators, and more.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://github.com/CorentinTh/it-tools",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 64,
+  "min_storage_gb": 1,
+  "env": [],
+  "ports": [{"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

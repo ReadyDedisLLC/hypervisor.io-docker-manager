@@ -1,0 +1,14 @@
+{
+  "name": "SearXNG",
+  "slug": "searxng",
+  "description": "Privacy-respecting metasearch engine that aggregates results from 70+ search engines without tracking you.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "latest",
+  "website": "https://docs.searxng.org",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [{"container_port":8080,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

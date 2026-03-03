@@ -1,0 +1,11 @@
+services:
+  trilium:
+    image: triliumnext/notes:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8080:-8080}:8080"
+    volumes:
+      - trilium_data:/home/node/trilium-data
+
+volumes:
+  trilium_data:

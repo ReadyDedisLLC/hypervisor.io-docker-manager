@@ -1,0 +1,30 @@
+{
+  "name": "Prowlarr",
+  "slug": "prowlarr",
+  "description": "Indexer manager for Sonarr, Radarr, and Lidarr that integrates with your download clients and media managers.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://prowlarr.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 9696,
+      "default_host_port": 9696,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

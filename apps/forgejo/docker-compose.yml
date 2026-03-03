@@ -1,0 +1,17 @@
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:9
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3000}:3000"
+      - "${HOST_PORT_22:-2222}:22"
+    environment:
+      USER_UID: 1000
+      USER_GID: 1000
+    volumes:
+      - forgejo_data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+volumes:
+  forgejo_data:

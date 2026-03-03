@@ -1,0 +1,14 @@
+services:
+  lldap:
+    image: lldap/lldap:stable
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_17170:-17170}:17170"
+      - "${HOST_PORT_3890:-3890}:3890"
+    env_file:
+      - .env
+    volumes:
+      - lldap_data:/data
+
+volumes:
+  lldap_data:

@@ -1,0 +1,14 @@
+{
+  "name": "PocketBase",
+  "slug": "pocketbase",
+  "description": "Lightweight backend-as-a-service with built-in SQLite database, authentication, file storage, and admin dashboard.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://pocketbase.io",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 128,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [{"container_port":8090,"default_host_port":8090,"protocol":"tcp","label":"API / Admin UI","configurable":true}]
+}

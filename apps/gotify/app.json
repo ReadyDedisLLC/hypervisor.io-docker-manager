@@ -1,0 +1,14 @@
+{
+  "name": "Gotify",
+  "slug": "gotify",
+  "description": "Simple self-hosted push notification server with real-time messaging via WebSockets and a REST API.",
+  "icon": "icon.png",
+  "category": "communication",
+  "version": "latest",
+  "website": "https://gotify.net",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 64,
+  "min_storage_gb": 1,
+  "env": [],
+  "ports": [{"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI / API","configurable":true}]
+}

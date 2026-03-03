@@ -1,0 +1,14 @@
+{
+  "name": "FreshRSS",
+  "slug": "freshrss",
+  "description": "Lightweight self-hosted RSS feed aggregator with multi-user support, web scraping, and mobile-friendly UI.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://freshrss.org",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 128,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [{"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

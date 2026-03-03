@@ -1,0 +1,30 @@
+{
+  "name": "Sonarr",
+  "slug": "sonarr",
+  "description": "PVR for Usenet and BitTorrent users that monitors RSS feeds for new TV show episodes and automatically grabs them.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "4",
+  "website": "https://sonarr.tv",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 5,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8989,
+      "default_host_port": 8989,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

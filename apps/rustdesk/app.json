@@ -1,0 +1,21 @@
+{
+  "name": "RustDesk Server",
+  "slug": "rustdesk",
+  "description": "Open-source remote desktop server — a self-hosted alternative to TeamViewer and AnyDesk with end-to-end encryption.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "latest",
+  "website": "https://rustdesk.com",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {"container_port":21115,"default_host_port":21115,"protocol":"tcp","label":"NAT Test","configurable":false},
+    {"container_port":21116,"default_host_port":21116,"protocol":"tcp","label":"ID/Relay TCP","configurable":false},
+    {"container_port":21116,"default_host_port":21116,"protocol":"udp","label":"ID Server","configurable":false},
+    {"container_port":21117,"default_host_port":21117,"protocol":"tcp","label":"Relay","configurable":false},
+    {"container_port":21118,"default_host_port":21118,"protocol":"tcp","label":"Web Client WS","configurable":false},
+    {"container_port":21119,"default_host_port":21119,"protocol":"tcp","label":"Web Client WSS","configurable":false}
+  ]
+}

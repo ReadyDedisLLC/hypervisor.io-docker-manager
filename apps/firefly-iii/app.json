@@ -1,0 +1,17 @@
+{
+  "name": "Firefly III",
+  "slug": "firefly-iii",
+  "description": "Self-hosted personal finance manager with double-entry bookkeeping, budgets, reports, and bank import.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://www.firefly-iii.org",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {"key":"APP_KEY","label":"Application Key","default":"","required":true,"type":"password","generate":true,"description":"32-character encryption key for Laravel (auto-generated)"},
+    {"key":"DB_PASSWORD","label":"Database Password","default":"","required":true,"type":"password","generate":true,"description":"Password for the database"}
+  ],
+  "ports": [{"container_port":8080,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

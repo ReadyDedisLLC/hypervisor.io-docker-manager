@@ -1,0 +1,17 @@
+{
+  "name": "Woodpecker CI",
+  "slug": "woodpecker-ci",
+  "description": "Simple yet powerful CI/CD engine with Docker-native pipelines and Gitea/GitHub/GitLab integration.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://woodpecker-ci.org",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 5,
+  "env": [
+    {"key":"WOODPECKER_OPEN","label":"Open Registration","default":"true","required":true,"type":"select","options":[{"label":"Yes","value":"true"},{"label":"No","value":"false"}],"description":"Allow any user to sign up"},
+    {"key":"WOODPECKER_AGENT_SECRET","label":"Agent Secret","default":"","required":true,"type":"password","generate":true,"description":"Shared secret between server and agents"}
+  ],
+  "ports": [{"container_port":8000,"default_host_port":8000,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

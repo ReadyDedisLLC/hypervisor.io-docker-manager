@@ -1,0 +1,14 @@
+{
+  "name": "LibreTranslate",
+  "slug": "libretranslate",
+  "description": "Free, open-source machine translation API that runs entirely offline with no third-party dependencies.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://libretranslate.com",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [],
+  "ports": [{"container_port":5000,"default_host_port":5000,"protocol":"tcp","label":"API / Web UI","configurable":true}]
+}

@@ -1,0 +1,16 @@
+services:
+  nginx:
+    image: nginx:stable
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-80}:80"
+      - "${HOST_PORT_443:-443}:443"
+    volumes:
+      - nginx_conf:/etc/nginx
+      - nginx_html:/usr/share/nginx/html
+      - nginx_certs:/etc/nginx/certs
+
+volumes:
+  nginx_conf:
+  nginx_html:
+  nginx_certs:

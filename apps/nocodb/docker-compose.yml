@@ -1,0 +1,13 @@
+services:
+  nocodb:
+    image: nocodb/nocodb:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8080:-8080}:8080"
+    env_file:
+      - .env
+    volumes:
+      - nocodb_data:/usr/app/data
+
+volumes:
+  nocodb_data:

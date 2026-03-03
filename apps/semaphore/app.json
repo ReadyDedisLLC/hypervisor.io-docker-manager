@@ -1,0 +1,19 @@
+{
+  "name": "Semaphore",
+  "slug": "semaphore",
+  "description": "Modern web UI for Ansible, Terraform, and OpenTofu — run playbooks, manage inventory, and track deployments.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://semaphoreui.com",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [
+    {"key":"SEMAPHORE_ADMIN_PASSWORD","label":"Admin Password","default":"","required":true,"type":"password","generate":true,"description":"Admin account password"},
+    {"key":"SEMAPHORE_ADMIN_NAME","label":"Admin Username","default":"admin","required":true,"type":"text","description":"Admin account username"},
+    {"key":"SEMAPHORE_ADMIN_EMAIL","label":"Admin Email","default":"admin@localhost","required":true,"type":"text","description":"Admin account email"},
+    {"key":"SEMAPHORE_ACCESS_KEY_ENCRYPTION","label":"Encryption Key","default":"","required":true,"type":"password","generate":true,"description":"Key for encrypting secrets in the database"}
+  ],
+  "ports": [{"container_port":3000,"default_host_port":3000,"protocol":"tcp","label":"Web UI","configurable":true}]
+}

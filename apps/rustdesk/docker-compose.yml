@@ -1,0 +1,25 @@
+services:
+  rustdesk-hbbs:
+    image: rustdesk/rustdesk-server:latest
+    restart: unless-stopped
+    command: hbbs
+    ports:
+      - "${HOST_PORT_21115:-21115}:21115"
+      - "${HOST_PORT_21116:-21116}:21116"
+      - "${HOST_PORT_21116:-21116}:21116/udp"
+      - "${HOST_PORT_21118:-21118}:21118"
+    volumes:
+      - rustdesk_data:/root
+
+  rustdesk-hbbr:
+    image: rustdesk/rustdesk-server:latest
+    restart: unless-stopped
+    command: hbbr
+    ports:
+      - "${HOST_PORT_21117:-21117}:21117"
+      - "${HOST_PORT_21119:-21119}:21119"
+    volumes:
+      - rustdesk_data:/root
+
+volumes:
+  rustdesk_data:

@@ -1,0 +1,44 @@
+{
+  "name": "qBittorrent",
+  "slug": "qbittorrent",
+  "description": "Feature-rich BitTorrent client with a web UI, RSS feed support, and integration with *arr media managers.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://www.qbittorrent.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 10,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    },
+    {
+      "container_port": 6881,
+      "default_host_port": 6881,
+      "protocol": "tcp",
+      "label": "Torrent (TCP)",
+      "configurable": true
+    },
+    {
+      "container_port": 6881,
+      "default_host_port": 6881,
+      "protocol": "udp",
+      "label": "Torrent (UDP)",
+      "configurable": true
+    }
+  ]
+}
