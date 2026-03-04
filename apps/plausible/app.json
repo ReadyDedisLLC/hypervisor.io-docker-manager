@@ -41,6 +41,15 @@
       "type": "password",
       "generate": true,
       "description": "Encryption key for TOTP secrets"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Plausible PostgreSQL database"
     }
   ],
   "ports": [

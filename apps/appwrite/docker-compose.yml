@@ -14,7 +14,7 @@ services:
       _APP_DB_PORT: 3306
       _APP_DB_SCHEMA: appwrite
       _APP_DB_USER: appwrite
-      _APP_DB_PASS: password
+      _APP_DB_PASS: ${_APP_DB_PASS}
     volumes:
       - appwrite_uploads:/storage/uploads
       - appwrite_cache:/storage/cache
@@ -29,10 +29,10 @@ services:
     image: mariadb:11
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: ${_APP_DB_PASS}
       MYSQL_DATABASE: appwrite
       MYSQL_USER: appwrite
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: ${_APP_DB_PASS}
     volumes:
       - mariadb_data:/var/lib/mysql
 

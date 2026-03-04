@@ -24,14 +24,6 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Immich PostgreSQL database"
-    },
-    {
-      "key": "UPLOAD_LOCATION",
-      "label": "Upload Location",
-      "default": "/data/immich/upload",
-      "required": true,
-      "type": "text",
-      "description": "Path where uploaded photos and videos are stored"
     }
   ],
   "ports": [

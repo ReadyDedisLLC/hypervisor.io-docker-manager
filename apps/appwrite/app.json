@@ -10,7 +10,8 @@
   "min_ram_mb": 2048,
   "min_storage_gb": 10,
   "env": [
-    {"key":"_APP_OPENSSL_KEY_V1","label":"Encryption Key","default":"","required":true,"type":"password","generate":true,"description":"Secret key for encrypting data at rest"}
+    {"key":"_APP_OPENSSL_KEY_V1","label":"Encryption Key","default":"","required":true,"type":"password","generate":true,"description":"Secret key for encrypting data at rest"},
+    {"key":"_APP_DB_PASS","label":"Database Password","default":"","required":true,"type":"password","generate":true,"description":"Password for Appwrite MariaDB database"}
   ],
   "ports": [
     {"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true},

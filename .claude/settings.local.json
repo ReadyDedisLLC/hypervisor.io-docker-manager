@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(do python:*)",
+      "Bash(do node:*)",
+      "Bash(magick:*)",
+      "Bash(pip install:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(rm:*)",
+      "Bash(python3:*)",
+      "Bash(do echo:*)"
+    ]
+  }
+}

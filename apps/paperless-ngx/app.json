@@ -42,6 +42,15 @@
       "type": "password",
       "generate": true,
       "description": "Initial admin password"
+    },
+    {
+      "key": "PAPERLESS_DB_PASS",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Paperless PostgreSQL database"
     }
   ],
   "ports": [

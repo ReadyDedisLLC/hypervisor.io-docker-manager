@@ -17,7 +17,9 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {"key":"SECRET_ENCRYPTION_KEY","label":"Encryption Key","default":"","required":true,"type":"password","generate":true,"description":"Secret key for encrypting Homarr data"}
+  ],
   "ports": [
     {
       "container_port": 7575,

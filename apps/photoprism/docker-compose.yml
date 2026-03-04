@@ -11,7 +11,7 @@ services:
       PHOTOPRISM_DATABASE_SERVER: db:3306
       PHOTOPRISM_DATABASE_NAME: photoprism
       PHOTOPRISM_DATABASE_USER: photoprism
-      PHOTOPRISM_DATABASE_PASSWORD: photoprism
+      PHOTOPRISM_DATABASE_PASSWORD: ${PHOTOPRISM_DB_PASSWORD}
     volumes:
       - photoprism_originals:/photoprism/originals
       - photoprism_storage:/photoprism/storage
@@ -22,10 +22,10 @@ services:
     image: mariadb:11
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: photoprism
+      MYSQL_ROOT_PASSWORD: ${PHOTOPRISM_DB_PASSWORD}
       MYSQL_DATABASE: photoprism
       MYSQL_USER: photoprism
-      MYSQL_PASSWORD: photoprism
+      MYSQL_PASSWORD: ${PHOTOPRISM_DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
 

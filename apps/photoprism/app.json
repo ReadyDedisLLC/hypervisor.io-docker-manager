@@ -11,7 +11,8 @@
   "min_storage_gb": 20,
   "env": [
     {"key":"PHOTOPRISM_ADMIN_PASSWORD","label":"Admin Password","default":"","required":true,"type":"password","generate":true,"description":"Initial admin account password"},
-    {"key":"PHOTOPRISM_SITE_URL","label":"Site URL","default":"http://localhost:2342/","required":true,"type":"text","description":"Public URL of your PhotoPrism instance"}
+    {"key":"PHOTOPRISM_SITE_URL","label":"Site URL","default":"http://localhost:2342/","required":true,"type":"text","description":"Public URL of your PhotoPrism instance"},
+    {"key":"PHOTOPRISM_DB_PASSWORD","label":"Database Password","default":"","required":true,"type":"password","generate":true,"description":"Password for PhotoPrism MariaDB database"}
   ],
   "ports": [{"container_port":2342,"default_host_port":2342,"protocol":"tcp","label":"Web UI","configurable":true}]
 }

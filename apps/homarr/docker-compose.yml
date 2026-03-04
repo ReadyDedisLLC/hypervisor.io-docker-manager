@@ -4,6 +4,10 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_7575:-7575}:7575"
+    env_file:
+      - .env
+    environment:
+      SECRET_ENCRYPTION_KEY: ${SECRET_ENCRYPTION_KEY}
     volumes:
       - homarr_appdata:/appdata
       - /var/run/docker.sock:/var/run/docker.sock:ro
