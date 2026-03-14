@@ -1,0 +1,13 @@
+services:
+  grocy:
+    image: lscr.io/linuxserver/grocy:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-9283}:80"
+    env_file:
+      - .env
+    volumes:
+      - grocy_config:/config
+
+volumes:
+  grocy_config:

@@ -1,0 +1,13 @@
+services:
+  huginn:
+    image: ghcr.io/huginn/huginn:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3004}:3000"
+    env_file:
+      - .env
+    volumes:
+      - huginn_data:/var/lib/mysql
+
+volumes:
+  huginn_data:

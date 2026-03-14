@@ -1,0 +1,53 @@
+{
+  "name": "GitLab",
+  "slug": "gitlab",
+  "description": "Complete self-hosted DevOps platform providing Git repository management, CI/CD, issue tracking, and more.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://about.gitlab.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 8192,
+  "min_storage_gb": 50,
+  "env": [
+    {
+      "key": "GITLAB_ROOT_PASSWORD",
+      "label": "Root Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the GitLab root admin account"
+    },
+    {
+      "key": "EXTERNAL_URL",
+      "label": "External URL",
+      "default": "http://localhost:8929",
+      "required": true,
+      "type": "text",
+      "description": "Public URL used to access GitLab"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 8929,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    },
+    {
+      "container_port": 22,
+      "default_host_port": 2224,
+      "protocol": "tcp",
+      "label": "SSH",
+      "configurable": true
+    }
+  ]
+}

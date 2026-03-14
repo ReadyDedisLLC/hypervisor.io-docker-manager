@@ -1,0 +1,11 @@
+services:
+  docuseal:
+    image: docuseal/docuseal:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3003}:3000"
+    volumes:
+      - docuseal_data:/data
+
+volumes:
+  docuseal_data:

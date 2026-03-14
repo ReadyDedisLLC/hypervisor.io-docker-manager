@@ -1,0 +1,8 @@
+services:
+  chatbot-ui:
+    image: ghcr.io/mckaywrigley/chatbot-ui:main
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env

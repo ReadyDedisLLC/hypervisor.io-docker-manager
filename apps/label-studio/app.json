@@ -1,0 +1,46 @@
+{
+  "name": "Label Studio",
+  "slug": "label-studio",
+  "description": "Multi-type data labeling and annotation tool for machine learning with support for text, images, audio, and video.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://labelstud.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "LABEL_STUDIO_USERNAME",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Email address for the initial admin account"
+    },
+    {
+      "key": "LABEL_STUDIO_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the initial admin account"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

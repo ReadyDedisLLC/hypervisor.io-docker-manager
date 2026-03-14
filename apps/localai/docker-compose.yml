@@ -1,0 +1,13 @@
+services:
+  localai:
+    image: localai/localai:latest-cpu
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8080:-8080}:8080"
+    environment:
+      MODELS_PATH: /models
+    volumes:
+      - localai_models:/models
+
+volumes:
+  localai_models:

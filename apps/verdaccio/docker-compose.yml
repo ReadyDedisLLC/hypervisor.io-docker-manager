@@ -1,0 +1,15 @@
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_4873:-4873}:4873"
+    volumes:
+      - verdaccio_storage:/verdaccio/storage
+      - verdaccio_conf:/verdaccio/conf
+      - verdaccio_plugins:/verdaccio/plugins
+
+volumes:
+  verdaccio_storage:
+  verdaccio_conf:
+  verdaccio_plugins:

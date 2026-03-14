@@ -1,0 +1,28 @@
+{
+  "name": "DocuSeal",
+  "slug": "docuseal",
+  "description": "Self-hosted document signing platform for creating, filling, and signing digital documents with ease.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://docuseal.co",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3003,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

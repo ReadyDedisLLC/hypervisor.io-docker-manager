@@ -1,0 +1,44 @@
+{
+  "name": "Headscale",
+  "slug": "headscale",
+  "description": "Self-hosted open-source implementation of the Tailscale control server for managing a WireGuard-based VPN.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "latest",
+  "website": "https://headscale.net",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "HEADSCALE_SERVER_URL",
+      "label": "Server URL",
+      "default": "http://localhost:8093",
+      "required": true,
+      "type": "text",
+      "description": "Public URL of the Headscale server"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8093,
+      "protocol": "tcp",
+      "label": "Web UI/API",
+      "configurable": true
+    },
+    {
+      "container_port": 3478,
+      "default_host_port": 3478,
+      "protocol": "udp",
+      "label": "DERP/STUN",
+      "configurable": true
+    }
+  ]
+}

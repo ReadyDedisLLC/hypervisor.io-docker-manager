@@ -1,0 +1,13 @@
+services:
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_4000:-4000}:4000"
+    env_file:
+      - .env
+    volumes:
+      - litellm_data:/app
+
+volumes:
+  litellm_data:

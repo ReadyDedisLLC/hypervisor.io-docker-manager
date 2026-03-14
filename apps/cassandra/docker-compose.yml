@@ -1,0 +1,14 @@
+services:
+  cassandra:
+    image: cassandra:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_9042:-9042}:9042"
+      - "${HOST_PORT_7000:-7000}:7000"
+    env_file:
+      - .env
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+
+volumes:
+  cassandra_data:

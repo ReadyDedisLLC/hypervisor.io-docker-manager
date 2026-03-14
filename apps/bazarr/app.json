@@ -1,0 +1,39 @@
+{
+  "name": "Bazarr",
+  "slug": "bazarr",
+  "description": "Companion application to Sonarr and Radarr that automatically manages and downloads subtitles for your media library.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://bazarr.media",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for file permissions"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for file permissions"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 6767,
+      "default_host_port": 6767,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

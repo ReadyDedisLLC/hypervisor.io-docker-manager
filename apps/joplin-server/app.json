@@ -1,0 +1,46 @@
+{
+  "name": "Joplin Server",
+  "slug": "joplin-server",
+  "description": "Self-hosted sync server for Joplin note-taking app with sharing and collaboration features.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://joplinapp.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "APP_BASE_URL",
+      "label": "Base URL",
+      "default": "http://localhost:22300",
+      "required": false,
+      "type": "text",
+      "description": "The base URL where Joplin Server will be accessible"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 22300,
+      "default_host_port": 22300,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

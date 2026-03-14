@@ -1,0 +1,27 @@
+{
+  "name": "ComfyUI",
+  "slug": "comfyui",
+  "description": "Powerful node-based Stable Diffusion GUI with advanced workflow support for image generation and processing.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 8192,
+  "min_storage_gb": 30,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8188,
+      "default_host_port": 8188,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

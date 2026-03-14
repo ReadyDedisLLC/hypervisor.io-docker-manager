@@ -1,0 +1,12 @@
+services:
+  text-generation-webui:
+    image: atinoda/text-generation-webui:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_7860:-7860}:7860"
+      - "${HOST_PORT_5000:-5000}:5000"
+    volumes:
+      - tgwebui_data:/app
+
+volumes:
+  tgwebui_data:

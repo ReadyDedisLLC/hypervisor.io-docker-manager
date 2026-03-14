@@ -1,0 +1,38 @@
+{
+  "name": "LiteLLM",
+  "slug": "litellm",
+  "description": "Unified proxy server for 100+ LLM providers with OpenAI-compatible API, load balancing, and spend tracking.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "main-latest",
+  "website": "https://litellm.ai",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "LITELLM_MASTER_KEY",
+      "label": "Master API Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Master API key for authenticating with the LiteLLM proxy"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 4000,
+      "default_host_port": 4000,
+      "protocol": "tcp",
+      "label": "API",
+      "configurable": true
+    }
+  ]
+}

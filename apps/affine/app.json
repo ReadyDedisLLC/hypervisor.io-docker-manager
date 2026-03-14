@@ -1,0 +1,55 @@
+{
+  "name": "AFFiNE",
+  "slug": "affine",
+  "description": "Knowledge base and workspace — a self-hosted Notion alternative with docs, whiteboards, and databases.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "stable",
+  "website": "https://affine.pro",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "AFFINE_ADMIN_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": false,
+      "type": "text",
+      "description": "Admin email address for the AFFiNE instance"
+    },
+    {
+      "key": "AFFINE_ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Admin password for the AFFiNE instance"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3010,
+      "default_host_port": 3010,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

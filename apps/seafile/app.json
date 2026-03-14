@@ -1,0 +1,63 @@
+{
+  "name": "Seafile",
+  "slug": "seafile",
+  "description": "Open-source file sync and share platform with built-in wiki, knowledge management, and file encryption.",
+  "icon": "icon.png",
+  "category": "file-storage",
+  "version": "latest",
+  "website": "https://seafile.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "SEAFILE_ADMIN_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Seafile administrator email address"
+    },
+    {
+      "key": "SEAFILE_ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Seafile administrator password"
+    },
+    {
+      "key": "MYSQL_ROOT_PASSWORD",
+      "label": "MySQL Root Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Root password for the MariaDB database"
+    },
+    {
+      "key": "SEAFILE_SERVER_HOSTNAME",
+      "label": "Server Hostname",
+      "default": "localhost",
+      "required": true,
+      "type": "text",
+      "description": "Hostname or IP address of the Seafile server"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 8090,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

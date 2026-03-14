@@ -1,0 +1,28 @@
+{
+  "name": "CyberChef",
+  "slug": "cyberchef",
+  "description": "Web app for encryption, encoding, compression, and data analysis, often referred to as the cyber Swiss Army knife.",
+  "icon": "icon.png",
+  "category": "security",
+  "version": "latest",
+  "website": "https://gchq.github.io/CyberChef",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 1,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8000,
+      "default_host_port": 8000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

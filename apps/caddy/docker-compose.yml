@@ -1,0 +1,15 @@
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-80}:80"
+      - "${HOST_PORT_443:-443}:443"
+      - "${HOST_PORT_443_UDP:-443}:443/udp"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

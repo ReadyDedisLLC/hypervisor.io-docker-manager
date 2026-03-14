@@ -1,0 +1,37 @@
+services:
+  directus:
+    image: directus/directus:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8055:-8055}:8055"
+    environment:
+      DB_CLIENT: pg
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_DATABASE: directus
+      DB_USER: directus
+      DB_PASSWORD: ${DB_PASSWORD}
+      KEY: ${KEY}
+      SECRET: ${SECRET}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+    volumes:
+      - directus_uploads:/directus/uploads
+      - directus_extensions:/directus/extensions
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: directus
+      POSTGRES_USER: directus
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  directus_uploads:
+  directus_extensions:
+  pgdata:

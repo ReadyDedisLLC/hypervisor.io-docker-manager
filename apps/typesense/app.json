@@ -1,0 +1,38 @@
+{
+  "name": "Typesense",
+  "slug": "typesense",
+  "description": "Fast, typo-tolerant search engine optimized for instant search-as-you-type experiences.",
+  "icon": "icon.png",
+  "category": "databases",
+  "version": "latest",
+  "website": "https://typesense.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "TYPESENSE_API_KEY",
+      "label": "API Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "API key for authenticating requests to Typesense"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8108,
+      "default_host_port": 8108,
+      "protocol": "tcp",
+      "label": "API",
+      "configurable": true
+    }
+  ]
+}

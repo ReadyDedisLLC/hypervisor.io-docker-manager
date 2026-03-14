@@ -1,0 +1,14 @@
+services:
+  mumble:
+    image: mumblevoip/mumble-server:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_64738:-64738}:64738/tcp"
+      - "${HOST_PORT_64738:-64738}:64738/udp"
+    env_file:
+      - .env
+    volumes:
+      - mumble_data:/data
+
+volumes:
+  mumble_data:

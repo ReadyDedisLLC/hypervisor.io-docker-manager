@@ -1,0 +1,16 @@
+services:
+  synapse:
+    image: matrixdotorg/synapse:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8008:-8008}:8008"
+      - "${HOST_PORT_8448:-8448}:8448"
+    env_file:
+      - .env
+    environment:
+      SYNAPSE_CONFIG_DIR: /data
+    volumes:
+      - synapse_data:/data
+
+volumes:
+  synapse_data:

@@ -1,0 +1,13 @@
+services:
+  flowise:
+    image: flowiseai/flowise:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
+    volumes:
+      - flowise_data:/root/.flowise
+
+volumes:
+  flowise_data:

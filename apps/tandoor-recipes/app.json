@@ -1,0 +1,47 @@
+{
+  "name": "Tandoor Recipes",
+  "slug": "tandoor-recipes",
+  "description": "Recipe manager and meal planner for organizing, sharing, and cooking your favorite recipes.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://tandoor.dev",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Django secret key for application security"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8087,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

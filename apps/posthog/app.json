@@ -1,0 +1,47 @@
+{
+  "name": "PostHog",
+  "slug": "posthog",
+  "description": "Open-source product analytics platform with event tracking, session recording, feature flags, and A/B testing.",
+  "icon": "icon.png",
+  "category": "analytics",
+  "version": "latest",
+  "website": "https://posthog.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 4096,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Django secret key for cryptographic signing"
+    },
+    {
+      "key": "POSTHOG_DB_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8000,
+      "default_host_port": 8097,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

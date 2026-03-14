@@ -1,0 +1,29 @@
+{
+  "name": "Cloudflared",
+  "slug": "cloudflared",
+  "description": "Cloudflare Tunnel client that creates encrypted tunnels between your origin server and Cloudflare's network.",
+  "icon": "icon.png",
+  "category": "networking",
+  "version": "latest",
+  "website": "https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 128,
+  "min_storage_gb": 1,
+  "env": [
+    {
+      "key": "TUNNEL_TOKEN",
+      "label": "Tunnel Token",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "description": "Token from Cloudflare Zero Trust dashboard"
+    }
+  ],
+  "ports": []
+}

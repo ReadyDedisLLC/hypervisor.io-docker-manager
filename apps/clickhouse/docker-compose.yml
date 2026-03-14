@@ -1,0 +1,16 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8123:-8123}:8123"
+      - "${HOST_PORT_9000:-9003}:9000"
+    env_file:
+      - .env
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
+
+volumes:
+  clickhouse_data:
+  clickhouse_logs:

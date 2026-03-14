@@ -1,0 +1,11 @@
+services:
+  comfyui:
+    image: ghcr.io/ai-dock/comfyui:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8188:-8188}:8188"
+    volumes:
+      - comfyui_data:/workspace
+
+volumes:
+  comfyui_data:

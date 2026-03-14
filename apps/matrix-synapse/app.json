@@ -1,0 +1,53 @@
+{
+  "name": "Matrix Synapse",
+  "slug": "matrix-synapse",
+  "description": "Decentralized Matrix messaging server for secure, federated real-time communication.",
+  "icon": "icon.png",
+  "category": "communication",
+  "version": "latest",
+  "website": "https://matrix.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "SYNAPSE_SERVER_NAME",
+      "label": "Server Domain",
+      "default": "localhost",
+      "required": true,
+      "type": "text",
+      "description": "The domain name for your Matrix server"
+    },
+    {
+      "key": "SYNAPSE_REPORT_STATS",
+      "label": "Report Stats",
+      "default": "no",
+      "required": false,
+      "type": "select",
+      "options": ["yes", "no"],
+      "description": "Whether to report anonymous usage statistics"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8008,
+      "default_host_port": 8008,
+      "protocol": "tcp",
+      "label": "API",
+      "configurable": true
+    },
+    {
+      "container_port": 8448,
+      "default_host_port": 8448,
+      "protocol": "tcp",
+      "label": "Federation",
+      "configurable": true
+    }
+  ]
+}

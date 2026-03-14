@@ -1,87 +1,6982 @@
 [
-  "actual-budget",
-  "adguard-home",
-  "agent-zero",
-  "appwrite",
-  "authelia",
-  "bookstack",
-  "cal-com",
-  "changedetection",
-  "code-server",
-  "crowdsec",
-  "documenso",
-  "dozzle",
-  "duplicati",
-  "excalidraw",
-  "filebrowser",
-  "firefly-iii",
-  "forgejo",
-  "freshrss",
-  "ghost",
-  "gitea",
-  "gotify",
-  "grafana",
-  "hoarder",
-  "homarr",
-  "home-assistant",
-  "homepage",
-  "immich",
-  "it-tools",
-  "jellyfin",
-  "libretranslate",
-  "linkwarden",
-  "lldap",
-  "mariadb",
-  "mattermost",
-  "mealie",
-  "minecraft",
-  "minio",
-  "mongodb",
-  "mysql",
-  "n8n",
-  "navidrome",
-  "netdata",
-  "nextcloud",
-  "nginx",
-  "nginx-proxy-manager",
-  "nocodb",
-  "node-red",
-  "ntfy",
-  "ollama",
-  "open-webui",
-  "openclaw",
-  "outline",
-  "palworld",
-  "paperless-ngx",
-  "photoprism",
-  "pi-hole",
-  "plausible",
-  "pocketbase",
-  "portainer",
-  "postgresql",
-  "prometheus",
-  "prowlarr",
-  "qbittorrent",
-  "radarr",
-  "redis",
-  "rocket-chat",
-  "rustdesk",
-  "searxng",
-  "semaphore",
-  "sonarr",
-  "speedtest-tracker",
-  "stirling-pdf",
-  "traefik",
-  "trilium",
-  "umami",
-  "uptime-kuma",
-  "valheim",
-  "vaultwarden",
-  "vikunja",
-  "watchtower",
-  "wg-easy",
-  "wiki-js",
-  "woodpecker-ci",
-  "wordpress",
-  "zeroclaw"
+  {
+    "name": "Activepieces",
+    "slug": "activepieces",
+    "description": "No-code business automation platform for connecting apps and automating workflows with a visual builder.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "latest",
+    "website": "https://activepieces.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "AP_ENCRYPTION_KEY",
+        "label": "Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Encryption key for securing sensitive data"
+      },
+      {
+        "key": "AP_JWT_SECRET",
+        "label": "JWT Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for signing JWT tokens"
+      },
+      {
+        "key": "AP_POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8098,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Actual Budget",
+    "slug": "actual-budget",
+    "description": "Fast and privacy-focused personal finance app with envelope budgeting, bank sync, and a beautiful local-first UI.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://actualbudget.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 5006,
+        "default_host_port": 5006,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "AdGuard Home",
+    "slug": "adguard-home",
+    "description": "Network-wide DNS ad blocker with built-in DHCP, encrypted DNS support, and a modern web interface.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://adguard.com/adguard-home.html",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Setup UI (initial)",
+        "configurable": true
+      },
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 53,
+        "default_host_port": 53,
+        "protocol": "tcp",
+        "label": "DNS (TCP)",
+        "configurable": false
+      },
+      {
+        "container_port": 53,
+        "default_host_port": 53,
+        "protocol": "udp",
+        "label": "DNS (UDP)",
+        "configurable": false
+      }
+    ]
+  },
+  {
+    "name": "AFFiNE",
+    "slug": "affine",
+    "description": "Knowledge base and workspace — a self-hosted Notion alternative with docs, whiteboards, and databases.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "stable",
+    "website": "https://affine.pro",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "AFFINE_ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": false,
+        "type": "text",
+        "description": "Admin email address for the AFFiNE instance"
+      },
+      {
+        "key": "AFFINE_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Admin password for the AFFiNE instance"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3010,
+        "default_host_port": 3010,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Agent Zero",
+    "slug": "agent-zero",
+    "description": "Autonomous AI assistant with full Linux access, persistent memory, web browsing, and multi-agent task delegation.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://www.agent-zero.ai",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "A0_SET_CHAT_MODEL_PROVIDER",
+        "label": "Chat Model Provider",
+        "default": "openai",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "OpenAI",
+            "value": "openai"
+          },
+          {
+            "label": "Anthropic",
+            "value": "anthropic"
+          },
+          {
+            "label": "Ollama (local)",
+            "value": "ollama"
+          },
+          {
+            "label": "Google",
+            "value": "google"
+          }
+        ],
+        "description": "LLM provider for the chat model"
+      },
+      {
+        "key": "A0_SET_CHAT_MODEL_NAME",
+        "label": "Chat Model Name",
+        "default": "gpt-4o",
+        "required": true,
+        "type": "text",
+        "description": "Model name to use (e.g. gpt-4o, claude-sonnet-4-20250514, llama3)"
+      },
+      {
+        "key": "API_KEY_OPENAI",
+        "label": "OpenAI API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "OpenAI API key (required if using OpenAI provider)"
+      },
+      {
+        "key": "API_KEY_ANTHROPIC",
+        "label": "Anthropic API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "Anthropic API key (required if using Anthropic provider)"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 50001,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "AnythingLLM",
+    "slug": "anything-llm",
+    "description": "All-in-one AI application for chatting with documents, using AI agents, and managing multiple LLM providers.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://anythingllm.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3001,
+        "default_host_port": 3001,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Appwrite",
+    "slug": "appwrite",
+    "description": "Open-source backend server for web and mobile apps with auth, database, storage, functions, and messaging.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://appwrite.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "_APP_OPENSSL_KEY_V1",
+        "label": "Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for encrypting data at rest"
+      },
+      {
+        "key": "_APP_DB_PASS",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for Appwrite MariaDB database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 443,
+        "default_host_port": 8443,
+        "protocol": "tcp",
+        "label": "HTTPS",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Audiobookshelf",
+    "slug": "audiobookshelf",
+    "description": "Self-hosted audiobook and podcast server for managing and streaming your audio library from any device.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://audiobookshelf.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 13378,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Authelia",
+    "slug": "authelia",
+    "description": "Authentication and authorization server providing SSO, 2FA, and access control for your applications.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "latest",
+    "website": "https://www.authelia.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "AUTHELIA_JWT_SECRET",
+        "label": "JWT Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key used for signing JWTs"
+      },
+      {
+        "key": "AUTHELIA_SESSION_SECRET",
+        "label": "Session Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key used for session encryption"
+      },
+      {
+        "key": "AUTHELIA_STORAGE_ENCRYPTION_KEY",
+        "label": "Storage Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Encryption key for the storage backend"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9091,
+        "default_host_port": 9091,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Authentik",
+    "slug": "authentik",
+    "description": "Open-source identity provider with support for OAuth2, SAML, LDAP, and SCIM for single sign-on and user management.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "latest",
+    "website": "https://goauthentik.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "AUTHENTIK_SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key used for signing and encryption"
+      },
+      {
+        "key": "PG_PASS",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      },
+      {
+        "key": "AUTHENTIK_BOOTSTRAP_PASSWORD",
+        "label": "Initial Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Initial password for the admin account"
+      },
+      {
+        "key": "AUTHENTIK_BOOTSTRAP_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the admin account"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9000,
+        "default_host_port": 9001,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 9443,
+        "default_host_port": 9443,
+        "protocol": "tcp",
+        "label": "HTTPS",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Bazarr",
+    "slug": "bazarr",
+    "description": "Companion application to Sonarr and Radarr that automatically manages and downloads subtitles for your media library.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://bazarr.media",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "PUID",
+        "label": "User ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "UID for file permissions"
+      },
+      {
+        "key": "PGID",
+        "label": "Group ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "GID for file permissions"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 6767,
+        "default_host_port": 6767,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "BookStack",
+    "slug": "bookstack",
+    "description": "Simple and free wiki system for organizing and storing information in a structured book-like format.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://www.bookstackapp.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "APP_URL",
+        "label": "Application URL",
+        "default": "http://localhost:6875",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of your BookStack instance"
+      },
+      {
+        "key": "DB_PASS",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the MariaDB database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 6875,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Caddy",
+    "slug": "caddy",
+    "description": "Fast, multi-platform web server with automatic HTTPS, HTTP/3, and reverse proxy capabilities.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "2",
+    "website": "https://caddyserver.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 80,
+        "protocol": "tcp",
+        "label": "HTTP",
+        "configurable": true
+      },
+      {
+        "container_port": 443,
+        "default_host_port": 443,
+        "protocol": "tcp",
+        "label": "HTTPS",
+        "configurable": true
+      },
+      {
+        "container_port": 443,
+        "default_host_port": 443,
+        "protocol": "udp",
+        "label": "HTTP/3",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Cal.com",
+    "slug": "cal-com",
+    "description": "Open-source Calendly alternative for scheduling meetings, appointments, and events with calendar integrations.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://cal.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "NEXTAUTH_SECRET",
+        "label": "Auth Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for session encryption"
+      },
+      {
+        "key": "CALENDSO_ENCRYPTION_KEY",
+        "label": "Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Encryption key for sensitive data"
+      },
+      {
+        "key": "NEXT_PUBLIC_WEBAPP_URL",
+        "label": "Application URL",
+        "default": "http://localhost:3000",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of your Cal.com instance"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Calibre-Web",
+    "slug": "calibre-web",
+    "description": "Web-based ebook library and reader providing a clean interface for browsing, reading, and managing your book collection.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://github.com/janeczku/calibre-web",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "PUID",
+        "label": "User ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "UID for file permissions"
+      },
+      {
+        "key": "PGID",
+        "label": "Group ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "GID for file permissions"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8083,
+        "default_host_port": 8083,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Cassandra",
+    "slug": "cassandra",
+    "description": "Distributed NoSQL database designed for high availability and linear scalability across multiple nodes.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "latest",
+    "website": "https://cassandra.apache.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "CASSANDRA_CLUSTER_NAME",
+        "label": "Cluster Name",
+        "default": "MyCluster",
+        "required": true,
+        "type": "text",
+        "description": "Name of the Cassandra cluster"
+      },
+      {
+        "key": "CASSANDRA_DC",
+        "label": "Datacenter Name",
+        "default": "dc1",
+        "required": true,
+        "type": "text",
+        "description": "Name of the datacenter for this node"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9042,
+        "default_host_port": 9042,
+        "protocol": "tcp",
+        "label": "CQL Native",
+        "configurable": true
+      },
+      {
+        "container_port": 7000,
+        "default_host_port": 7000,
+        "protocol": "tcp",
+        "label": "Inter-node",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Changedetection.io",
+    "slug": "changedetection",
+    "description": "Website change detection and monitoring tool that alerts you when web pages are updated or modified.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "latest",
+    "website": "https://changedetection.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 5000,
+        "default_host_port": 5000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Chatbot UI",
+    "slug": "chatbot-ui",
+    "description": "Open-source ChatGPT-like interface for interacting with OpenAI models through a clean, self-hosted web app.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "main",
+    "website": "https://chatbotui.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "OPENAI_API_KEY",
+        "label": "OpenAI API Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "description": "API key from OpenAI for accessing GPT models"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "ClickHouse",
+    "slug": "clickhouse",
+    "description": "Column-oriented OLAP database management system for real-time analytics on large datasets.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "latest",
+    "website": "https://clickhouse.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "CLICKHOUSE_USER",
+        "label": "Admin Username",
+        "default": "default",
+        "required": true,
+        "type": "text",
+        "description": "Username for the ClickHouse admin account"
+      },
+      {
+        "key": "CLICKHOUSE_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the ClickHouse admin account"
+      },
+      {
+        "key": "CLICKHOUSE_DB",
+        "label": "Default Database",
+        "default": "default",
+        "required": true,
+        "type": "text",
+        "description": "Name of the default database to create"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8123,
+        "default_host_port": 8123,
+        "protocol": "tcp",
+        "label": "HTTP API",
+        "configurable": true
+      },
+      {
+        "container_port": 9000,
+        "default_host_port": 9003,
+        "protocol": "tcp",
+        "label": "Native Protocol",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Cloudflared",
+    "slug": "cloudflared",
+    "description": "Cloudflare Tunnel client that creates encrypted tunnels between your origin server and Cloudflare's network.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 1,
+    "env": [
+      {
+        "key": "TUNNEL_TOKEN",
+        "label": "Tunnel Token",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "description": "Token from Cloudflare Zero Trust dashboard"
+      }
+    ],
+    "ports": []
+  },
+  {
+    "name": "code-server",
+    "slug": "code-server",
+    "description": "Run VS Code in the browser, enabling remote development from any device with a web browser.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://github.com/coder/code-server",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "PASSWORD",
+        "label": "Access Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password to access the code-server web interface"
+      },
+      {
+        "key": "SUDO_PASSWORD",
+        "label": "Sudo Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Password for sudo access inside the container"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8443,
+        "default_host_port": 8443,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Coder",
+    "slug": "coder",
+    "description": "Self-hosted remote development environment platform for creating and managing cloud-based workspaces.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://coder.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "CODER_ACCESS_URL",
+        "label": "Access URL",
+        "default": "http://localhost:7080",
+        "required": true,
+        "type": "text",
+        "description": "Public URL used to access Coder"
+      },
+      {
+        "key": "CODER_PG_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 7080,
+        "default_host_port": 7080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "ComfyUI",
+    "slug": "comfyui",
+    "description": "Powerful node-based Stable Diffusion GUI with advanced workflow support for image generation and processing.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 8192,
+    "min_storage_gb": 30,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8188,
+        "default_host_port": 8188,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "CrowdSec",
+    "slug": "crowdsec",
+    "description": "Open-source intrusion prevention system with crowd-sourced threat intelligence and real-time attack detection.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "latest",
+    "website": "https://www.crowdsec.net",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      },
+      {
+        "container_port": 6060,
+        "default_host_port": 6060,
+        "protocol": "tcp",
+        "label": "Prometheus Metrics",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "CyberChef",
+    "slug": "cyberchef",
+    "description": "Web app for encryption, encoding, compression, and data analysis, often referred to as the cyber Swiss Army knife.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "latest",
+    "website": "https://gchq.github.io/CyberChef",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8000,
+        "default_host_port": 8000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Dashy",
+    "slug": "dashy",
+    "description": "Highly customizable, self-hosted dashboard application for organizing and accessing your services and bookmarks.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://dashy.to",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8099,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Dify",
+    "slug": "dify",
+    "description": "LLM app development platform for building AI-powered chatbots, agents, and workflow automations.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://dify.ai",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for session and data encryption"
+      },
+      {
+        "key": "DB_USERNAME",
+        "label": "Database Username",
+        "default": "postgres",
+        "required": true,
+        "type": "text",
+        "description": "Username for the PostgreSQL database"
+      },
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      },
+      {
+        "key": "REDIS_PASSWORD",
+        "label": "Redis Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Redis instance"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Directus",
+    "slug": "directus",
+    "description": "Open-source data platform and headless CMS that wraps any SQL database with a dynamic API and intuitive admin app.",
+    "icon": "icon.png",
+    "category": "cms",
+    "version": "latest",
+    "website": "https://directus.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the initial admin account"
+      },
+      {
+        "key": "ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the initial admin account"
+      },
+      {
+        "key": "KEY",
+        "label": "App Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Unique application key for Directus"
+      },
+      {
+        "key": "SECRET",
+        "label": "App Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key used for signing tokens"
+      },
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8055,
+        "default_host_port": 8055,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Discourse",
+    "slug": "discourse",
+    "description": "Community forum platform for civilized discussions with rich content, categories, and moderation tools.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://discourse.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "DISCOURSE_HOST",
+        "label": "Discourse Host",
+        "default": "localhost",
+        "required": false,
+        "type": "text",
+        "description": "The hostname for your Discourse instance"
+      },
+      {
+        "key": "DISCOURSE_USERNAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": false,
+        "type": "text",
+        "description": "Initial admin username"
+      },
+      {
+        "key": "DISCOURSE_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Initial admin password"
+      },
+      {
+        "key": "DISCOURSE_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Admin email address"
+      },
+      {
+        "key": "POSTGRESQL_PASSWORD",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Docker Registry",
+    "slug": "docker-registry",
+    "description": "Self-hosted container image registry for storing and distributing Docker images privately.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "2",
+    "website": "https://docs.docker.com/registry/",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 20,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 5000,
+        "default_host_port": 5000,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Documenso",
+    "slug": "documenso",
+    "description": "Open-source DocuSign alternative for digital document signing with a beautiful, modern interface.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://documenso.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "NEXTAUTH_SECRET",
+        "label": "Auth Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for NextAuth session encryption"
+      },
+      {
+        "key": "NEXTAUTH_URL",
+        "label": "Application URL",
+        "default": "http://localhost:3000",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of your Documenso instance"
+      },
+      {
+        "key": "NEXT_PRIVATE_ENCRYPTION_KEY",
+        "label": "Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Key used to encrypt sensitive document data"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "DocuSeal",
+    "slug": "docuseal",
+    "description": "Self-hosted document signing platform for creating, filling, and signing digital documents with ease.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://docuseal.co",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3003,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Dozzle",
+    "slug": "dozzle",
+    "description": "Lightweight real-time Docker log viewer with a clean web interface. No log storage — live monitoring only.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://dozzle.dev",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Drone",
+    "slug": "drone",
+    "description": "Container-native CI/CD platform that integrates with popular Git providers for automated build pipelines.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://drone.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "DRONE_GITEA_SERVER",
+        "label": "Gitea Server URL",
+        "default": "",
+        "required": true,
+        "type": "text",
+        "description": "URL of your Gitea instance"
+      },
+      {
+        "key": "DRONE_GITEA_CLIENT_ID",
+        "label": "Gitea OAuth Client ID",
+        "default": "",
+        "required": true,
+        "type": "text",
+        "description": "OAuth2 client ID from Gitea"
+      },
+      {
+        "key": "DRONE_GITEA_CLIENT_SECRET",
+        "label": "Gitea OAuth Client Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "description": "OAuth2 client secret from Gitea"
+      },
+      {
+        "key": "DRONE_RPC_SECRET",
+        "label": "RPC Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Shared secret for Drone server and runner communication"
+      },
+      {
+        "key": "DRONE_SERVER_HOST",
+        "label": "Server Host",
+        "default": "localhost:8091",
+        "required": true,
+        "type": "text",
+        "description": "Hostname and port where Drone is accessible"
+      },
+      {
+        "key": "DRONE_SERVER_PROTO",
+        "label": "Server Protocol",
+        "default": "http",
+        "required": true,
+        "type": "select",
+        "options": [
+          "http",
+          "https"
+        ],
+        "description": "Protocol used to access Drone"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8091,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Duplicati",
+    "slug": "duplicati",
+    "description": "Free backup software to store encrypted backups to cloud storage services and remote file servers.",
+    "icon": "icon.png",
+    "category": "file-storage",
+    "version": "latest",
+    "website": "https://www.duplicati.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 5,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8200,
+        "default_host_port": 8200,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Excalidraw",
+    "slug": "excalidraw",
+    "description": "Virtual whiteboard for sketching diagrams with a hand-drawn feel, supporting real-time collaboration.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://excalidraw.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "File Browser",
+    "slug": "filebrowser",
+    "description": "Web-based file manager with upload, download, move, rename, and share capabilities in a clean interface.",
+    "icon": "icon.png",
+    "category": "file-storage",
+    "version": "latest",
+    "website": "https://filebrowser.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Firefly III",
+    "slug": "firefly-iii",
+    "description": "Self-hosted personal finance manager with double-entry bookkeeping, budgets, reports, and bank import.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://www.firefly-iii.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "APP_KEY",
+        "label": "Application Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "32-character encryption key for Laravel (auto-generated)"
+      },
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Flowise",
+    "slug": "flowise",
+    "description": "Drag and drop LLM flow builder for creating customized AI workflows and chatbots with no code.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://flowiseai.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "FLOWISE_USERNAME",
+        "label": "Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Username for Flowise web interface login"
+      },
+      {
+        "key": "FLOWISE_PASSWORD",
+        "label": "Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for Flowise web interface login"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Forgejo",
+    "slug": "forgejo",
+    "description": "Community-maintained Gitea fork providing Git hosting, code review, CI/CD, and package registry — fully FOSS.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "9",
+    "website": "https://forgejo.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 22,
+        "default_host_port": 2222,
+        "protocol": "tcp",
+        "label": "SSH",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "FreshRSS",
+    "slug": "freshrss",
+    "description": "Lightweight self-hosted RSS feed aggregator with multi-user support, web scraping, and mobile-friendly UI.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://freshrss.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Ghost",
+    "slug": "ghost",
+    "description": "Professional publishing platform for creating blogs, newsletters, and paid memberships.",
+    "icon": "icon.png",
+    "category": "cms",
+    "version": "5",
+    "website": "https://ghost.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "GHOST_URL",
+        "label": "Site URL",
+        "default": "http://localhost:2368",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of your Ghost site (e.g. https://blog.example.com)"
+      },
+      {
+        "key": "MYSQL_ROOT_PASSWORD",
+        "label": "MySQL Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Root password for the MySQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 2368,
+        "default_host_port": 2368,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Gitea",
+    "slug": "gitea",
+    "description": "Lightweight self-hosted Git service providing repository hosting, code review, and CI/CD pipelines.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://gitea.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 22,
+        "default_host_port": 2222,
+        "protocol": "tcp",
+        "label": "SSH",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "GitLab",
+    "slug": "gitlab",
+    "description": "Complete self-hosted DevOps platform providing Git repository management, CI/CD, issue tracking, and more.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://about.gitlab.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 8192,
+    "min_storage_gb": 50,
+    "env": [
+      {
+        "key": "GITLAB_ROOT_PASSWORD",
+        "label": "Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the GitLab root admin account"
+      },
+      {
+        "key": "EXTERNAL_URL",
+        "label": "External URL",
+        "default": "http://localhost:8929",
+        "required": true,
+        "type": "text",
+        "description": "Public URL used to access GitLab"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8929,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 22,
+        "default_host_port": 2224,
+        "protocol": "tcp",
+        "label": "SSH",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Gotify",
+    "slug": "gotify",
+    "description": "Simple self-hosted push notification server with real-time messaging via WebSockets and a REST API.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://gotify.net",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI / API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Grafana",
+    "slug": "grafana",
+    "description": "Open-source analytics and interactive visualization platform for monitoring metrics, logs, and traces.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://grafana.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "GF_SECURITY_ADMIN_USER",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Grafana admin username"
+      },
+      {
+        "key": "GF_SECURITY_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Grafana admin password"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Graylog",
+    "slug": "graylog",
+    "description": "Centralized log management platform for collecting, indexing, and analyzing log data from any source.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "6.0",
+    "website": "https://graylog.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "GRAYLOG_PASSWORD_SECRET",
+        "label": "Password Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret used for password encryption, must be at least 16 characters"
+      },
+      {
+        "key": "GRAYLOG_ROOT_PASSWORD_SHA2",
+        "label": "Root Password SHA256",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "SHA256 hash of the admin password"
+      },
+      {
+        "key": "GRAYLOG_HTTP_EXTERNAL_URI",
+        "label": "External URI",
+        "default": "http://localhost:9002/",
+        "required": true,
+        "type": "text",
+        "description": "Public URI of the Graylog web interface"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9000,
+        "default_host_port": 9002,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 1514,
+        "default_host_port": 1514,
+        "protocol": "tcp",
+        "label": "Syslog",
+        "configurable": true
+      },
+      {
+        "container_port": 12201,
+        "default_host_port": 12201,
+        "protocol": "udp",
+        "label": "GELF",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Grocy",
+    "slug": "grocy",
+    "description": "Self-hosted household and grocery management solution for tracking inventory, meal planning, and chores.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://grocy.info",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "PUID",
+        "label": "User ID",
+        "default": "1000",
+        "required": true,
+        "type": "number",
+        "description": "User ID for file permissions"
+      },
+      {
+        "key": "PGID",
+        "label": "Group ID",
+        "default": "1000",
+        "required": true,
+        "type": "number",
+        "description": "Group ID for file permissions"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 9283,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Headscale",
+    "slug": "headscale",
+    "description": "Self-hosted open-source implementation of the Tailscale control server for managing a WireGuard-based VPN.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://headscale.net",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "HEADSCALE_SERVER_URL",
+        "label": "Server URL",
+        "default": "http://localhost:8093",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of the Headscale server"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8093,
+        "protocol": "tcp",
+        "label": "Web UI/API",
+        "configurable": true
+      },
+      {
+        "container_port": 3478,
+        "default_host_port": 3478,
+        "protocol": "udp",
+        "label": "DERP/STUN",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Healthchecks",
+    "slug": "healthchecks",
+    "description": "Cron job monitoring service that listens for pings from your scheduled tasks and alerts you when they don't arrive on time.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://healthchecks.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "SITE_ROOT",
+        "label": "Site URL",
+        "default": "http://localhost:8094",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of the Healthchecks instance"
+      },
+      {
+        "key": "SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Django secret key for cryptographic signing"
+      },
+      {
+        "key": "ALLOWED_HOSTS",
+        "label": "Allowed Hosts",
+        "default": "*",
+        "required": true,
+        "type": "text",
+        "description": "Comma-separated list of allowed hostnames"
+      },
+      {
+        "key": "SUPERUSER_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the superuser account"
+      },
+      {
+        "key": "SUPERUSER_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the superuser account"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8000,
+        "default_host_port": 8094,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "HedgeDoc",
+    "slug": "hedgedoc",
+    "description": "Collaborative markdown editor for real-time team documentation and note-taking.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://hedgedoc.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "CMD_DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the HedgeDoc PostgreSQL database"
+      },
+      {
+        "key": "CMD_SESSION_SECRET",
+        "label": "Session Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for session encryption"
+      },
+      {
+        "key": "CMD_DOMAIN",
+        "label": "Domain",
+        "default": "localhost",
+        "required": false,
+        "type": "text",
+        "description": "The domain name for your HedgeDoc instance"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Hoarder",
+    "slug": "hoarder",
+    "description": "AI-powered bookmark manager with automatic tagging, full-text search, and mobile apps for iOS and Android.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "release",
+    "website": "https://hoarder.app",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "NEXTAUTH_SECRET",
+        "label": "Auth Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for authentication"
+      },
+      {
+        "key": "NEXTAUTH_URL",
+        "label": "Application URL",
+        "default": "http://localhost:3000",
+        "required": true,
+        "type": "text",
+        "description": "Public URL where Hoarder will be accessible"
+      },
+      {
+        "key": "OPENAI_API_KEY",
+        "label": "OpenAI API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "Optional OpenAI key for AI-powered tagging (or use local Ollama)"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Homarr",
+    "slug": "homarr",
+    "description": "Sleek, modern dashboard for managing and monitoring your self-hosted services with rich Docker integration.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://homarr.dev",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "SECRET_ENCRYPTION_KEY",
+        "label": "Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for encrypting Homarr data"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 7575,
+        "default_host_port": 7575,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Home Assistant",
+    "slug": "home-assistant",
+    "description": "Open-source home automation platform with 2000+ integrations for controlling smart home devices locally.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "stable",
+    "website": "https://www.home-assistant.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "TZ",
+        "label": "Timezone",
+        "default": "America/New_York",
+        "required": true,
+        "type": "text",
+        "description": "Timezone (e.g. America/New_York, Europe/London)"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8123,
+        "default_host_port": 8123,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Homepage",
+    "slug": "homepage",
+    "description": "Modern, fully static, and highly customizable application dashboard with integrations for 100+ services.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://gethomepage.dev",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Huginn",
+    "slug": "huginn",
+    "description": "Programmable automation agents that monitor the web and act on your behalf, performing automated tasks triggered by events.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "latest",
+    "website": "https://github.com/huginn/huginn",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "HUGINN_SEED_USERNAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Username for the initial admin account"
+      },
+      {
+        "key": "HUGINN_SEED_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the initial admin account"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3004,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Immich",
+    "slug": "immich",
+    "description": "High-performance self-hosted photo and video management solution with AI-powered search and mobile apps.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "release",
+    "website": "https://immich.app",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Immich PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 2283,
+        "default_host_port": 2283,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "InfluxDB",
+    "slug": "influxdb",
+    "description": "Open-source time series database designed for high-performance storage and retrieval of time-stamped data.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "2",
+    "website": "https://influxdata.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "DOCKER_INFLUXDB_INIT_USERNAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Username for the initial admin account"
+      },
+      {
+        "key": "DOCKER_INFLUXDB_INIT_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the initial admin account"
+      },
+      {
+        "key": "DOCKER_INFLUXDB_INIT_ORG",
+        "label": "Organization",
+        "default": "myorg",
+        "required": true,
+        "type": "text",
+        "description": "Name of the initial organization"
+      },
+      {
+        "key": "DOCKER_INFLUXDB_INIT_BUCKET",
+        "label": "Default Bucket",
+        "default": "default",
+        "required": true,
+        "type": "text",
+        "description": "Name of the initial bucket"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8086,
+        "default_host_port": 8086,
+        "protocol": "tcp",
+        "label": "Web UI / API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Invoice Ninja",
+    "slug": "invoice-ninja",
+    "description": "Self-hosted invoicing, payments, and expense tracking platform for freelancers and businesses.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://invoiceninja.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "APP_KEY",
+        "label": "App Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Application encryption key"
+      },
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the MySQL database"
+      },
+      {
+        "key": "IN_USER_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the admin account"
+      },
+      {
+        "key": "IN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the admin account"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8088,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "IT Tools",
+    "slug": "it-tools",
+    "description": "Collection of 100+ handy developer utilities — JSON formatter, Base64, UUID, hash generators, and more.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://github.com/CorentinTh/it-tools",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Jellyfin",
+    "slug": "jellyfin",
+    "description": "Free and open-source media server for streaming movies, TV shows, music, and photos to any device.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://jellyfin.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 20,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8096,
+        "default_host_port": 8096,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Jellyseerr",
+    "slug": "jellyseerr",
+    "description": "Media request and discovery manager for Jellyfin, allowing users to request movies and TV shows.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://github.com/Fallenbagel/jellyseerr",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 5055,
+        "default_host_port": 5055,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Jenkins",
+    "slug": "jenkins",
+    "description": "Leading open-source CI/CD automation server for building, testing, and deploying software.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "lts",
+    "website": "https://jenkins.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 20,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8089,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 50000,
+        "default_host_port": 50000,
+        "protocol": "tcp",
+        "label": "Agent",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Joplin Server",
+    "slug": "joplin-server",
+    "description": "Self-hosted sync server for Joplin note-taking app with sharing and collaboration features.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://joplinapp.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "APP_BASE_URL",
+        "label": "Base URL",
+        "default": "http://localhost:22300",
+        "required": false,
+        "type": "text",
+        "description": "The base URL where Joplin Server will be accessible"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 22300,
+        "default_host_port": 22300,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Kavita",
+    "slug": "kavita",
+    "description": "Fast and feature-rich manga, comic, and ebook reader with a modern web interface and OPDS support.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://kavitareader.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 5000,
+        "default_host_port": 5000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Keycloak",
+    "slug": "keycloak",
+    "description": "Open-source identity and access management solution with support for SSO, social login, and user federation.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "latest",
+    "website": "https://keycloak.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "KEYCLOAK_ADMIN",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Keycloak admin username"
+      },
+      {
+        "key": "KEYCLOAK_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Keycloak admin password"
+      },
+      {
+        "key": "KC_DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8092,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Kimai",
+    "slug": "kimai",
+    "description": "Self-hosted time tracking application for teams and freelancers with project management and invoicing features.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://kimai.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the admin account"
+      },
+      {
+        "key": "ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the admin account"
+      },
+      {
+        "key": "DATABASE_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the MySQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8001,
+        "default_host_port": 8001,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Label Studio",
+    "slug": "label-studio",
+    "description": "Multi-type data labeling and annotation tool for machine learning with support for text, images, audio, and video.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://labelstud.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "LABEL_STUDIO_USERNAME",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the initial admin account"
+      },
+      {
+        "key": "LABEL_STUDIO_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the initial admin account"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Langflow",
+    "slug": "langflow",
+    "description": "Visual framework for building multi-agent AI applications with drag-and-drop components and Python-based customization.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://langflow.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "LANGFLOW_AUTO_LOGIN",
+        "label": "Auto Login",
+        "default": "true",
+        "required": false,
+        "type": "text",
+        "description": "Enable automatic login without authentication"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 7860,
+        "default_host_port": 7860,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "LibreTranslate",
+    "slug": "libretranslate",
+    "description": "Free, open-source machine translation API that runs entirely offline with no third-party dependencies.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://libretranslate.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 5000,
+        "default_host_port": 5000,
+        "protocol": "tcp",
+        "label": "API / Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Lidarr",
+    "slug": "lidarr",
+    "description": "Music collection manager that monitors RSS feeds and integrates with download clients to grab, sort, and rename music.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://lidarr.audio",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "PUID",
+        "label": "User ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "UID for file permissions"
+      },
+      {
+        "key": "PGID",
+        "label": "Group ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "GID for file permissions"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8686,
+        "default_host_port": 8686,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Linkwarden",
+    "slug": "linkwarden",
+    "description": "Collaborative bookmark manager for collecting, organizing, and preserving web pages with automatic archiving.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://linkwarden.app",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "NEXTAUTH_SECRET",
+        "label": "Auth Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for NextAuth session encryption"
+      },
+      {
+        "key": "NEXTAUTH_URL",
+        "label": "Application URL",
+        "default": "http://localhost:3000",
+        "required": true,
+        "type": "text",
+        "description": "Public URL where Linkwarden will be accessible"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "LiteLLM",
+    "slug": "litellm",
+    "description": "Unified proxy server for 100+ LLM providers with OpenAI-compatible API, load balancing, and spend tracking.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "main-latest",
+    "website": "https://litellm.ai",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "LITELLM_MASTER_KEY",
+        "label": "Master API Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Master API key for authenticating with the LiteLLM proxy"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 4000,
+        "default_host_port": 4000,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "LLDAP",
+    "slug": "lldap",
+    "description": "Lightweight LDAP server with a simple web UI for managing users and groups across your self-hosted services.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "stable",
+    "website": "https://github.com/lldap/lldap",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [
+      {
+        "key": "LLDAP_JWT_SECRET",
+        "label": "JWT Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for JWT authentication"
+      },
+      {
+        "key": "LLDAP_LDAP_USER_PASS",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the default admin user"
+      },
+      {
+        "key": "LLDAP_LDAP_BASE_DN",
+        "label": "Base DN",
+        "default": "dc=example,dc=com",
+        "required": true,
+        "type": "text",
+        "description": "LDAP base distinguished name"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 17170,
+        "default_host_port": 17170,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 3890,
+        "default_host_port": 3890,
+        "protocol": "tcp",
+        "label": "LDAP",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "LocalAI",
+    "slug": "localai",
+    "description": "OpenAI-compatible local AI API server for running LLMs, image generation, and audio models entirely offline.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest-cpu",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Loki",
+    "slug": "loki",
+    "description": "Horizontally scalable, highly available log aggregation system inspired by Prometheus, designed for cost-effective log storage.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://grafana.com/oss/loki/",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3100,
+        "default_host_port": 3100,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "MariaDB",
+    "slug": "mariadb",
+    "description": "Community-developed fork of MySQL with improved performance, new storage engines, and full MySQL compatibility.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "11",
+    "website": "https://mariadb.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "MYSQL_ROOT_PASSWORD",
+        "label": "Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "MariaDB root user password"
+      },
+      {
+        "key": "MYSQL_DATABASE",
+        "label": "Default Database",
+        "default": "mydb",
+        "required": false,
+        "type": "text",
+        "description": "Name of the default database to create"
+      },
+      {
+        "key": "MYSQL_USER",
+        "label": "Database User",
+        "default": "",
+        "required": false,
+        "type": "text",
+        "description": "Additional non-root user to create"
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "label": "User Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the additional user"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3306,
+        "default_host_port": 3306,
+        "protocol": "tcp",
+        "label": "MariaDB",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Matomo",
+    "slug": "matomo",
+    "description": "Open-source web analytics platform that gives you full ownership of your data and privacy-compliant visitor insights.",
+    "icon": "icon.png",
+    "category": "analytics",
+    "version": "latest",
+    "website": "https://matomo.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "MYSQL_ROOT_PASSWORD",
+        "label": "MySQL Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Root password for the MariaDB database"
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "label": "MySQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Matomo database user"
+      },
+      {
+        "key": "MYSQL_DATABASE",
+        "label": "MySQL Database",
+        "default": "matomo",
+        "required": true,
+        "type": "text",
+        "description": "Name of the Matomo database"
+      },
+      {
+        "key": "MYSQL_USER",
+        "label": "MySQL User",
+        "default": "matomo",
+        "required": true,
+        "type": "text",
+        "description": "Database username for Matomo"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8095,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Matrix Synapse",
+    "slug": "matrix-synapse",
+    "description": "Decentralized Matrix messaging server for secure, federated real-time communication.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://matrix.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "SYNAPSE_SERVER_NAME",
+        "label": "Server Domain",
+        "default": "localhost",
+        "required": true,
+        "type": "text",
+        "description": "The domain name for your Matrix server"
+      },
+      {
+        "key": "SYNAPSE_REPORT_STATS",
+        "label": "Report Stats",
+        "default": "no",
+        "required": false,
+        "type": "select",
+        "options": [
+          "yes",
+          "no"
+        ],
+        "description": "Whether to report anonymous usage statistics"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8008,
+        "default_host_port": 8008,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      },
+      {
+        "container_port": 8448,
+        "default_host_port": 8448,
+        "protocol": "tcp",
+        "label": "Federation",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Mattermost",
+    "slug": "mattermost",
+    "description": "Open-source team messaging platform — a self-hosted alternative to Slack with channels, threads, and integrations.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://mattermost.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "MM_SQLSETTINGS_DATASOURCE_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Mattermost PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8065,
+        "default_host_port": 8065,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Mealie",
+    "slug": "mealie",
+    "description": "Self-hosted recipe manager and meal planner with automatic recipe import from any URL and a shopping list.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://mealie.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "DEFAULT_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Default admin email for initial login"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9000,
+        "default_host_port": 9925,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Minecraft Server",
+    "slug": "minecraft",
+    "description": "Dedicated Minecraft Java Edition server with automatic version management and easy configuration.",
+    "icon": "icon.png",
+    "category": "gaming",
+    "version": "latest",
+    "website": "https://github.com/itzg/docker-minecraft-server",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "EULA",
+        "label": "Accept EULA",
+        "default": "TRUE",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "Accept",
+            "value": "TRUE"
+          }
+        ],
+        "description": "You must accept the Minecraft EULA to run the server"
+      },
+      {
+        "key": "TYPE",
+        "label": "Server Type",
+        "default": "VANILLA",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "Vanilla",
+            "value": "VANILLA"
+          },
+          {
+            "label": "Paper",
+            "value": "PAPER"
+          },
+          {
+            "label": "Fabric",
+            "value": "FABRIC"
+          },
+          {
+            "label": "Forge",
+            "value": "FORGE"
+          }
+        ],
+        "description": "Minecraft server implementation"
+      },
+      {
+        "key": "MEMORY",
+        "label": "Server Memory",
+        "default": "2G",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "1 GB",
+            "value": "1G"
+          },
+          {
+            "label": "2 GB",
+            "value": "2G"
+          },
+          {
+            "label": "4 GB",
+            "value": "4G"
+          },
+          {
+            "label": "8 GB",
+            "value": "8G"
+          }
+        ],
+        "description": "Amount of RAM allocated to the Minecraft server"
+      },
+      {
+        "key": "DIFFICULTY",
+        "label": "Difficulty",
+        "default": "normal",
+        "required": false,
+        "type": "select",
+        "options": [
+          {
+            "label": "Peaceful",
+            "value": "peaceful"
+          },
+          {
+            "label": "Easy",
+            "value": "easy"
+          },
+          {
+            "label": "Normal",
+            "value": "normal"
+          },
+          {
+            "label": "Hard",
+            "value": "hard"
+          }
+        ],
+        "description": "Game difficulty level"
+      },
+      {
+        "key": "MAX_PLAYERS",
+        "label": "Max Players",
+        "default": "20",
+        "required": false,
+        "type": "number",
+        "description": "Maximum number of players that can join"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 25565,
+        "default_host_port": 25565,
+        "protocol": "tcp",
+        "label": "Minecraft Server",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "MinIO",
+    "slug": "minio",
+    "description": "High-performance S3-compatible object storage for building cloud-native data infrastructure.",
+    "icon": "icon.png",
+    "category": "file-storage",
+    "version": "latest",
+    "website": "https://min.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "MINIO_ROOT_USER",
+        "label": "Root Username",
+        "default": "minioadmin",
+        "required": true,
+        "type": "text",
+        "description": "MinIO root user (access key)"
+      },
+      {
+        "key": "MINIO_ROOT_PASSWORD",
+        "label": "Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "MinIO root password (secret key, minimum 8 characters)"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9000,
+        "default_host_port": 9000,
+        "protocol": "tcp",
+        "label": "S3 API",
+        "configurable": true
+      },
+      {
+        "container_port": 9001,
+        "default_host_port": 9001,
+        "protocol": "tcp",
+        "label": "Web Console",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "MongoDB",
+    "slug": "mongodb",
+    "description": "General-purpose NoSQL document database designed for modern application development and cloud deployment.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "7",
+    "website": "https://www.mongodb.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "MONGO_INITDB_ROOT_USERNAME",
+        "label": "Root Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "MongoDB root admin username"
+      },
+      {
+        "key": "MONGO_INITDB_ROOT_PASSWORD",
+        "label": "Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "MongoDB root admin password"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 27017,
+        "default_host_port": 27017,
+        "protocol": "tcp",
+        "label": "MongoDB",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Monica",
+    "slug": "monica",
+    "description": "Personal CRM to organize interactions with friends, family, and contacts.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://monicahq.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "APP_KEY",
+        "label": "App Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Laravel app key for encryption"
+      },
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the MySQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8085,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Mumble",
+    "slug": "mumble",
+    "description": "Low-latency, high-quality voice chat server for gaming and team communication.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://mumble.info",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 1,
+    "env": [
+      {
+        "key": "MUMBLE_SUPERUSER_PASSWORD",
+        "label": "Superuser Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Mumble superuser account"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 64738,
+        "default_host_port": 64738,
+        "protocol": "tcp",
+        "label": "Voice (TCP)",
+        "configurable": true
+      },
+      {
+        "container_port": 64738,
+        "default_host_port": 64738,
+        "protocol": "udp",
+        "label": "Voice (UDP)",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "MySQL",
+    "slug": "mysql",
+    "description": "The world's most popular open-source relational database, trusted for web applications and enterprise workloads.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "8.0",
+    "website": "https://www.mysql.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "MYSQL_ROOT_PASSWORD",
+        "label": "Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "MySQL root user password"
+      },
+      {
+        "key": "MYSQL_DATABASE",
+        "label": "Default Database",
+        "default": "mydb",
+        "required": false,
+        "type": "text",
+        "description": "Name of the default database to create"
+      },
+      {
+        "key": "MYSQL_USER",
+        "label": "Database User",
+        "default": "",
+        "required": false,
+        "type": "text",
+        "description": "Additional non-root user to create"
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "label": "User Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the additional user"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3306,
+        "default_host_port": 3306,
+        "protocol": "tcp",
+        "label": "MySQL",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "n8n",
+    "slug": "n8n",
+    "description": "Workflow automation platform with 400+ integrations for connecting apps, APIs, and services with a visual editor.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "latest",
+    "website": "https://n8n.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "N8N_BASIC_AUTH_USER",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Username for basic auth on the web interface"
+      },
+      {
+        "key": "N8N_BASIC_AUTH_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for basic auth on the web interface"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 5678,
+        "default_host_port": 5678,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Navidrome",
+    "slug": "navidrome",
+    "description": "Modern music server and streamer compatible with Subsonic/Airsonic clients, with a sleek web UI.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://www.navidrome.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 4533,
+        "default_host_port": 4533,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Netdata",
+    "slug": "netdata",
+    "description": "Real-time system monitoring with per-second granularity for CPU, memory, disks, network, and Docker containers.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "stable",
+    "website": "https://www.netdata.cloud",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 19999,
+        "default_host_port": 19999,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Nextcloud",
+    "slug": "nextcloud",
+    "description": "Self-hosted productivity and file storage platform — a complete alternative to Google Drive, Calendar, and Contacts.",
+    "icon": "icon.png",
+    "category": "file-storage",
+    "version": "latest",
+    "website": "https://nextcloud.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "MYSQL_ROOT_PASSWORD",
+        "label": "MySQL Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Root password for the MariaDB database"
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Nextcloud database user"
+      },
+      {
+        "key": "MYSQL_DATABASE",
+        "label": "Database Name",
+        "default": "nextcloud",
+        "required": true,
+        "type": "text",
+        "description": "Name of the Nextcloud database"
+      },
+      {
+        "key": "MYSQL_USER",
+        "label": "Database User",
+        "default": "nextcloud",
+        "required": true,
+        "type": "text",
+        "description": "Database username for Nextcloud"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Nginx",
+    "slug": "nginx",
+    "description": "High-performance web server, reverse proxy, and load balancer — the backbone of modern web infrastructure.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "stable",
+    "website": "https://nginx.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 80,
+        "protocol": "tcp",
+        "label": "HTTP",
+        "configurable": true
+      },
+      {
+        "container_port": 443,
+        "default_host_port": 443,
+        "protocol": "tcp",
+        "label": "HTTPS",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Nginx Proxy Manager",
+    "slug": "nginx-proxy-manager",
+    "description": "Easy-to-use reverse proxy with a web UI for managing SSL certificates, proxy hosts, and access lists.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://nginxproxymanager.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 80,
+        "protocol": "tcp",
+        "label": "HTTP",
+        "configurable": false
+      },
+      {
+        "container_port": 443,
+        "default_host_port": 443,
+        "protocol": "tcp",
+        "label": "HTTPS",
+        "configurable": false
+      },
+      {
+        "container_port": 81,
+        "default_host_port": 81,
+        "protocol": "tcp",
+        "label": "Admin UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "NocoDB",
+    "slug": "nocodb",
+    "description": "Open-source Airtable alternative that turns any SQL database into a smart spreadsheet with API access.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://nocodb.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "NC_AUTH_JWT_SECRET",
+        "label": "JWT Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret for JWT authentication tokens"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Node-RED",
+    "slug": "node-red",
+    "description": "Flow-based programming tool for wiring together hardware devices, APIs, and online services with a visual editor.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "latest",
+    "website": "https://nodered.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 1880,
+        "default_host_port": 1880,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "ntfy",
+    "slug": "ntfy",
+    "description": "Simple HTTP-based push notification service that lets you send notifications to your phone or desktop via scripts.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://ntfy.sh",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI / API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Ollama",
+    "slug": "ollama",
+    "description": "Run open-source large language models locally. Supports Llama 3, Mistral, Gemma, Phi, and many more.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://ollama.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 11434,
+        "default_host_port": 11434,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Open WebUI",
+    "slug": "open-webui",
+    "description": "Feature-rich ChatGPT-like web interface for Ollama and OpenAI-compatible LLMs, designed to run entirely offline.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://openwebui.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "WEBUI_SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for session encryption"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 11434,
+        "default_host_port": 11434,
+        "protocol": "tcp",
+        "label": "Ollama API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "OpenClaw",
+    "slug": "openclaw",
+    "description": "Self-hosted AI agent framework that can manage calendars, browse the web, organize files, and run terminal commands via any LLM.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://docs.openclaw.ai",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "OPENCLAW_GATEWAY_PORT",
+        "label": "Gateway Port",
+        "default": "18789",
+        "required": false,
+        "type": "number",
+        "description": "Port for the OpenClaw web UI and API gateway"
+      },
+      {
+        "key": "OPENCLAW_GATEWAY_BIND",
+        "label": "Bind Mode",
+        "default": "lan",
+        "required": false,
+        "type": "select",
+        "options": [
+          {
+            "label": "LAN only",
+            "value": "lan"
+          },
+          {
+            "label": "Public",
+            "value": "public"
+          }
+        ],
+        "description": "Network bind mode for the gateway"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 18789,
+        "default_host_port": 18789,
+        "protocol": "tcp",
+        "label": "Web UI / API Gateway",
+        "configurable": true
+      },
+      {
+        "container_port": 18790,
+        "default_host_port": 18790,
+        "protocol": "tcp",
+        "label": "Bridge",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Outline",
+    "slug": "outline",
+    "description": "Beautiful team wiki and knowledge base with real-time collaboration, markdown, and Slack/API integrations.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://www.getoutline.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for session encryption"
+      },
+      {
+        "key": "UTILS_SECRET",
+        "label": "Utils Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret for utility functions"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "PostgreSQL database password"
+      },
+      {
+        "key": "URL",
+        "label": "Application URL",
+        "default": "http://localhost:3000",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of your Outline instance"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Overseerr",
+    "slug": "overseerr",
+    "description": "Media request and discovery tool for Plex, allowing users to easily request movies and TV shows.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://overseerr.dev",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 5055,
+        "default_host_port": 5056,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Palworld Server",
+    "slug": "palworld",
+    "description": "Dedicated Palworld multiplayer server with automatic updates, backup support, and RCON management.",
+    "icon": "icon.png",
+    "category": "gaming",
+    "version": "latest",
+    "website": "https://github.com/thijsvanloef/palworld-server-docker",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 8192,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "SERVER_NAME",
+        "label": "Server Name",
+        "default": "My Palworld Server",
+        "required": true,
+        "type": "text",
+        "description": "Name displayed in the server browser"
+      },
+      {
+        "key": "SERVER_PASSWORD",
+        "label": "Server Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "Password required to join the server (leave empty for public)"
+      },
+      {
+        "key": "ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "RCON admin password for server management"
+      },
+      {
+        "key": "PLAYERS",
+        "label": "Max Players",
+        "default": "16",
+        "required": false,
+        "type": "number",
+        "description": "Maximum number of players"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8211,
+        "default_host_port": 8211,
+        "protocol": "udp",
+        "label": "Game Port",
+        "configurable": true
+      },
+      {
+        "container_port": 25575,
+        "default_host_port": 25575,
+        "protocol": "tcp",
+        "label": "RCON",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Paperless-ngx",
+    "slug": "paperless-ngx",
+    "description": "Document management system that transforms physical documents into a searchable digital archive with OCR.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://docs.paperless-ngx.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "PAPERLESS_SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for Django session management"
+      },
+      {
+        "key": "PAPERLESS_ADMIN_USER",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Initial admin username"
+      },
+      {
+        "key": "PAPERLESS_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Initial admin password"
+      },
+      {
+        "key": "PAPERLESS_DB_PASS",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Paperless PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8000,
+        "default_host_port": 8000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "PhotoPrism",
+    "slug": "photoprism",
+    "description": "AI-powered photo management app with automatic face recognition, object detection, and location tagging.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://www.photoprism.app",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "PHOTOPRISM_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Initial admin account password"
+      },
+      {
+        "key": "PHOTOPRISM_SITE_URL",
+        "label": "Site URL",
+        "default": "http://localhost:2342/",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of your PhotoPrism instance"
+      },
+      {
+        "key": "PHOTOPRISM_DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for PhotoPrism MariaDB database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 2342,
+        "default_host_port": 2342,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Pi-hole",
+    "slug": "pi-hole",
+    "description": "Network-wide ad blocker and DNS sinkhole that protects all devices on your network from ads and trackers.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://pi-hole.net",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "WEBPASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Pi-hole admin dashboard"
+      },
+      {
+        "key": "TZ",
+        "label": "Timezone",
+        "default": "America/New_York",
+        "required": true,
+        "type": "text",
+        "description": "Timezone (e.g. America/New_York, Europe/London)"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 53,
+        "default_host_port": 53,
+        "protocol": "tcp",
+        "label": "DNS (TCP)",
+        "configurable": false
+      },
+      {
+        "container_port": 53,
+        "default_host_port": 53,
+        "protocol": "udp",
+        "label": "DNS (UDP)",
+        "configurable": false
+      }
+    ]
+  },
+  {
+    "name": "Plane",
+    "slug": "plane",
+    "description": "Open-source project management tool and Linear alternative for issue tracking and sprints.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://plane.so",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for Plane application security"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Plausible Analytics",
+    "slug": "plausible",
+    "description": "Lightweight, privacy-friendly web analytics — a simple alternative to Google Analytics without cookies.",
+    "icon": "icon.png",
+    "category": "analytics",
+    "version": "v2.1",
+    "website": "https://plausible.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "BASE_URL",
+        "label": "Base URL",
+        "default": "http://localhost:8000",
+        "required": true,
+        "type": "text",
+        "description": "Public URL where Plausible will be accessible"
+      },
+      {
+        "key": "SECRET_KEY_BASE",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for session encryption (min 64 characters)"
+      },
+      {
+        "key": "TOTP_VAULT_KEY",
+        "label": "TOTP Vault Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Encryption key for TOTP secrets"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Plausible PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8000,
+        "default_host_port": 8000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "PocketBase",
+    "slug": "pocketbase",
+    "description": "Lightweight backend-as-a-service with built-in SQLite database, authentication, file storage, and admin dashboard.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://pocketbase.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8090,
+        "default_host_port": 8090,
+        "protocol": "tcp",
+        "label": "API / Admin UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Portainer",
+    "slug": "portainer",
+    "description": "Web-based Docker management UI for deploying, troubleshooting, and managing containers, images, and volumes.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://www.portainer.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 9443,
+        "default_host_port": 9443,
+        "protocol": "tcp",
+        "label": "Web UI (HTTPS)",
+        "configurable": true
+      },
+      {
+        "container_port": 8000,
+        "default_host_port": 8000,
+        "protocol": "tcp",
+        "label": "Edge Agent",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "description": "Powerful open-source relational database with advanced features, extensibility, and strong SQL compliance.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "16",
+    "website": "https://www.postgresql.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "POSTGRES_USER",
+        "label": "Database User",
+        "default": "postgres",
+        "required": true,
+        "type": "text",
+        "description": "PostgreSQL superuser username"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "PostgreSQL superuser password"
+      },
+      {
+        "key": "POSTGRES_DB",
+        "label": "Default Database",
+        "default": "postgres",
+        "required": false,
+        "type": "text",
+        "description": "Name of the default database to create"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 5432,
+        "default_host_port": 5432,
+        "protocol": "tcp",
+        "label": "PostgreSQL",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "PostHog",
+    "slug": "posthog",
+    "description": "Open-source product analytics platform with event tracking, session recording, feature flags, and A/B testing.",
+    "icon": "icon.png",
+    "category": "analytics",
+    "version": "latest",
+    "website": "https://posthog.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Django secret key for cryptographic signing"
+      },
+      {
+        "key": "POSTHOG_DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8000,
+        "default_host_port": 8097,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Prometheus",
+    "slug": "prometheus",
+    "description": "Open-source systems monitoring and alerting toolkit for collecting and querying time-series metrics.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://prometheus.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 9090,
+        "default_host_port": 9090,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Prowlarr",
+    "slug": "prowlarr",
+    "description": "Indexer manager for Sonarr, Radarr, and Lidarr that integrates with your download clients and media managers.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://prowlarr.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 9696,
+        "default_host_port": 9696,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "qBittorrent",
+    "slug": "qbittorrent",
+    "description": "Feature-rich BitTorrent client with a web UI, RSS feed support, and integration with *arr media managers.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "latest",
+    "website": "https://www.qbittorrent.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 6881,
+        "default_host_port": 6881,
+        "protocol": "tcp",
+        "label": "Torrent (TCP)",
+        "configurable": true
+      },
+      {
+        "container_port": 6881,
+        "default_host_port": 6881,
+        "protocol": "udp",
+        "label": "Torrent (UDP)",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Radarr",
+    "slug": "radarr",
+    "description": "Movie collection manager that automatically searches for movies, grabs releases, and organizes your library.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "5",
+    "website": "https://radarr.video",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 5,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 7878,
+        "default_host_port": 7878,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Readarr",
+    "slug": "readarr",
+    "description": "Book and ebook collection manager that monitors RSS feeds and integrates with download clients to manage your library.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "develop",
+    "website": "https://readarr.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "PUID",
+        "label": "User ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "UID for file permissions"
+      },
+      {
+        "key": "PGID",
+        "label": "Group ID",
+        "default": "1000",
+        "required": false,
+        "type": "number",
+        "description": "GID for file permissions"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8787,
+        "default_host_port": 8787,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Redis",
+    "slug": "redis",
+    "description": "In-memory data store used as a database, cache, message broker, and streaming engine.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "7",
+    "website": "https://redis.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "REDIS_PASSWORD",
+        "label": "Redis Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Optional password for Redis authentication"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 6379,
+        "default_host_port": 6379,
+        "protocol": "tcp",
+        "label": "Redis",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Rocket.Chat",
+    "slug": "rocket-chat",
+    "description": "Open-source team communication platform with channels, direct messaging, video calls, and extensive integrations.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://rocket.chat",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "ROOT_URL",
+        "label": "Site URL",
+        "default": "http://localhost:3000",
+        "required": true,
+        "type": "text",
+        "description": "Public URL of your Rocket.Chat instance"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "RustDesk Server",
+    "slug": "rustdesk",
+    "description": "Open-source remote desktop server — a self-hosted alternative to TeamViewer and AnyDesk with end-to-end encryption.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://rustdesk.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 21115,
+        "default_host_port": 21115,
+        "protocol": "tcp",
+        "label": "NAT Test",
+        "configurable": false
+      },
+      {
+        "container_port": 21116,
+        "default_host_port": 21116,
+        "protocol": "tcp",
+        "label": "ID/Relay TCP",
+        "configurable": false
+      },
+      {
+        "container_port": 21116,
+        "default_host_port": 21116,
+        "protocol": "udp",
+        "label": "ID Server",
+        "configurable": false
+      },
+      {
+        "container_port": 21117,
+        "default_host_port": 21117,
+        "protocol": "tcp",
+        "label": "Relay",
+        "configurable": false
+      },
+      {
+        "container_port": 21118,
+        "default_host_port": 21118,
+        "protocol": "tcp",
+        "label": "Web Client WS",
+        "configurable": false
+      },
+      {
+        "container_port": 21119,
+        "default_host_port": 21119,
+        "protocol": "tcp",
+        "label": "Web Client WSS",
+        "configurable": false
+      }
+    ]
+  },
+  {
+    "name": "Satisfactory Server",
+    "slug": "satisfactory",
+    "description": "Dedicated server for Satisfactory, the factory-building game by Coffee Stain Studios.",
+    "icon": "icon.png",
+    "category": "gaming",
+    "version": "latest",
+    "website": "https://satisfactory.wiki.gg",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 8192,
+    "min_storage_gb": 25,
+    "env": [
+      {
+        "key": "MAXPLAYERS",
+        "label": "Max Players",
+        "default": "4",
+        "required": true,
+        "type": "number",
+        "description": "Maximum number of players allowed on the server"
+      },
+      {
+        "key": "SERVERGAMEPORT",
+        "label": "Game Port",
+        "default": "7777",
+        "required": true,
+        "type": "number",
+        "description": "UDP port for game traffic"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 7777,
+        "default_host_port": 7777,
+        "protocol": "udp",
+        "label": "Game",
+        "configurable": true
+      },
+      {
+        "container_port": 15000,
+        "default_host_port": 15000,
+        "protocol": "udp",
+        "label": "Beacon",
+        "configurable": true
+      },
+      {
+        "container_port": 15777,
+        "default_host_port": 15777,
+        "protocol": "udp",
+        "label": "Query",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Seafile",
+    "slug": "seafile",
+    "description": "Open-source file sync and share platform with built-in wiki, knowledge management, and file encryption.",
+    "icon": "icon.png",
+    "category": "file-storage",
+    "version": "latest",
+    "website": "https://seafile.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "SEAFILE_ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Seafile administrator email address"
+      },
+      {
+        "key": "SEAFILE_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Seafile administrator password"
+      },
+      {
+        "key": "MYSQL_ROOT_PASSWORD",
+        "label": "MySQL Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Root password for the MariaDB database"
+      },
+      {
+        "key": "SEAFILE_SERVER_HOSTNAME",
+        "label": "Server Hostname",
+        "default": "localhost",
+        "required": true,
+        "type": "text",
+        "description": "Hostname or IP address of the Seafile server"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8090,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "SearXNG",
+    "slug": "searxng",
+    "description": "Privacy-respecting metasearch engine that aggregates results from 70+ search engines without tracking you.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://docs.searxng.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Semaphore",
+    "slug": "semaphore",
+    "description": "Modern web UI for Ansible, Terraform, and OpenTofu — run playbooks, manage inventory, and track deployments.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://semaphoreui.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "SEMAPHORE_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Admin account password"
+      },
+      {
+        "key": "SEMAPHORE_ADMIN_NAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Admin account username"
+      },
+      {
+        "key": "SEMAPHORE_ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@localhost",
+        "required": true,
+        "type": "text",
+        "description": "Admin account email"
+      },
+      {
+        "key": "SEMAPHORE_ACCESS_KEY_ENCRYPTION",
+        "label": "Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Key for encrypting secrets in the database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "SonarQube",
+    "slug": "sonarqube",
+    "description": "Self-hosted code quality and security analysis platform for continuous inspection of code.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "community",
+    "website": "https://sonarqube.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "SONAR_JDBC_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9000,
+        "default_host_port": 9000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Sonarr",
+    "slug": "sonarr",
+    "description": "PVR for Usenet and BitTorrent users that monitors RSS feeds for new TV show episodes and automatically grabs them.",
+    "icon": "icon.png",
+    "category": "media",
+    "version": "4",
+    "website": "https://sonarr.tv",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 5,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8989,
+        "default_host_port": 8989,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Speedtest Tracker",
+    "slug": "speedtest-tracker",
+    "description": "Self-hosted internet speed tracking app that runs scheduled Ookla speedtests and displays historical results.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "latest",
+    "website": "https://github.com/alexjustesen/speedtest-tracker",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "APP_KEY",
+        "label": "App Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Laravel application key"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Stable Diffusion WebUI",
+    "slug": "stable-diffusion-webui",
+    "description": "AUTOMATIC1111 Stable Diffusion web interface for AI image generation with extensive model and extension support.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 8192,
+    "min_storage_gb": 30,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 7860,
+        "default_host_port": 7860,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Standard Notes",
+    "slug": "standardnotes",
+    "description": "End-to-end encrypted notes app with a focus on privacy and longevity.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://standardnotes.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the MySQL database"
+      },
+      {
+        "key": "SECRET_KEY_BASE",
+        "label": "Secret Key Base",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for application security"
+      },
+      {
+        "key": "ENCRYPTION_SERVER_KEY",
+        "label": "Encryption Server Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Key used for server-side encryption"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3002,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Stirling-PDF",
+    "slug": "stirling-pdf",
+    "description": "Powerful locally hosted PDF manipulation tool with splitting, merging, converting, OCR, and 30+ other operations.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://github.com/Stirling-Tools/Stirling-PDF",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "DOCKER_ENABLE_SECURITY",
+        "label": "Enable Security",
+        "default": "false",
+        "required": false,
+        "type": "select",
+        "options": [
+          {
+            "label": "Disabled",
+            "value": "false"
+          },
+          {
+            "label": "Enabled",
+            "value": "true"
+          }
+        ],
+        "description": "Enable login authentication for the web interface"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Syncthing",
+    "slug": "syncthing",
+    "description": "Continuous file synchronization program that synchronizes files between two or more computers in real time.",
+    "icon": "icon.png",
+    "category": "file-storage",
+    "version": "latest",
+    "website": "https://syncthing.net",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8384,
+        "default_host_port": 8384,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 22000,
+        "default_host_port": 22000,
+        "protocol": "tcp",
+        "label": "Sync",
+        "configurable": true
+      },
+      {
+        "container_port": 22000,
+        "default_host_port": 22000,
+        "protocol": "udp",
+        "label": "Sync Discovery",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Tandoor Recipes",
+    "slug": "tandoor-recipes",
+    "description": "Recipe manager and meal planner for organizing, sharing, and cooking your favorite recipes.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://tandoor.dev",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "SECRET_KEY",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Django secret key for application security"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8087,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Terraria Server",
+    "slug": "terraria",
+    "description": "Dedicated multiplayer server for Terraria, the 2D action-adventure sandbox game.",
+    "icon": "icon.png",
+    "category": "gaming",
+    "version": "latest",
+    "website": "https://terraria.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "WORLD_NAME",
+        "label": "World Name",
+        "default": "World1",
+        "required": true,
+        "type": "text",
+        "description": "Name of the Terraria world"
+      },
+      {
+        "key": "MAX_PLAYERS",
+        "label": "Max Players",
+        "default": "8",
+        "required": true,
+        "type": "number",
+        "description": "Maximum number of players allowed on the server"
+      },
+      {
+        "key": "SERVER_PASSWORD",
+        "label": "Server Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password required to join the server"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 7777,
+        "default_host_port": 7778,
+        "protocol": "tcp",
+        "label": "Game",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Text Generation WebUI",
+    "slug": "text-generation-webui",
+    "description": "Oobabooga web interface for running large language models with support for multiple backends and model formats.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 8192,
+    "min_storage_gb": 30,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 7860,
+        "default_host_port": 7860,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      },
+      {
+        "container_port": 5000,
+        "default_host_port": 5000,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Traefik",
+    "slug": "traefik",
+    "description": "Cloud-native reverse proxy and load balancer with automatic HTTPS, Docker integration, and a real-time dashboard.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "v3.0",
+    "website": "https://traefik.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 1,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 80,
+        "protocol": "tcp",
+        "label": "HTTP",
+        "configurable": false
+      },
+      {
+        "container_port": 443,
+        "default_host_port": 443,
+        "protocol": "tcp",
+        "label": "HTTPS",
+        "configurable": false
+      },
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Dashboard",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Trilium Notes",
+    "slug": "trilium",
+    "description": "Hierarchical note-taking app with WYSIWYG editing, code notes, relation maps, and end-to-end encryption.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://github.com/TriliumNext/Notes",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Typesense",
+    "slug": "typesense",
+    "description": "Fast, typo-tolerant search engine optimized for instant search-as-you-type experiences.",
+    "icon": "icon.png",
+    "category": "databases",
+    "version": "latest",
+    "website": "https://typesense.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "TYPESENSE_API_KEY",
+        "label": "API Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "API key for authenticating requests to Typesense"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8108,
+        "default_host_port": 8108,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Umami",
+    "slug": "umami",
+    "description": "Simple, fast, and privacy-focused open-source web analytics alternative to Google Analytics.",
+    "icon": "icon.png",
+    "category": "analytics",
+    "version": "latest",
+    "website": "https://umami.is",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "APP_SECRET",
+        "label": "App Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Random string used to generate unique values"
+      },
+      {
+        "key": "DB_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Umami PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Uptime Kuma",
+    "slug": "uptime-kuma",
+    "description": "Self-hosted monitoring tool for tracking uptime of websites, APIs, and services with a beautiful UI.",
+    "icon": "icon.png",
+    "category": "monitoring",
+    "version": "1",
+    "website": "https://github.com/louislam/uptime-kuma",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 3001,
+        "default_host_port": 3001,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Valheim Server",
+    "slug": "valheim",
+    "description": "Dedicated Valheim multiplayer server with automatic updates, world backups, and BepInEx mod support.",
+    "icon": "icon.png",
+    "category": "gaming",
+    "version": "latest",
+    "website": "https://github.com/lloesche/valheim-server-docker",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "SERVER_NAME",
+        "label": "Server Name",
+        "default": "My Valheim Server",
+        "required": true,
+        "type": "text",
+        "description": "Name displayed in the server browser"
+      },
+      {
+        "key": "WORLD_NAME",
+        "label": "World Name",
+        "default": "Dedicated",
+        "required": true,
+        "type": "text",
+        "description": "Name of the Valheim world"
+      },
+      {
+        "key": "SERVER_PASS",
+        "label": "Server Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password to join the server (minimum 5 characters)"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 2456,
+        "default_host_port": 2456,
+        "protocol": "udp",
+        "label": "Game Port",
+        "configurable": true
+      },
+      {
+        "container_port": 2457,
+        "default_host_port": 2457,
+        "protocol": "udp",
+        "label": "Query Port",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Vaultwarden",
+    "slug": "vaultwarden",
+    "description": "Lightweight Bitwarden-compatible password manager server for securely storing and syncing credentials across devices.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "latest",
+    "website": "https://github.com/dani-garcia/vaultwarden",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "ADMIN_TOKEN",
+        "label": "Admin Token",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Token for accessing the Vaultwarden admin panel at /admin"
+      },
+      {
+        "key": "SIGNUPS_ALLOWED",
+        "label": "Allow Signups",
+        "default": "true",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "true"
+          },
+          {
+            "label": "No",
+            "value": "false"
+          }
+        ],
+        "description": "Whether new users can register accounts"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Verdaccio",
+    "slug": "verdaccio",
+    "description": "Lightweight self-hosted npm proxy registry for caching and publishing private packages.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://verdaccio.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 10,
+    "env": [],
+    "ports": [
+      {
+        "container_port": 4873,
+        "default_host_port": 4873,
+        "protocol": "tcp",
+        "label": "Web UI / Registry",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Vikunja",
+    "slug": "vikunja",
+    "description": "Open-source task and project management tool with kanban boards, calendars, and team collaboration.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://vikunja.io",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "VIKUNJA_SERVICE_JWTSECRET",
+        "label": "JWT Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for JWT token signing"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3456,
+        "default_host_port": 3456,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Watchtower",
+    "slug": "watchtower",
+    "description": "Automatically updates running Docker containers when new images are available. Set it and forget it.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "latest",
+    "website": "https://containrrr.dev/watchtower",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 64,
+    "min_storage_gb": 1,
+    "env": [
+      {
+        "key": "WATCHTOWER_CLEANUP",
+        "label": "Remove Old Images",
+        "default": "true",
+        "required": false,
+        "type": "select",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "true"
+          },
+          {
+            "label": "No",
+            "value": "false"
+          }
+        ],
+        "description": "Automatically remove old images after updating"
+      },
+      {
+        "key": "WATCHTOWER_POLL_INTERVAL",
+        "label": "Check Interval (seconds)",
+        "default": "86400",
+        "required": false,
+        "type": "number",
+        "description": "How often to check for updates in seconds (default: 24 hours)"
+      }
+    ],
+    "ports": [],
+    "env_note": "Watchtower runs as a background service with no web UI."
+  },
+  {
+    "name": "WireGuard Easy",
+    "slug": "wg-easy",
+    "description": "Simple web UI for managing a WireGuard VPN server with one-click client configuration.",
+    "icon": "icon.png",
+    "category": "networking",
+    "version": "latest",
+    "website": "https://github.com/wg-easy/wg-easy",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 128,
+    "min_storage_gb": 1,
+    "env": [
+      {
+        "key": "WG_HOST",
+        "label": "Server Public IP/Hostname",
+        "default": "",
+        "required": true,
+        "type": "text",
+        "description": "Public IP address or hostname clients will connect to"
+      },
+      {
+        "key": "PASSWORD_HASH",
+        "label": "Admin Password Hash",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "description": "Bcrypt password hash for the web UI (generate with: htpasswd -nbBC 10 '' 'yourpassword' | cut -d: -f2)"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 51820,
+        "default_host_port": 51820,
+        "protocol": "udp",
+        "label": "WireGuard VPN",
+        "configurable": false
+      },
+      {
+        "container_port": 51821,
+        "default_host_port": 51821,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Whisper",
+    "slug": "whisper",
+    "description": "OpenAI Whisper speech-to-text web service for automatic speech recognition and audio transcription.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "ASR_MODEL",
+        "label": "ASR Model",
+        "default": "base",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "Tiny",
+            "value": "tiny"
+          },
+          {
+            "label": "Base",
+            "value": "base"
+          },
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          }
+        ],
+        "description": "Whisper model size - larger models are more accurate but require more resources"
+      },
+      {
+        "key": "ASR_ENGINE",
+        "label": "ASR Engine",
+        "default": "openai_whisper",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "OpenAI Whisper",
+            "value": "openai_whisper"
+          },
+          {
+            "label": "Faster Whisper",
+            "value": "faster_whisper"
+          }
+        ],
+        "description": "Speech recognition engine to use"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 9000,
+        "default_host_port": 9000,
+        "protocol": "tcp",
+        "label": "API",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Wiki.js",
+    "slug": "wiki-js",
+    "description": "Powerful open-source wiki platform with markdown support, visual editor, and built-in authentication.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "2",
+    "website": "https://js.wiki",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "DB_PASS",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Wiki.js PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Woodpecker CI",
+    "slug": "woodpecker-ci",
+    "description": "Simple yet powerful CI/CD engine with Docker-native pipelines and Gitea/GitHub/GitLab integration.",
+    "icon": "icon.png",
+    "category": "development",
+    "version": "latest",
+    "website": "https://woodpecker-ci.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 256,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "WOODPECKER_OPEN",
+        "label": "Open Registration",
+        "default": "true",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "true"
+          },
+          {
+            "label": "No",
+            "value": "false"
+          }
+        ],
+        "description": "Allow any user to sign up"
+      },
+      {
+        "key": "WOODPECKER_AGENT_SECRET",
+        "label": "Agent Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Shared secret between server and agents"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8000,
+        "default_host_port": 8000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "WordPress",
+    "slug": "wordpress",
+    "description": "The world's most popular content management system, powering over 40% of all websites on the internet.",
+    "icon": "icon.png",
+    "category": "cms",
+    "version": "latest",
+    "website": "https://wordpress.org",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-11",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9",
+      "centos-stream-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "MYSQL_ROOT_PASSWORD",
+        "label": "MySQL Root Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Root password for the MySQL database"
+      },
+      {
+        "key": "MYSQL_DATABASE",
+        "label": "Database Name",
+        "default": "wordpress",
+        "required": true,
+        "type": "text",
+        "description": "Name of the WordPress database"
+      },
+      {
+        "key": "MYSQL_USER",
+        "label": "Database User",
+        "default": "wordpress",
+        "required": true,
+        "type": "text",
+        "description": "MySQL user for WordPress"
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the WordPress database user"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "ZeroClaw",
+    "slug": "zeroclaw",
+    "description": "Ultra-lightweight AI agent framework written in Rust with sub-10ms cold starts and under 5MB memory footprint.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://github.com/zeroclaw-labs/zeroclaw",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "API_KEY",
+        "label": "LLM API Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "description": "API key for your LLM provider (OpenRouter, OpenAI, Anthropic, etc.)"
+      },
+      {
+        "key": "PROVIDER",
+        "label": "LLM Provider",
+        "default": "openrouter",
+        "required": true,
+        "type": "select",
+        "options": [
+          {
+            "label": "OpenRouter",
+            "value": "openrouter"
+          },
+          {
+            "label": "OpenAI",
+            "value": "openai"
+          },
+          {
+            "label": "Anthropic",
+            "value": "anthropic"
+          },
+          {
+            "label": "Ollama (local)",
+            "value": "ollama"
+          }
+        ],
+        "description": "LLM provider to use for agent inference"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 42617,
+        "default_host_port": 42617,
+        "protocol": "tcp",
+        "label": "API Gateway",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Zulip",
+    "slug": "zulip",
+    "description": "Threaded team chat platform designed for productive conversations with topic-based threading.",
+    "icon": "icon.png",
+    "category": "communication",
+    "version": "latest",
+    "website": "https://zulip.com",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12",
+      "rocky-9",
+      "almalinux-9"
+    ],
+    "min_ram_mb": 4096,
+    "min_storage_gb": 20,
+    "env": [
+      {
+        "key": "SETTING_EXTERNAL_HOST",
+        "label": "External Host",
+        "default": "localhost",
+        "required": true,
+        "type": "text",
+        "description": "The external hostname for your Zulip instance"
+      },
+      {
+        "key": "SETTING_ZULIP_ADMINISTRATOR",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address of the Zulip administrator"
+      },
+      {
+        "key": "SECRETS_secret_key",
+        "label": "Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key for Zulip session management"
+      },
+      {
+        "key": "SECRETS_postgres_password",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Zulip PostgreSQL database"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 80,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  }
 ]

@@ -1,0 +1,11 @@
+services:
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_5055:-5056}:5055"
+    volumes:
+      - overseerr_config:/config
+
+volumes:
+  overseerr_config:

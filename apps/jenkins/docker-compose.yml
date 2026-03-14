@@ -1,0 +1,12 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8080:-8089}:8080"
+      - "${HOST_PORT_50000:-50000}:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+volumes:
+  jenkins_home:

@@ -1,0 +1,63 @@
+{
+  "name": "Matomo",
+  "slug": "matomo",
+  "description": "Open-source web analytics platform that gives you full ownership of your data and privacy-compliant visitor insights.",
+  "icon": "icon.png",
+  "category": "analytics",
+  "version": "latest",
+  "website": "https://matomo.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "MYSQL_ROOT_PASSWORD",
+      "label": "MySQL Root Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Root password for the MariaDB database"
+    },
+    {
+      "key": "MYSQL_PASSWORD",
+      "label": "MySQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Matomo database user"
+    },
+    {
+      "key": "MYSQL_DATABASE",
+      "label": "MySQL Database",
+      "default": "matomo",
+      "required": true,
+      "type": "text",
+      "description": "Name of the Matomo database"
+    },
+    {
+      "key": "MYSQL_USER",
+      "label": "MySQL User",
+      "default": "matomo",
+      "required": true,
+      "type": "text",
+      "description": "Database username for Matomo"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 8095,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

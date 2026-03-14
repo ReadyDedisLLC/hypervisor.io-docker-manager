@@ -1,0 +1,22 @@
+{
+  "name": "Kavita",
+  "slug": "kavita",
+  "description": "Fast and feature-rich manga, comic, and ebook reader with a modern web interface and OPDS support.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://kavitareader.com",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 512,
+  "min_storage_gb": 10,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 5000,
+      "default_host_port": 5000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

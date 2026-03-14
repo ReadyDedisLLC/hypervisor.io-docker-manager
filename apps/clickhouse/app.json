@@ -1,0 +1,61 @@
+{
+  "name": "ClickHouse",
+  "slug": "clickhouse",
+  "description": "Column-oriented OLAP database management system for real-time analytics on large datasets.",
+  "icon": "icon.png",
+  "category": "databases",
+  "version": "latest",
+  "website": "https://clickhouse.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "CLICKHOUSE_USER",
+      "label": "Admin Username",
+      "default": "default",
+      "required": true,
+      "type": "text",
+      "description": "Username for the ClickHouse admin account"
+    },
+    {
+      "key": "CLICKHOUSE_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the ClickHouse admin account"
+    },
+    {
+      "key": "CLICKHOUSE_DB",
+      "label": "Default Database",
+      "default": "default",
+      "required": true,
+      "type": "text",
+      "description": "Name of the default database to create"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8123,
+      "default_host_port": 8123,
+      "protocol": "tcp",
+      "label": "HTTP API",
+      "configurable": true
+    },
+    {
+      "container_port": 9000,
+      "default_host_port": 9003,
+      "protocol": "tcp",
+      "label": "Native Protocol",
+      "configurable": true
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+services:
+  standardnotes:
+    image: standardnotes/server:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3002}:3000"
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_DATABASE: standardnotes
+      DB_USERNAME: standardnotes
+      DB_PASSWORD: ${DB_PASSWORD}
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: standardnotes
+      MYSQL_USER: standardnotes
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+volumes:
+  mysql_data:
+  redis_data:

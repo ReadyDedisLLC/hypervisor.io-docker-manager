@@ -1,0 +1,46 @@
+{
+  "name": "Coder",
+  "slug": "coder",
+  "description": "Self-hosted remote development environment platform for creating and managing cloud-based workspaces.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://coder.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "CODER_ACCESS_URL",
+      "label": "Access URL",
+      "default": "http://localhost:7080",
+      "required": true,
+      "type": "text",
+      "description": "Public URL used to access Coder"
+    },
+    {
+      "key": "CODER_PG_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 7080,
+      "default_host_port": 7080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

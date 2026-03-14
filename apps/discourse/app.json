@@ -1,0 +1,71 @@
+{
+  "name": "Discourse",
+  "slug": "discourse",
+  "description": "Community forum platform for civilized discussions with rich content, categories, and moderation tools.",
+  "icon": "icon.png",
+  "category": "communication",
+  "version": "latest",
+  "website": "https://discourse.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "DISCOURSE_HOST",
+      "label": "Discourse Host",
+      "default": "localhost",
+      "required": false,
+      "type": "text",
+      "description": "The hostname for your Discourse instance"
+    },
+    {
+      "key": "DISCOURSE_USERNAME",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": false,
+      "type": "text",
+      "description": "Initial admin username"
+    },
+    {
+      "key": "DISCOURSE_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Initial admin password"
+    },
+    {
+      "key": "DISCOURSE_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Admin email address"
+    },
+    {
+      "key": "POSTGRESQL_PASSWORD",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

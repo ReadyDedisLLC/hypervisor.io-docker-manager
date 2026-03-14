@@ -1,0 +1,33 @@
+services:
+  seafile:
+    image: seafileltd/seafile-mc:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-8090}:80"
+    environment:
+      DB_HOST: db
+      DB_ROOT_PASSWD: ${MYSQL_ROOT_PASSWORD}
+      SEAFILE_ADMIN_EMAIL: ${SEAFILE_ADMIN_EMAIL}
+      SEAFILE_ADMIN_PASSWORD: ${SEAFILE_ADMIN_PASSWORD}
+      SEAFILE_SERVER_HOSTNAME: ${SEAFILE_SERVER_HOSTNAME}
+    volumes:
+      - seafile_data:/shared
+    depends_on:
+      - db
+      - memcached
+
+  db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - seafile_mysql:/var/lib/mysql
+
+  memcached:
+    image: memcached:alpine
+    restart: unless-stopped
+
+volumes:
+  seafile_data:
+  seafile_mysql:

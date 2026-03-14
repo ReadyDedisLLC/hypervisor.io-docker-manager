@@ -1,0 +1,52 @@
+{
+  "name": "Cassandra",
+  "slug": "cassandra",
+  "description": "Distributed NoSQL database designed for high availability and linear scalability across multiple nodes.",
+  "icon": "icon.png",
+  "category": "databases",
+  "version": "latest",
+  "website": "https://cassandra.apache.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 4096,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "CASSANDRA_CLUSTER_NAME",
+      "label": "Cluster Name",
+      "default": "MyCluster",
+      "required": true,
+      "type": "text",
+      "description": "Name of the Cassandra cluster"
+    },
+    {
+      "key": "CASSANDRA_DC",
+      "label": "Datacenter Name",
+      "default": "dc1",
+      "required": true,
+      "type": "text",
+      "description": "Name of the datacenter for this node"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 9042,
+      "default_host_port": 9042,
+      "protocol": "tcp",
+      "label": "CQL Native",
+      "configurable": true
+    },
+    {
+      "container_port": 7000,
+      "default_host_port": 7000,
+      "protocol": "tcp",
+      "label": "Inter-node",
+      "configurable": true
+    }
+  ]
+}

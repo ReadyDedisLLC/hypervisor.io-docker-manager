@@ -1,0 +1,12 @@
+services:
+  loki:
+    image: grafana/loki:latest
+    restart: unless-stopped
+    command: -config.file=/etc/loki/local-config.yaml
+    ports:
+      - "${HOST_PORT_3100:-3100}:3100"
+    volumes:
+      - loki_data:/loki
+
+volumes:
+  loki_data:

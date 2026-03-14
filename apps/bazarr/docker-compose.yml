@@ -1,0 +1,15 @@
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_6767:-6767}:6767"
+    environment:
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      TZ: Etc/UTC
+    volumes:
+      - bazarr_config:/config
+
+volumes:
+  bazarr_config:

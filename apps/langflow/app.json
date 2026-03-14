@@ -1,0 +1,37 @@
+{
+  "name": "Langflow",
+  "slug": "langflow",
+  "description": "Visual framework for building multi-agent AI applications with drag-and-drop components and Python-based customization.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://langflow.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "LANGFLOW_AUTO_LOGIN",
+      "label": "Auto Login",
+      "default": "true",
+      "required": false,
+      "type": "text",
+      "description": "Enable automatic login without authentication"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 7860,
+      "default_host_port": 7860,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

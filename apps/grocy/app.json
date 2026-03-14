@@ -1,0 +1,45 @@
+{
+  "name": "Grocy",
+  "slug": "grocy",
+  "description": "Self-hosted household and grocery management solution for tracking inventory, meal planning, and chores.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://grocy.info",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": true,
+      "type": "number",
+      "description": "User ID for file permissions"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": true,
+      "type": "number",
+      "description": "Group ID for file permissions"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 9283,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

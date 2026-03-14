@@ -1,0 +1,55 @@
+{
+  "name": "Whisper",
+  "slug": "whisper",
+  "description": "OpenAI Whisper speech-to-text web service for automatic speech recognition and audio transcription.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 4096,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "ASR_MODEL",
+      "label": "ASR Model",
+      "default": "base",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "Tiny", "value": "tiny" },
+        { "label": "Base", "value": "base" },
+        { "label": "Small", "value": "small" },
+        { "label": "Medium", "value": "medium" },
+        { "label": "Large", "value": "large" }
+      ],
+      "description": "Whisper model size - larger models are more accurate but require more resources"
+    },
+    {
+      "key": "ASR_ENGINE",
+      "label": "ASR Engine",
+      "default": "openai_whisper",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "OpenAI Whisper", "value": "openai_whisper" },
+        { "label": "Faster Whisper", "value": "faster_whisper" }
+      ],
+      "description": "Speech recognition engine to use"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 9000,
+      "default_host_port": 9000,
+      "protocol": "tcp",
+      "label": "API",
+      "configurable": true
+    }
+  ]
+}

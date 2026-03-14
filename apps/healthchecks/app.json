@@ -1,0 +1,71 @@
+{
+  "name": "Healthchecks",
+  "slug": "healthchecks",
+  "description": "Cron job monitoring service that listens for pings from your scheduled tasks and alerts you when they don't arrive on time.",
+  "icon": "icon.png",
+  "category": "monitoring",
+  "version": "latest",
+  "website": "https://healthchecks.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "SITE_ROOT",
+      "label": "Site URL",
+      "default": "http://localhost:8094",
+      "required": true,
+      "type": "text",
+      "description": "Public URL of the Healthchecks instance"
+    },
+    {
+      "key": "SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Django secret key for cryptographic signing"
+    },
+    {
+      "key": "ALLOWED_HOSTS",
+      "label": "Allowed Hosts",
+      "default": "*",
+      "required": true,
+      "type": "text",
+      "description": "Comma-separated list of allowed hostnames"
+    },
+    {
+      "key": "SUPERUSER_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Email address for the superuser account"
+    },
+    {
+      "key": "SUPERUSER_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the superuser account"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8000,
+      "default_host_port": 8094,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

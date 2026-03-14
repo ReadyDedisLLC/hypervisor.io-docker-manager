@@ -1,0 +1,11 @@
+services:
+  stable-diffusion-webui:
+    image: ghcr.io/ai-dock/stable-diffusion-webui:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_7860:-7860}:7860"
+    volumes:
+      - sdwebui_data:/workspace
+
+volumes:
+  sdwebui_data:

@@ -1,0 +1,11 @@
+services:
+  dashy:
+    image: lissy93/dashy:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8080:-8099}:8080"
+    volumes:
+      - dashy_config:/app/user-data
+
+volumes:
+  dashy_config:

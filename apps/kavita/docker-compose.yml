@@ -1,0 +1,13 @@
+services:
+  kavita:
+    image: jvmilazz0/kavita:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_5000:-5000}:5000"
+    volumes:
+      - kavita_config:/kavita/config
+      - kavita_data:/manga
+
+volumes:
+  kavita_config:
+  kavita_data:

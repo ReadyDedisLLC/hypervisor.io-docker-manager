@@ -1,0 +1,71 @@
+{
+  "name": "Authentik",
+  "slug": "authentik",
+  "description": "Open-source identity provider with support for OAuth2, SAML, LDAP, and SCIM for single sign-on and user management.",
+  "icon": "icon.png",
+  "category": "security",
+  "version": "latest",
+  "website": "https://goauthentik.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "AUTHENTIK_SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key used for signing and encryption"
+    },
+    {
+      "key": "PG_PASS",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "AUTHENTIK_BOOTSTRAP_PASSWORD",
+      "label": "Initial Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Initial password for the admin account"
+    },
+    {
+      "key": "AUTHENTIK_BOOTSTRAP_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Email address for the admin account"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 9000,
+      "default_host_port": 9001,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    },
+    {
+      "container_port": 9443,
+      "default_host_port": 9443,
+      "protocol": "tcp",
+      "label": "HTTPS",
+      "configurable": true
+    }
+  ]
+}

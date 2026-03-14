@@ -1,0 +1,12 @@
+services:
+  typesense:
+    image: typesense/typesense:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8108:-8108}:8108"
+    command: --data-dir /data --api-key=${TYPESENSE_API_KEY}
+    volumes:
+      - typesense_data:/data
+
+volumes:
+  typesense_data:

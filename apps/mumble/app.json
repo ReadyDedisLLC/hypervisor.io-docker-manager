@@ -1,0 +1,45 @@
+{
+  "name": "Mumble",
+  "slug": "mumble",
+  "description": "Low-latency, high-quality voice chat server for gaming and team communication.",
+  "icon": "icon.png",
+  "category": "communication",
+  "version": "latest",
+  "website": "https://mumble.info",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 1,
+  "env": [
+    {
+      "key": "MUMBLE_SUPERUSER_PASSWORD",
+      "label": "Superuser Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Mumble superuser account"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 64738,
+      "default_host_port": 64738,
+      "protocol": "tcp",
+      "label": "Voice (TCP)",
+      "configurable": true
+    },
+    {
+      "container_port": 64738,
+      "default_host_port": 64738,
+      "protocol": "udp",
+      "label": "Voice (UDP)",
+      "configurable": true
+    }
+  ]
+}

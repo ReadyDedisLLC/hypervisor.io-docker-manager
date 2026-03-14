@@ -1,0 +1,15 @@
+services:
+  terraria:
+    image: ryshe/terraria:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_7777:-7778}:7777"
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - terraria_worlds:/root/.local/share/Terraria/Worlds
+
+volumes:
+  terraria_worlds:

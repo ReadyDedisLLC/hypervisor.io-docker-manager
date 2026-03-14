@@ -1,0 +1,79 @@
+{
+  "name": "Drone",
+  "slug": "drone",
+  "description": "Container-native CI/CD platform that integrates with popular Git providers for automated build pipelines.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://drone.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "DRONE_GITEA_SERVER",
+      "label": "Gitea Server URL",
+      "default": "",
+      "required": true,
+      "type": "text",
+      "description": "URL of your Gitea instance"
+    },
+    {
+      "key": "DRONE_GITEA_CLIENT_ID",
+      "label": "Gitea OAuth Client ID",
+      "default": "",
+      "required": true,
+      "type": "text",
+      "description": "OAuth2 client ID from Gitea"
+    },
+    {
+      "key": "DRONE_GITEA_CLIENT_SECRET",
+      "label": "Gitea OAuth Client Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "description": "OAuth2 client secret from Gitea"
+    },
+    {
+      "key": "DRONE_RPC_SECRET",
+      "label": "RPC Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Shared secret for Drone server and runner communication"
+    },
+    {
+      "key": "DRONE_SERVER_HOST",
+      "label": "Server Host",
+      "default": "localhost:8091",
+      "required": true,
+      "type": "text",
+      "description": "Hostname and port where Drone is accessible"
+    },
+    {
+      "key": "DRONE_SERVER_PROTO",
+      "label": "Server Protocol",
+      "default": "http",
+      "required": true,
+      "type": "select",
+      "options": ["http", "https"],
+      "description": "Protocol used to access Drone"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 8091,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

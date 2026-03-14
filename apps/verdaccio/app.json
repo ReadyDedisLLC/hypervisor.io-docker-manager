@@ -1,0 +1,28 @@
+{
+  "name": "Verdaccio",
+  "slug": "verdaccio",
+  "description": "Lightweight self-hosted npm proxy registry for caching and publishing private packages.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "latest",
+  "website": "https://verdaccio.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 10,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 4873,
+      "default_host_port": 4873,
+      "protocol": "tcp",
+      "label": "Web UI / Registry",
+      "configurable": true
+    }
+  ]
+}

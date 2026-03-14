@@ -1,0 +1,35 @@
+{
+  "name": "Jenkins",
+  "slug": "jenkins",
+  "description": "Leading open-source CI/CD automation server for building, testing, and deploying software.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "lts",
+  "website": "https://jenkins.io",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 20,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8089,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    },
+    {
+      "container_port": 50000,
+      "default_host_port": 50000,
+      "protocol": "tcp",
+      "label": "Agent",
+      "configurable": true
+    }
+  ]
+}

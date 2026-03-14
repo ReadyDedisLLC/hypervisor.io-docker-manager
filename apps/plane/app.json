@@ -1,0 +1,47 @@
+{
+  "name": "Plane",
+  "slug": "plane",
+  "description": "Open-source project management tool and Linear alternative for issue tracking and sprints.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://plane.so",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 4096,
+  "min_storage_gb": 20,
+  "env": [
+    {
+      "key": "SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for Plane application security"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

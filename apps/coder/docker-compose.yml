@@ -1,0 +1,28 @@
+services:
+  coder:
+    image: ghcr.io/coder/coder:latest
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "${HOST_PORT_7080:-7080}:7080"
+    environment:
+      CODER_PG_CONNECTION_URL: postgresql://coder:${CODER_PG_PASSWORD}@db:5432/coder?sslmode=disable
+      CODER_ACCESS_URL: ${CODER_ACCESS_URL}
+    volumes:
+      - coder_data:/home/coder/.config
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: coder
+      POSTGRES_PASSWORD: ${CODER_PG_PASSWORD}
+      POSTGRES_DB: coder
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  coder_data:
+  db_data:

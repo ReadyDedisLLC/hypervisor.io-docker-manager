@@ -1,0 +1,46 @@
+{
+  "name": "Huginn",
+  "slug": "huginn",
+  "description": "Programmable automation agents that monitor the web and act on your behalf, performing automated tasks triggered by events.",
+  "icon": "icon.png",
+  "category": "automation",
+  "version": "latest",
+  "website": "https://github.com/huginn/huginn",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "HUGINN_SEED_USERNAME",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": true,
+      "type": "text",
+      "description": "Username for the initial admin account"
+    },
+    {
+      "key": "HUGINN_SEED_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the initial admin account"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3004,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

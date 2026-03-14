@@ -1,0 +1,22 @@
+{
+  "name": "Overseerr",
+  "slug": "overseerr",
+  "description": "Media request and discovery tool for Plex, allowing users to easily request movies and TV shows.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://overseerr.dev",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 512,
+  "min_storage_gb": 2,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 5055,
+      "default_host_port": 5056,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

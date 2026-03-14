@@ -1,0 +1,28 @@
+{
+  "name": "Docker Registry",
+  "slug": "docker-registry",
+  "description": "Self-hosted container image registry for storing and distributing Docker images privately.",
+  "icon": "icon.png",
+  "category": "development",
+  "version": "2",
+  "website": "https://docs.docker.com/registry/",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 20,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 5000,
+      "default_host_port": 5000,
+      "protocol": "tcp",
+      "label": "API",
+      "configurable": true
+    }
+  ]
+}

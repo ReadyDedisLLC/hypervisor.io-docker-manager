@@ -1,0 +1,59 @@
+{
+  "name": "Satisfactory Server",
+  "slug": "satisfactory",
+  "description": "Dedicated server for Satisfactory, the factory-building game by Coffee Stain Studios.",
+  "icon": "icon.png",
+  "category": "gaming",
+  "version": "latest",
+  "website": "https://satisfactory.wiki.gg",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 8192,
+  "min_storage_gb": 25,
+  "env": [
+    {
+      "key": "MAXPLAYERS",
+      "label": "Max Players",
+      "default": "4",
+      "required": true,
+      "type": "number",
+      "description": "Maximum number of players allowed on the server"
+    },
+    {
+      "key": "SERVERGAMEPORT",
+      "label": "Game Port",
+      "default": "7777",
+      "required": true,
+      "type": "number",
+      "description": "UDP port for game traffic"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 7777,
+      "default_host_port": 7777,
+      "protocol": "udp",
+      "label": "Game",
+      "configurable": true
+    },
+    {
+      "container_port": 15000,
+      "default_host_port": 15000,
+      "protocol": "udp",
+      "label": "Beacon",
+      "configurable": true
+    },
+    {
+      "container_port": 15777,
+      "default_host_port": 15777,
+      "protocol": "udp",
+      "label": "Query",
+      "configurable": true
+    }
+  ]
+}

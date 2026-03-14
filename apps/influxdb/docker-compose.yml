@@ -1,0 +1,17 @@
+services:
+  influxdb:
+    image: influxdb:2
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_8086:-8086}:8086"
+    env_file:
+      - .env
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+      - influxdb_config:/etc/influxdb2
+
+volumes:
+  influxdb_data:
+  influxdb_config:

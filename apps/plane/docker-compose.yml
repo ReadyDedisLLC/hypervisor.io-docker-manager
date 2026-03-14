@@ -1,0 +1,68 @@
+services:
+  web:
+    image: makeplane/plane-frontend:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
+    depends_on:
+      - api
+
+  api:
+    image: makeplane/plane-backend:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://plane:${POSTGRES_PASSWORD}@db:5432/plane
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - db
+      - redis
+
+  worker:
+    image: makeplane/plane-backend:latest
+    restart: unless-stopped
+    command: celery worker
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://plane:${POSTGRES_PASSWORD}@db:5432/plane
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - db
+      - redis
+
+  beat-worker:
+    image: makeplane/plane-backend:latest
+    restart: unless-stopped
+    command: celery beat
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://plane:${POSTGRES_PASSWORD}@db:5432/plane
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: plane
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: plane
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+volumes:
+  pgdata:
+  redis_data:

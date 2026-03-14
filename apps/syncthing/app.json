@@ -1,0 +1,42 @@
+{
+  "name": "Syncthing",
+  "slug": "syncthing",
+  "description": "Continuous file synchronization program that synchronizes files between two or more computers in real time.",
+  "icon": "icon.png",
+  "category": "file-storage",
+  "version": "latest",
+  "website": "https://syncthing.net",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 256,
+  "min_storage_gb": 10,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 8384,
+      "default_host_port": 8384,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    },
+    {
+      "container_port": 22000,
+      "default_host_port": 22000,
+      "protocol": "tcp",
+      "label": "Sync",
+      "configurable": true
+    },
+    {
+      "container_port": 22000,
+      "default_host_port": 22000,
+      "protocol": "udp",
+      "label": "Sync Discovery",
+      "configurable": true
+    }
+  ]
+}

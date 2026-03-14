@@ -1,0 +1,22 @@
+{
+  "name": "Audiobookshelf",
+  "slug": "audiobookshelf",
+  "description": "Self-hosted audiobook and podcast server for managing and streaming your audio library from any device.",
+  "icon": "icon.png",
+  "category": "media",
+  "version": "latest",
+  "website": "https://audiobookshelf.org",
+  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
+  "min_ram_mb": 512,
+  "min_storage_gb": 10,
+  "env": [],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 13378,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

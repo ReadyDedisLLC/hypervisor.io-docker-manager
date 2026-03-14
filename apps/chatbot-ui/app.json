@@ -1,0 +1,37 @@
+{
+  "name": "Chatbot UI",
+  "slug": "chatbot-ui",
+  "description": "Open-source ChatGPT-like interface for interacting with OpenAI models through a clean, self-hosted web app.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "main",
+  "website": "https://chatbotui.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "description": "API key from OpenAI for accessing GPT models"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

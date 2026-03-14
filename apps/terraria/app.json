@@ -1,0 +1,54 @@
+{
+  "name": "Terraria Server",
+  "slug": "terraria",
+  "description": "Dedicated multiplayer server for Terraria, the 2D action-adventure sandbox game.",
+  "icon": "icon.png",
+  "category": "gaming",
+  "version": "latest",
+  "website": "https://terraria.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "WORLD_NAME",
+      "label": "World Name",
+      "default": "World1",
+      "required": true,
+      "type": "text",
+      "description": "Name of the Terraria world"
+    },
+    {
+      "key": "MAX_PLAYERS",
+      "label": "Max Players",
+      "default": "8",
+      "required": true,
+      "type": "number",
+      "description": "Maximum number of players allowed on the server"
+    },
+    {
+      "key": "SERVER_PASSWORD",
+      "label": "Server Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password required to join the server"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 7777,
+      "default_host_port": 7778,
+      "protocol": "tcp",
+      "label": "Game",
+      "configurable": true
+    }
+  ]
+}

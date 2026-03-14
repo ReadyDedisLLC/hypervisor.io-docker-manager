@@ -1,0 +1,22 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "${HOST_PORT_80:-8929}:80"
+      - "${HOST_PORT_22:-2224}:22"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url '${EXTERNAL_URL}'
+        gitlab_rails['initial_root_password'] = '${GITLAB_ROOT_PASSWORD}'
+    volumes:
+      - gitlab_config:/etc/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_data:/var/opt/gitlab
+    shm_size: '256m'
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:

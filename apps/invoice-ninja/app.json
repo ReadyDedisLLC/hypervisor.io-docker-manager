@@ -1,0 +1,64 @@
+{
+  "name": "Invoice Ninja",
+  "slug": "invoice-ninja",
+  "description": "Self-hosted invoicing, payments, and expense tracking platform for freelancers and businesses.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://invoiceninja.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "APP_KEY",
+      "label": "App Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Application encryption key"
+    },
+    {
+      "key": "DB_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the MySQL database"
+    },
+    {
+      "key": "IN_USER_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Email address for the admin account"
+    },
+    {
+      "key": "IN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the admin account"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 80,
+      "default_host_port": 8088,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

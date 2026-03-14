@@ -1,0 +1,55 @@
+{
+  "name": "Keycloak",
+  "slug": "keycloak",
+  "description": "Open-source identity and access management solution with support for SSO, social login, and user federation.",
+  "icon": "icon.png",
+  "category": "security",
+  "version": "latest",
+  "website": "https://keycloak.org",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "KEYCLOAK_ADMIN",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": true,
+      "type": "text",
+      "description": "Keycloak admin username"
+    },
+    {
+      "key": "KEYCLOAK_ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Keycloak admin password"
+    },
+    {
+      "key": "KC_DB_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the PostgreSQL database"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8092,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

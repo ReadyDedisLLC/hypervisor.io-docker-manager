@@ -1,0 +1,32 @@
+services:
+  discourse:
+    image: bitnami/discourse:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
+    environment:
+      DISCOURSE_DATABASE_HOST: postgresql
+      DISCOURSE_DATABASE_PORT_NUMBER: "5432"
+      DISCOURSE_DATABASE_USER: bn_discourse
+      DISCOURSE_DATABASE_NAME: bitnami_discourse
+      DISCOURSE_DATABASE_PASSWORD: ${POSTGRESQL_PASSWORD}
+    volumes:
+      - discourse_data:/bitnami/discourse
+    depends_on:
+      - postgresql
+
+  postgresql:
+    image: bitnami/postgresql:16
+    restart: unless-stopped
+    environment:
+      POSTGRESQL_DATABASE: bitnami_discourse
+      POSTGRESQL_USERNAME: bn_discourse
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+    volumes:
+      - pgdata:/bitnami/postgresql
+
+volumes:
+  discourse_data:
+  pgdata:

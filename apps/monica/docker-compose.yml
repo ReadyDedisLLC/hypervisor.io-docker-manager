@@ -1,0 +1,32 @@
+services:
+  monica:
+    image: monica:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_80:-8085}:80"
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+      DB_DATABASE: monica
+      DB_USERNAME: monica
+      DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - monica_data:/var/www/html/storage
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: monica
+      MYSQL_USER: monica
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  monica_data:
+  mysql_data:

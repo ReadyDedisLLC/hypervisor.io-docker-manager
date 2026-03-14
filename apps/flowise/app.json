@@ -1,0 +1,46 @@
+{
+  "name": "Flowise",
+  "slug": "flowise",
+  "description": "Drag and drop LLM flow builder for creating customized AI workflows and chatbots with no code.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://flowiseai.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "FLOWISE_USERNAME",
+      "label": "Username",
+      "default": "admin",
+      "required": true,
+      "type": "text",
+      "description": "Username for Flowise web interface login"
+    },
+    {
+      "key": "FLOWISE_PASSWORD",
+      "label": "Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for Flowise web interface login"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}
