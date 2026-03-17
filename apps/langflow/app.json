@@ -22,7 +22,24 @@
       "default": "true",
       "required": false,
       "type": "text",
-      "description": "Enable automatic login without authentication"
+      "description": "Enable automatic login without authentication (set to false to require login)"
+    },
+    {
+      "key": "LANGFLOW_SUPERUSER",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": false,
+      "type": "text",
+      "description": "Superuser username (used when auto login is disabled)"
+    },
+    {
+      "key": "LANGFLOW_SUPERUSER_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Superuser password (used when auto login is disabled)"
     }
   ],
   "ports": [

@@ -25,6 +25,15 @@
       "required": true,
       "type": "text",
       "description": "Default admin email for initial login"
+    },
+    {
+      "key": "DEFAULT_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Default admin password for initial login"
     }
   ],
   "ports": [

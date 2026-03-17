@@ -1102,7 +1102,17 @@
     ],
     "min_ram_mb": 256,
     "min_storage_gb": 2,
-    "env": [],
+    "env": [
+      {
+        "key": "BOUNCER_KEY_firewall",
+        "label": "Bouncer API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Pre-registered API key for a firewall bouncer"
+      }
+    ],
     "ports": [
       {
         "container_port": 8080,
@@ -1523,7 +1533,25 @@
     ],
     "min_ram_mb": 64,
     "min_storage_gb": 1,
-    "env": [],
+    "env": [
+      {
+        "key": "DOZZLE_USERNAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": false,
+        "type": "text",
+        "description": "Username for basic authentication (leave empty to disable auth)"
+      },
+      {
+        "key": "DOZZLE_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Password for basic authentication (leave empty to disable auth)"
+      }
+    ],
     "ports": [
       {
         "container_port": 8080,
@@ -1857,7 +1885,33 @@
     ],
     "min_ram_mb": 128,
     "min_storage_gb": 2,
-    "env": [],
+    "env": [
+      {
+        "key": "FRESHRSS_USER",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Username for the initial admin account"
+      },
+      {
+        "key": "ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the initial admin account"
+      },
+      {
+        "key": "ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the admin account"
+      }
+    ],
     "ports": [
       {
         "container_port": 80,
@@ -2025,7 +2079,25 @@
     ],
     "min_ram_mb": 64,
     "min_storage_gb": 1,
-    "env": [],
+    "env": [
+      {
+        "key": "GOTIFY_DEFAULTUSER_NAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Username for the default admin account"
+      },
+      {
+        "key": "GOTIFY_DEFAULTUSER_PASS",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the default admin account"
+      }
+    ],
     "ports": [
       {
         "container_port": 80,
@@ -3118,7 +3190,24 @@
         "default": "true",
         "required": false,
         "type": "text",
-        "description": "Enable automatic login without authentication"
+        "description": "Enable automatic login without authentication (set to false to require login)"
+      },
+      {
+        "key": "LANGFLOW_SUPERUSER",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": false,
+        "type": "text",
+        "description": "Superuser username (used when auto login is disabled)"
+      },
+      {
+        "key": "LANGFLOW_SUPERUSER_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Superuser password (used when auto login is disabled)"
       }
     ],
     "ports": [
@@ -3666,6 +3755,15 @@
         "required": true,
         "type": "text",
         "description": "Default admin email for initial login"
+      },
+      {
+        "key": "DEFAULT_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Default admin password for initial login"
       }
     ],
     "ports": [
@@ -5425,6 +5523,31 @@
         "required": true,
         "type": "text",
         "description": "Public URL of your Rocket.Chat instance"
+      },
+      {
+        "key": "ADMIN_USERNAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": true,
+        "type": "text",
+        "description": "Username for the initial admin account"
+      },
+      {
+        "key": "ADMIN_PASS",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the initial admin account"
+      },
+      {
+        "key": "ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the initial admin account"
       }
     ],
     "ports": [
@@ -5945,6 +6068,23 @@
           }
         ],
         "description": "Enable login authentication for the web interface"
+      },
+      {
+        "key": "SECURITY_INITIALLOGIN_USERNAME",
+        "label": "Admin Username",
+        "default": "admin",
+        "required": false,
+        "type": "text",
+        "description": "Initial admin username (only used when security is enabled)"
+      },
+      {
+        "key": "SECURITY_INITIALLOGIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Initial admin password (only used when security is enabled)"
       }
     ],
     "ports": [

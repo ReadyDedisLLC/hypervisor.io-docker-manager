@@ -23,6 +23,31 @@
       "required": true,
       "type": "text",
       "description": "Public URL of your Rocket.Chat instance"
+    },
+    {
+      "key": "ADMIN_USERNAME",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": true,
+      "type": "text",
+      "description": "Username for the initial admin account"
+    },
+    {
+      "key": "ADMIN_PASS",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the initial admin account"
+    },
+    {
+      "key": "ADMIN_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Email address for the initial admin account"
     }
   ],
   "ports": [

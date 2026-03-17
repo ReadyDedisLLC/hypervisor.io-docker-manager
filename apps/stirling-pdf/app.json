@@ -29,6 +29,23 @@
         { "label": "Enabled", "value": "true" }
       ],
       "description": "Enable login authentication for the web interface"
+    },
+    {
+      "key": "SECURITY_INITIALLOGIN_USERNAME",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": false,
+      "type": "text",
+      "description": "Initial admin username (only used when security is enabled)"
+    },
+    {
+      "key": "SECURITY_INITIALLOGIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Initial admin password (only used when security is enabled)"
     }
   ],
   "ports": [

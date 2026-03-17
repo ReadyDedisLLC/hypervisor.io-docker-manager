@@ -17,7 +17,25 @@
   ],
   "min_ram_mb": 64,
   "min_storage_gb": 1,
-  "env": [],
+  "env": [
+    {
+      "key": "DOZZLE_USERNAME",
+      "label": "Admin Username",
+      "default": "admin",
+      "required": false,
+      "type": "text",
+      "description": "Username for basic authentication (leave empty to disable auth)"
+    },
+    {
+      "key": "DOZZLE_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Password for basic authentication (leave empty to disable auth)"
+    }
+  ],
   "ports": [
     {
       "container_port": 8080,

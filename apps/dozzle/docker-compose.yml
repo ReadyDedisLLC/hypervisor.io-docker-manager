@@ -2,6 +2,8 @@ services:
   dozzle:
     image: amir20/dozzle:latest
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "${HOST_PORT_8080:-8080}:8080"
     volumes:
