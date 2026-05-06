@@ -6,6 +6,7 @@
   "category": "security",
   "version": "latest",
   "website": "https://www.authelia.com",
+  "docs_url": "https://www.authelia.com/configuration/prologue/introduction/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -43,6 +44,62 @@
       "type": "password",
       "generate": true,
       "description": "Encryption key for the storage backend"
+    },
+    {
+      "key": "AUTHELIA_SESSION_DOMAIN",
+      "label": "Session Cookie Domain",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Root domain for session cookies (e.g. example.com)"
+    },
+    {
+      "key": "AUTHELIA_DEFAULT_REDIRECTION_URL",
+      "label": "Default Redirection URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Default URL to redirect users after authentication (e.g. https://home.example.com)"
+    },
+    {
+      "key": "AUTHELIA_NOTIFIER_SMTP_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending notification emails"
+    },
+    {
+      "key": "AUTHELIA_NOTIFIER_SMTP_PORT",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "AUTHELIA_NOTIFIER_SMTP_USERNAME",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Username for SMTP authentication"
+    },
+    {
+      "key": "AUTHELIA_NOTIFIER_SMTP_PASSWORD",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Password for SMTP authentication"
+    },
+    {
+      "key": "AUTHELIA_NOTIFIER_SMTP_SENDER",
+      "label": "SMTP Sender Address",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "From address for notification emails (e.g. authelia@example.com)"
     }
   ],
   "ports": [

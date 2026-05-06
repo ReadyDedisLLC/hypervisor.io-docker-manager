@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "latest",
   "website": "https://pi-hole.net",
+  "docs_url": "https://docs.pi-hole.net/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,48 @@
       "required": true,
       "type": "text",
       "description": "Timezone (e.g. America/New_York, Europe/London)"
+    },
+    {
+      "key": "PIHOLE_DNS_",
+      "label": "Upstream DNS Servers",
+      "default": "8.8.8.8;8.8.4.4",
+      "required": false,
+      "type": "text",
+      "description": "Upstream DNS servers separated by semicolons (e.g. 8.8.8.8;8.8.4.4, 1.1.1.1;1.0.0.1)"
+    },
+    {
+      "key": "DNSSEC",
+      "label": "DNSSEC",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable DNSSEC validation (requires compatible upstream DNS)"
+    },
+    {
+      "key": "FTLCONF_LOCAL_IPV4",
+      "label": "Local IPv4 Address",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Set to your server's LAN IP address for proper blocking page display"
+    },
+    {
+      "key": "VIRTUAL_HOST",
+      "label": "Virtual Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Hostname/IP of your Pi-hole instance for admin access (e.g. pi.hole)"
+    },
+    {
+      "key": "DNSMASQ_LISTENING",
+      "label": "DNS Listening Mode",
+      "default": "local",
+      "required": false,
+      "type": "select",
+      "options": ["local", "all", "single"],
+      "description": "Listening behavior: local (recommended), all, or single interface"
     }
   ],
   "ports": [

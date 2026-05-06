@@ -6,10 +6,36 @@
   "category": "networking",
   "version": "stable",
   "website": "https://nginx.org",
+  "docs_url": "https://nginx.org/en/docs/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 64,
   "min_storage_gb": 1,
-  "env": [],
+  "env": [
+    {
+      "key": "NGINX_ENVSUBST_TEMPLATE_DIR",
+      "label": "Template Directory",
+      "default": "/etc/nginx/templates",
+      "required": false,
+      "type": "text",
+      "description": "Directory containing envsubst template files (*.template)"
+    },
+    {
+      "key": "NGINX_ENVSUBST_TEMPLATE_SUFFIX",
+      "label": "Template Suffix",
+      "default": ".template",
+      "required": false,
+      "type": "text",
+      "description": "Suffix of template files to process with envsubst"
+    },
+    {
+      "key": "NGINX_ENVSUBST_OUTPUT_DIR",
+      "label": "Output Directory",
+      "default": "/etc/nginx/conf.d",
+      "required": false,
+      "type": "text",
+      "description": "Directory where processed config files are written"
+    }
+  ],
   "ports": [
     {"container_port":80,"default_host_port":80,"protocol":"tcp","label":"HTTP","configurable":true},
     {"container_port":443,"default_host_port":443,"protocol":"tcp","label":"HTTPS","configurable":true}

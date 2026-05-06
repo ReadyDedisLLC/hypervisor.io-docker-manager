@@ -6,6 +6,7 @@
   "category": "file-storage",
   "version": "latest",
   "website": "https://www.duplicati.com",
+  "docs_url": "https://docs.duplicati.com",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,40 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 5,
-  "env": [],
+  "env": [
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for the container user to match host file permissions"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for the container user to match host file permissions"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the container (e.g., America/New_York, Europe/London)"
+    },
+    {
+      "key": "CLI_ARGS",
+      "label": "CLI Arguments",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional command-line arguments to pass to Duplicati server"
+    }
+  ],
   "ports": [
     {
       "container_port": 8200,

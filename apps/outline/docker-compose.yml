@@ -12,6 +12,14 @@ services:
       URL: ${URL:-http://localhost:3000}
       FILE_STORAGE: local
       FILE_STORAGE_LOCAL_ROOT_DIR: /var/lib/outline/data
+      FORCE_HTTPS: ${FORCE_HTTPS:-false}
+      DEFAULT_LANGUAGE: ${DEFAULT_LANGUAGE:-en_US}
+      ENABLE_UPDATES: ${ENABLE_UPDATES:-true}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL:-}
     volumes:
       - outline_data:/var/lib/outline/data
     depends_on:

@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://invoiceninja.com",
+  "docs_url": "https://invoiceninja.github.io/en/self-host-installation/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -50,6 +51,71 @@
       "type": "password",
       "generate": true,
       "description": "Password for the admin account"
+    },
+    {
+      "key": "APP_URL",
+      "label": "Application URL",
+      "default": "http://localhost:8088",
+      "required": true,
+      "type": "text",
+      "description": "Public URL where Invoice Ninja will be accessible"
+    },
+    {
+      "key": "MAIL_MAILER",
+      "label": "Mail Driver",
+      "default": "smtp",
+      "required": false,
+      "type": "select",
+      "options": ["smtp", "sendmail", "mailgun", "postmark", "log"],
+      "description": "Email delivery driver to use"
+    },
+    {
+      "key": "MAIL_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname (e.g. smtp.gmail.com)"
+    },
+    {
+      "key": "MAIL_PORT",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port (587 for TLS, 465 for SSL)"
+    },
+    {
+      "key": "MAIL_USERNAME",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Username for SMTP authentication"
+    },
+    {
+      "key": "MAIL_PASSWORD",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Password for SMTP authentication"
+    },
+    {
+      "key": "MAIL_FROM_ADDRESS",
+      "label": "Mail From Address",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Default sender email address for outgoing mail"
+    },
+    {
+      "key": "MAIL_FROM_NAME",
+      "label": "Mail From Name",
+      "default": "Invoice Ninja",
+      "required": false,
+      "type": "text",
+      "description": "Default sender name for outgoing mail"
     }
   ],
   "ports": [

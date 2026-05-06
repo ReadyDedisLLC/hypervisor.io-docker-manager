@@ -6,6 +6,7 @@
   "category": "development",
   "version": "lts",
   "website": "https://jenkins.io",
+  "docs_url": "https://www.jenkins.io/doc/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,32 @@
   ],
   "min_ram_mb": 2048,
   "min_storage_gb": 20,
-  "env": [],
+  "env": [
+    {
+      "key": "JENKINS_OPTS",
+      "label": "Jenkins Options",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional Jenkins command-line arguments (e.g. --prefix=/jenkins)"
+    },
+    {
+      "key": "JAVA_OPTS",
+      "label": "Java Options",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "JVM options for Jenkins (e.g. -Xmx2g -Xms512m for memory limits)"
+    },
+    {
+      "key": "JENKINS_JAVA_OPTS",
+      "label": "Jenkins Java Options",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional Java options passed specifically to the Jenkins process"
+    }
+  ],
   "ports": [
     {
       "container_port": 8080,

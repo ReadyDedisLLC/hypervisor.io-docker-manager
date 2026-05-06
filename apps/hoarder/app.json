@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "release",
   "website": "https://hoarder.app",
+  "docs_url": "https://docs.hoarder.app",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -40,6 +41,47 @@
       "required": false,
       "type": "password",
       "description": "Optional OpenAI key for AI-powered tagging (or use local Ollama)"
+    },
+    {
+      "key": "OLLAMA_BASE_URL",
+      "label": "Ollama Base URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "URL of your Ollama instance for local AI tagging (e.g. http://host:11434)"
+    },
+    {
+      "key": "INFERENCE_TEXT_MODEL",
+      "label": "AI Text Model",
+      "default": "gpt-4o-mini",
+      "required": false,
+      "type": "text",
+      "description": "Model name for AI tagging (OpenAI model or Ollama model name)"
+    },
+    {
+      "key": "INFERENCE_IMAGE_MODEL",
+      "label": "AI Image Model",
+      "default": "gpt-4o-mini",
+      "required": false,
+      "type": "text",
+      "description": "Model name for AI image tagging (OpenAI model or Ollama model name)"
+    },
+    {
+      "key": "DISABLE_SIGNUPS",
+      "label": "Disable Signups",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable new user registrations after creating your account"
+    },
+    {
+      "key": "MAX_ASSET_SIZE_MB",
+      "label": "Max Asset Size (MB)",
+      "default": "4",
+      "required": false,
+      "type": "number",
+      "description": "Maximum file upload size in megabytes"
     }
   ],
   "ports": [

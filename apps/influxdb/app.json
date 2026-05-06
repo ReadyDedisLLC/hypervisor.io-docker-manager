@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "2",
   "website": "https://influxdata.com",
+  "docs_url": "https://docs.influxdata.com/influxdb/v2/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -48,6 +49,23 @@
       "required": true,
       "type": "text",
       "description": "Name of the initial bucket"
+    },
+    {
+      "key": "DOCKER_INFLUXDB_INIT_ADMIN_TOKEN",
+      "label": "Admin API Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Pre-set admin API token for programmatic access (auto-generated if empty)"
+    },
+    {
+      "key": "DOCKER_INFLUXDB_INIT_RETENTION",
+      "label": "Default Retention",
+      "default": "0",
+      "required": false,
+      "type": "text",
+      "description": "Default data retention period for the initial bucket (e.g. 1w, 30d, 0 for infinite)"
     }
   ],
   "ports": [

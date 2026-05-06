@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://cal.com",
+  "docs_url": "https://cal.com/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -50,6 +51,23 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "NEXTAUTH_URL",
+      "label": "NextAuth URL",
+      "default": "http://localhost:3000",
+      "required": true,
+      "type": "text",
+      "description": "URL used by NextAuth for authentication callbacks, should match your application URL"
+    },
+    {
+      "key": "CALCOM_TELEMETRY_DISABLED",
+      "label": "Disable Telemetry",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": ["0", "1"],
+      "description": "Set to 1 to disable anonymous telemetry data collection"
     }
   ],
   "ports": [

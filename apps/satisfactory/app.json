@@ -6,6 +6,7 @@
   "category": "gaming",
   "version": "latest",
   "website": "https://satisfactory.wiki.gg",
+  "docs_url": "https://github.com/wolveix/satisfactory-server/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -31,6 +32,57 @@
       "required": true,
       "type": "number",
       "description": "UDP port for game traffic"
+    },
+    {
+      "key": "AUTOPAUSE",
+      "label": "Auto Pause",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Automatically pause the server when no players are connected"
+    },
+    {
+      "key": "AUTOSAVEINTERVAL",
+      "label": "Auto-Save Interval",
+      "default": "300",
+      "required": false,
+      "type": "number",
+      "description": "Auto-save interval in seconds (default: 300)"
+    },
+    {
+      "key": "CRASHREPORT",
+      "label": "Crash Reporting",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable automatic crash reporting"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for file permissions"
+    },
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for file permissions"
+    },
+    {
+      "key": "STEAMBETA",
+      "label": "Steam Beta Branch",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to true to use the experimental branch of the server"
     }
   ],
   "ports": [

@@ -6,6 +6,7 @@
   "category": "media",
   "version": "develop",
   "website": "https://readarr.com",
+  "docs_url": "https://wiki.servarr.com/readarr",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
   "min_ram_mb": 512,
   "min_storage_gb": 5,
@@ -25,6 +26,14 @@
       "required": false,
       "type": "number",
       "description": "GID for file permissions"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone in TZ database format (e.g. America/New_York)"
     }
   ],
   "ports": [

@@ -9,6 +9,15 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE:-nextcloud}
       MYSQL_USER: ${MYSQL_USER:-nextcloud}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      NEXTCLOUD_ADMIN_USER: ${NEXTCLOUD_ADMIN_USER:-admin}
+      NEXTCLOUD_ADMIN_PASSWORD: ${NEXTCLOUD_ADMIN_PASSWORD}
+      NEXTCLOUD_TRUSTED_DOMAINS: ${NEXTCLOUD_TRUSTED_DOMAINS:-localhost}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_NAME: ${SMTP_NAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-}
+      MAIL_DOMAIN: ${MAIL_DOMAIN:-}
     volumes:
       - nextcloud_data:/var/www/html
     depends_on:

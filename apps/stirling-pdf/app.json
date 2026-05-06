@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://github.com/Stirling-Tools/Stirling-PDF",
+  "docs_url": "https://stirlingpdf.io/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -46,6 +47,26 @@
       "type": "password",
       "generate": true,
       "description": "Initial admin password (only used when security is enabled)"
+    },
+    {
+      "key": "LANGS",
+      "label": "OCR Languages",
+      "default": "en_GB",
+      "required": false,
+      "type": "text",
+      "description": "OCR languages to install, comma-separated (e.g., en_GB,fr_FR,de_DE)"
+    },
+    {
+      "key": "INSTALL_BOOK_AND_ADVANCED_HTML_OPS",
+      "label": "Install Advanced Operations",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Disabled", "value": "false" },
+        { "label": "Enabled", "value": "true" }
+      ],
+      "description": "Install calibre for ebook and advanced HTML conversion support"
     }
   ],
   "ports": [

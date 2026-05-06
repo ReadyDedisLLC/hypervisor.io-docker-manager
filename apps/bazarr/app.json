@@ -6,6 +6,7 @@
   "category": "media",
   "version": "latest",
   "website": "https://bazarr.media",
+  "docs_url": "https://wiki.bazarr.media",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
@@ -25,6 +26,14 @@
       "required": false,
       "type": "number",
       "description": "GID for file permissions"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the container (e.g. America/New_York)"
     }
   ],
   "ports": [

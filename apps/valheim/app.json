@@ -6,6 +6,7 @@
   "category": "gaming",
   "version": "latest",
   "website": "https://github.com/lloesche/valheim-server-docker",
+  "docs_url": "https://github.com/lloesche/valheim-server-docker#environment-variables",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -40,6 +41,58 @@
       "type": "password",
       "generate": true,
       "description": "Password to join the server (minimum 5 characters)"
+    },
+    {
+      "key": "SERVER_PUBLIC",
+      "label": "Public Server",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Whether the server is listed in the public server browser"
+    },
+    {
+      "key": "BACKUPS_ENABLED",
+      "label": "Enable Backups",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Enable automatic world backups"
+    },
+    {
+      "key": "BACKUPS_INTERVAL",
+      "label": "Backup Interval (seconds)",
+      "default": "43200",
+      "required": false,
+      "type": "number",
+      "description": "Time in seconds between automatic backups (default 12 hours)"
+    },
+    {
+      "key": "BACKUPS_MAX_AGE",
+      "label": "Backup Max Age (days)",
+      "default": "3",
+      "required": false,
+      "type": "number",
+      "description": "Maximum age of backup files in days before they are deleted"
+    },
+    {
+      "key": "UPDATE_ON_STARTUP",
+      "label": "Update on Startup",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Automatically update the Valheim server on container startup"
     }
   ],
   "ports": [

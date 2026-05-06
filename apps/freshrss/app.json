@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://freshrss.org",
+  "docs_url": "https://freshrss.github.io/FreshRSS/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 128,
   "min_storage_gb": 2,
@@ -34,6 +35,30 @@
       "required": true,
       "type": "text",
       "description": "Email address for the admin account"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York)"
+    },
+    {
+      "key": "CRON_MIN",
+      "label": "Cron Minutes",
+      "default": "2,32",
+      "required": false,
+      "type": "text",
+      "description": "Cron minutes for automatic feed refresh (e.g. '2,32' for every 30 min)"
+    },
+    {
+      "key": "FRESHRSS_DEFAULT_USER",
+      "label": "Default User",
+      "default": "admin",
+      "required": false,
+      "type": "text",
+      "description": "Name of the default user used for CLI operations"
     }
   ],
   "ports": [{"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]

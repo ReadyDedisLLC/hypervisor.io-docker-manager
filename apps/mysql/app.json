@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "8.0",
   "website": "https://www.mysql.com",
+  "docs_url": "https://dev.mysql.com/doc/refman/8.0/en/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -51,6 +52,14 @@
       "type": "password",
       "generate": true,
       "description": "Password for the additional user"
+    },
+    {
+      "key": "MYSQL_ROOT_HOST",
+      "label": "Root Host",
+      "default": "%",
+      "required": false,
+      "type": "text",
+      "description": "Hostname pattern for root user access (default % allows all hosts)"
     }
   ],
   "ports": [

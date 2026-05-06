@@ -6,6 +6,7 @@
   "category": "analytics",
   "version": "latest",
   "website": "https://umami.is",
+  "docs_url": "https://umami.is/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -35,6 +36,26 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Umami PostgreSQL database"
+    },
+    {
+      "key": "TRACKER_SCRIPT_NAME",
+      "label": "Tracker Script Name",
+      "default": "script.js",
+      "required": false,
+      "type": "text",
+      "description": "Custom name for the tracking script to avoid ad blockers (e.g. custom.js)"
+    },
+    {
+      "key": "DISABLE_LOGIN",
+      "label": "Disable Login",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "No", "value": "0" },
+        { "label": "Yes", "value": "1" }
+      ],
+      "description": "Disable the login page when using external authentication"
     }
   ],
   "ports": [

@@ -6,6 +6,8 @@ services:
       - "${HOST_PORT_80:-80}:80"
       - "${HOST_PORT_443:-443}:443"
       - "${HOST_PORT_443_UDP:-443}:443/udp"
+    environment:
+      CADDY_ADMIN: ${CADDY_ADMIN:-}
     volumes:
       - caddy_data:/data
       - caddy_config:/config

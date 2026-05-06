@@ -5,9 +5,9 @@ services:
     ports:
       - "${HOST_PORT_80:-6875}:80"
     environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: Etc/UTC
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      TZ: ${TZ:-Etc/UTC}
       APP_URL: ${APP_URL:-http://localhost:6875}
       DB_HOST: db
       DB_PORT: 3306

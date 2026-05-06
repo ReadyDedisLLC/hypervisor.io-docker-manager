@@ -6,6 +6,7 @@
   "category": "development",
   "version": "community",
   "website": "https://sonarqube.org",
+  "docs_url": "https://docs.sonarsource.com/sonarqube/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -24,6 +25,30 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "SONAR_WEB_JAVAADDITIONALOPTS",
+      "label": "Web Java Options",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional Java options for the web server process (e.g., -Xmx512m)"
+    },
+    {
+      "key": "SONAR_CE_JAVAADDITIONALOPTS",
+      "label": "Compute Engine Java Options",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional Java options for the Compute Engine process"
+    },
+    {
+      "key": "SONAR_SEARCH_JAVAADDITIONALOPTS",
+      "label": "Search Java Options",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional Java options for the Elasticsearch process"
     }
   ],
   "ports": [

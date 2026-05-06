@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://docs.openclaw.ai",
+  "docs_url": "https://docs.openclaw.ai",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -16,6 +17,71 @@
   "min_ram_mb": 2048,
   "min_storage_gb": 10,
   "env": [
+    {
+      "key": "OPENCLAW_GATEWAY_TOKEN",
+      "label": "Gateway Token",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Gateway authentication token for accessing the OpenClaw web interface"
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Claude models (get from console.anthropic.com)"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for GPT models (get from platform.openai.com)"
+    },
+    {
+      "key": "GEMINI_API_KEY",
+      "label": "Gemini API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Google API key for Gemini AI models (get from aistudio.google.com/api-keys)"
+    },
+    {
+      "key": "XAI_API_KEY",
+      "label": "X API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "X API key for Grok AI models (get from console.x.ai)"
+    },
+    {
+      "key": "NEXOS_API_KEY",
+      "label": "Nexos API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Nexos AI API key for accessing Nexos AI models"
+    },
+    {
+      "key": "WHATSAPP_NUMBER",
+      "label": "WhatsApp Number",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "WhatsApp phone number with country code (e.g., +12345678900)"
+    },
+    {
+      "key": "TELEGRAM_BOT_TOKEN",
+      "label": "Telegram Bot Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Telegram bot token (get from BotFather)"
+    },
     {
       "key": "OPENCLAW_GATEWAY_PORT",
       "label": "Gateway Port",

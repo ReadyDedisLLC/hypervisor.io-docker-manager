@@ -6,6 +6,7 @@
   "category": "cms",
   "version": "latest",
   "website": "https://wordpress.org",
+  "docs_url": "https://developer.wordpress.org/advanced-administration/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -51,6 +52,34 @@
       "type": "password",
       "generate": true,
       "description": "Password for the WordPress database user"
+    },
+    {
+      "key": "WORDPRESS_TABLE_PREFIX",
+      "label": "Table Prefix",
+      "default": "wp_",
+      "required": false,
+      "type": "text",
+      "description": "Database table prefix (change for multiple WordPress installs on one database)"
+    },
+    {
+      "key": "WORDPRESS_DEBUG",
+      "label": "Debug Mode",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Off", "value": "false" },
+        { "label": "On", "value": "true" }
+      ],
+      "description": "Enable WordPress debug mode for development and troubleshooting"
+    },
+    {
+      "key": "WORDPRESS_CONFIG_EXTRA",
+      "label": "Extra wp-config.php",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional PHP code to append to wp-config.php (e.g., define('WP_MEMORY_LIMIT', '256M');)"
     }
   ],
   "ports": [

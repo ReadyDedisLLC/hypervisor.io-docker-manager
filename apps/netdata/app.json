@@ -6,9 +6,63 @@
   "category": "monitoring",
   "version": "stable",
   "website": "https://www.netdata.cloud",
-  "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
+  "docs_url": "https://learn.netdata.cloud/docs/",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
-  "ports": [{"container_port":19999,"default_host_port":19999,"protocol":"tcp","label":"Web UI","configurable":true}]
+  "env": [
+    {
+      "key": "NETDATA_CLAIM_TOKEN",
+      "label": "Claim Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Token to connect this node to Netdata Cloud (found in your Netdata Cloud dashboard under Connect Nodes)"
+    },
+    {
+      "key": "NETDATA_CLAIM_URL",
+      "label": "Claim URL",
+      "default": "https://app.netdata.cloud",
+      "required": false,
+      "type": "text",
+      "description": "Netdata Cloud URL for claiming (usually https://app.netdata.cloud)"
+    },
+    {
+      "key": "NETDATA_CLAIM_ROOMS",
+      "label": "Claim Rooms",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of Netdata Cloud War Room IDs to add this node to"
+    },
+    {
+      "key": "DO_NOT_TRACK",
+      "label": "Disable Telemetry",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "No (allow telemetry)", "value": "0" },
+        { "label": "Yes (disable telemetry)", "value": "1" }
+      ],
+      "description": "Disable anonymous usage statistics reporting"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 19999,
+      "default_host_port": 19999,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
 }

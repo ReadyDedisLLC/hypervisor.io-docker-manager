@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_8090:-8090}:8090"
+    env_file:
+      - .env
     volumes:
       - pocketbase_data:/pb/pb_data
       - pocketbase_public:/pb/pb_public

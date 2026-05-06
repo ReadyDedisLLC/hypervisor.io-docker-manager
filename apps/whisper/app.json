@@ -5,6 +5,8 @@
   "icon": "icon.png",
   "category": "ai",
   "version": "latest",
+  "website": "https://github.com/ahmetoner/whisper-asr-webservice",
+  "docs_url": "https://ahmetoner.github.io/whisper-asr-webservice/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -26,7 +28,9 @@
         { "label": "Base", "value": "base" },
         { "label": "Small", "value": "small" },
         { "label": "Medium", "value": "medium" },
-        { "label": "Large", "value": "large" }
+        { "label": "Large", "value": "large" },
+        { "label": "Large V2", "value": "large-v2" },
+        { "label": "Large V3", "value": "large-v3" }
       ],
       "description": "Whisper model size - larger models are more accurate but require more resources"
     },
@@ -41,6 +45,14 @@
         { "label": "Faster Whisper", "value": "faster_whisper" }
       ],
       "description": "Speech recognition engine to use"
+    },
+    {
+      "key": "ASR_MODEL_PATH",
+      "label": "Model Cache Path",
+      "default": "/root/.cache/whisper",
+      "required": false,
+      "type": "text",
+      "description": "Path where downloaded models are cached inside the container"
     }
   ],
   "ports": [

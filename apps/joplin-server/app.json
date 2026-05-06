@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://joplinapp.org",
+  "docs_url": "https://joplinapp.org/help/install/joplin_server/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -32,6 +33,72 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "APP_PORT",
+      "label": "Application Port",
+      "default": "22300",
+      "required": false,
+      "type": "number",
+      "description": "Port the Joplin Server application listens on inside the container"
+    },
+    {
+      "key": "MAILER_ENABLED",
+      "label": "Enable Email",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": ["0", "1"],
+      "description": "Enable email notifications (set to 1 to enable, requires SMTP configuration)"
+    },
+    {
+      "key": "MAILER_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails"
+    },
+    {
+      "key": "MAILER_PORT",
+      "label": "SMTP Port",
+      "default": "465",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "MAILER_SECURITY",
+      "label": "SMTP Security",
+      "default": "tls",
+      "required": false,
+      "type": "select",
+      "options": ["tls", "starttls", "none"],
+      "description": "SMTP connection security method"
+    },
+    {
+      "key": "MAILER_AUTH_USER",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP authentication username"
+    },
+    {
+      "key": "MAILER_AUTH_PASSWORD",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "SMTP authentication password"
+    },
+    {
+      "key": "MAILER_NOREPLY_EMAIL",
+      "label": "No-Reply Email",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Email address used as the sender for outgoing emails"
     }
   ],
   "ports": [

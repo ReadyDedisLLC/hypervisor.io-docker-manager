@@ -6,6 +6,7 @@
   "category": "gaming",
   "version": "latest",
   "website": "https://github.com/thijsvanloef/palworld-server-docker",
+  "docs_url": "https://palworld-server-docker.loef.dev/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -48,6 +49,75 @@
       "required": false,
       "type": "number",
       "description": "Maximum number of players"
+    },
+    {
+      "key": "SERVER_DESCRIPTION",
+      "label": "Server Description",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Description shown in the server browser"
+    },
+    {
+      "key": "MULTITHREADING",
+      "label": "Multithreading",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable multithreading for improved performance (requires 4+ cores)"
+    },
+    {
+      "key": "COMMUNITY",
+      "label": "Community Server",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to true to make the server appear in the community server list"
+    },
+    {
+      "key": "UPDATE_ON_BOOT",
+      "label": "Update on Boot",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Automatically update the server when it starts"
+    },
+    {
+      "key": "BACKUP_ENABLED",
+      "label": "Backups Enabled",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable automatic world backups"
+    },
+    {
+      "key": "BACKUP_CRON_EXPRESSION",
+      "label": "Backup Schedule",
+      "default": "0 0 * * *",
+      "required": false,
+      "type": "text",
+      "description": "Cron expression for backup schedule (default: daily at midnight)"
+    },
+    {
+      "key": "RCON_ENABLED",
+      "label": "RCON Enabled",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable RCON for remote server administration"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "UTC",
+      "required": false,
+      "type": "text",
+      "description": "Server timezone (e.g. America/New_York, Europe/London)"
     }
   ],
   "ports": [

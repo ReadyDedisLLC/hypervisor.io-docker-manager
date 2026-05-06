@@ -4,6 +4,11 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_5000:-5000}:5000"
+    environment:
+      BASE_URL: ${BASE_URL:-}
+      PLAYWRIGHT_DRIVER_URL: ${PLAYWRIGHT_DRIVER_URL:-}
+      WEBDRIVER_URL: ${WEBDRIVER_URL:-}
+      HIDE_REFERER: ${HIDE_REFERER:-true}
     volumes:
       - changedetection_data:/datastore
 

@@ -5,6 +5,8 @@
   "icon": "icon.png",
   "category": "ai",
   "version": "latest",
+  "website": "https://www.comfy.org",
+  "docs_url": "https://docs.comfy.org",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -14,7 +16,28 @@
   ],
   "min_ram_mb": 8192,
   "min_storage_gb": 30,
-  "env": [],
+  "env": [
+    {
+      "key": "AUTO_UPDATE",
+      "label": "Auto Update",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Automatically update ComfyUI and custom nodes on container start"
+    },
+    {
+      "key": "VENV_PATH",
+      "label": "Virtual Env Path",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Path to Python virtual environment (leave empty for default)"
+    }
+  ],
   "ports": [
     {
       "container_port": 8188,

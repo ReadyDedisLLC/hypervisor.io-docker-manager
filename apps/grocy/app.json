@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://grocy.info",
+  "docs_url": "https://grocy.info/changelog",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -31,6 +32,39 @@
       "required": true,
       "type": "number",
       "description": "Group ID for file permissions"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York)"
+    },
+    {
+      "key": "GROCY_CURRENCY",
+      "label": "Currency",
+      "default": "USD",
+      "required": false,
+      "type": "text",
+      "description": "Default currency code (e.g. USD, EUR, GBP)"
+    },
+    {
+      "key": "GROCY_CULTURE",
+      "label": "Locale",
+      "default": "en",
+      "required": false,
+      "type": "text",
+      "description": "Locale for date/number formatting (e.g. en, de, fr)"
+    },
+    {
+      "key": "GROCY_MODE",
+      "label": "Mode",
+      "default": "production",
+      "required": false,
+      "type": "select",
+      "options": ["production", "dev", "demo"],
+      "description": "Application mode"
     }
   ],
   "ports": [

@@ -6,6 +6,7 @@
   "category": "gaming",
   "version": "latest",
   "website": "https://terraria.org",
+  "docs_url": "https://terraria.wiki.gg/wiki/Server#Server_config_file",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -40,6 +41,41 @@
       "type": "password",
       "generate": true,
       "description": "Password required to join the server"
+    },
+    {
+      "key": "WORLD_SIZE",
+      "label": "World Size",
+      "default": "3",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Small", "value": "1" },
+        { "label": "Medium", "value": "2" },
+        { "label": "Large", "value": "3" }
+      ],
+      "description": "Size of the world to create (1=small, 2=medium, 3=large)"
+    },
+    {
+      "key": "WORLD_DIFFICULTY",
+      "label": "World Difficulty",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Normal", "value": "0" },
+        { "label": "Expert", "value": "1" },
+        { "label": "Master", "value": "2" },
+        { "label": "Journey", "value": "3" }
+      ],
+      "description": "Difficulty of the world (0=normal, 1=expert, 2=master, 3=journey)"
+    },
+    {
+      "key": "MOTD",
+      "label": "Message of the Day",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Message displayed to players when they join the server"
     }
   ],
   "ports": [

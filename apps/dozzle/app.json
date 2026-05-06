@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://dozzle.dev",
+  "docs_url": "https://dozzle.dev/guide/what-is-dozzle",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,32 @@
       "type": "password",
       "generate": true,
       "description": "Password for basic authentication (leave empty to disable auth)"
+    },
+    {
+      "key": "DOZZLE_LEVEL",
+      "label": "Log Level",
+      "default": "info",
+      "required": false,
+      "type": "select",
+      "options": ["debug", "info", "warn", "error"],
+      "description": "Application log level for Dozzle itself"
+    },
+    {
+      "key": "DOZZLE_NO_ANALYTICS",
+      "label": "Disable Analytics",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to true to disable anonymous analytics"
+    },
+    {
+      "key": "DOZZLE_FILTER",
+      "label": "Container Filter",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Docker container filter to limit which containers are shown (e.g., name=myapp)"
     }
   ],
   "ports": [

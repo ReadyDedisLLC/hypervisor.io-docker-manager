@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://standardnotes.com",
+  "docs_url": "https://docs.standardnotes.com/self-hosting/docker",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -42,6 +43,32 @@
       "type": "password",
       "generate": true,
       "description": "Key used for server-side encryption"
+    },
+    {
+      "key": "AUTH_JWT_SECRET",
+      "label": "JWT Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for JWT token signing"
+    },
+    {
+      "key": "VALET_TOKEN_SECRET",
+      "label": "Valet Token Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for valet token generation"
+    },
+    {
+      "key": "FILES_SERVER_URL",
+      "label": "Files Server URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "URL of the files server for file uploads (e.g., https://files.example.com)"
     }
   ],
   "ports": [

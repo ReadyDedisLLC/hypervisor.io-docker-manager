@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://excalidraw.com",
+  "docs_url": "https://docs.excalidraw.com",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",

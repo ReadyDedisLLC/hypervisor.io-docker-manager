@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://prometheus.io",
+  "docs_url": "https://prometheus.io/docs/introduction/overview/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",

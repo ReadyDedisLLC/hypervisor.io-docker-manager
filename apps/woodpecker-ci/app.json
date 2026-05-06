@@ -6,12 +6,120 @@
   "category": "development",
   "version": "latest",
   "website": "https://woodpecker-ci.org",
+  "docs_url": "https://woodpecker-ci.org/docs/intro",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9"],
   "min_ram_mb": 256,
   "min_storage_gb": 5,
   "env": [
-    {"key":"WOODPECKER_OPEN","label":"Open Registration","default":"true","required":true,"type":"select","options":[{"label":"Yes","value":"true"},{"label":"No","value":"false"}],"description":"Allow any user to sign up"},
-    {"key":"WOODPECKER_AGENT_SECRET","label":"Agent Secret","default":"","required":true,"type":"password","generate":true,"description":"Shared secret between server and agents"}
+    {
+      "key": "WOODPECKER_OPEN",
+      "label": "Open Registration",
+      "default": "true",
+      "required": true,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Allow any user to sign up"
+    },
+    {
+      "key": "WOODPECKER_AGENT_SECRET",
+      "label": "Agent Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Shared secret between server and agents"
+    },
+    {
+      "key": "WOODPECKER_HOST",
+      "label": "Server URL",
+      "default": "http://localhost:8000",
+      "required": true,
+      "type": "text",
+      "description": "Full URL where the Woodpecker server is accessible (e.g., https://ci.example.com)"
+    },
+    {
+      "key": "WOODPECKER_ADMIN",
+      "label": "Admin Users",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of admin usernames (matched against forge login names)"
+    },
+    {
+      "key": "WOODPECKER_GITHUB",
+      "label": "Enable GitHub",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Enable GitHub as forge for authentication and repositories"
+    },
+    {
+      "key": "WOODPECKER_GITHUB_CLIENT",
+      "label": "GitHub OAuth Client ID",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "GitHub OAuth app client ID (create at github.com/settings/developers)"
+    },
+    {
+      "key": "WOODPECKER_GITHUB_SECRET",
+      "label": "GitHub OAuth Secret",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "GitHub OAuth app client secret"
+    },
+    {
+      "key": "WOODPECKER_GITEA",
+      "label": "Enable Gitea",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Enable Gitea as forge for authentication and repositories"
+    },
+    {
+      "key": "WOODPECKER_GITEA_URL",
+      "label": "Gitea URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "URL of your Gitea instance (e.g., https://gitea.example.com)"
+    },
+    {
+      "key": "WOODPECKER_GITEA_CLIENT",
+      "label": "Gitea OAuth Client ID",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Gitea OAuth2 application client ID"
+    },
+    {
+      "key": "WOODPECKER_GITEA_SECRET",
+      "label": "Gitea OAuth Secret",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Gitea OAuth2 application client secret"
+    }
   ],
-  "ports": [{"container_port":8000,"default_host_port":8000,"protocol":"tcp","label":"Web UI","configurable":true}]
+  "ports": [
+    {
+      "container_port": 8000,
+      "default_host_port": 8000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
 }

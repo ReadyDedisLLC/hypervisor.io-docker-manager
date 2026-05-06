@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://monicahq.com",
+  "docs_url": "https://github.com/monicahq/monica/tree/main/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -33,6 +34,84 @@
       "type": "password",
       "generate": true,
       "description": "Password for the MySQL database"
+    },
+    {
+      "key": "APP_URL",
+      "label": "Application URL",
+      "default": "http://localhost:8085",
+      "required": false,
+      "type": "text",
+      "description": "Public URL where Monica is accessible"
+    },
+    {
+      "key": "APP_DISABLE_SIGNUP",
+      "label": "Disable Signup",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Disable public user registration"
+    },
+    {
+      "key": "MAIL_MAILER",
+      "label": "Mail Driver",
+      "default": "log",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Log (disabled)", "value": "log" },
+        { "label": "SMTP", "value": "smtp" },
+        { "label": "Sendmail", "value": "sendmail" }
+      ],
+      "description": "Email delivery driver for notifications"
+    },
+    {
+      "key": "MAIL_HOST",
+      "label": "Mail Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname (required if using SMTP mailer)"
+    },
+    {
+      "key": "MAIL_PORT",
+      "label": "Mail Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "MAIL_USERNAME",
+      "label": "Mail Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP authentication username"
+    },
+    {
+      "key": "MAIL_PASSWORD",
+      "label": "Mail Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "SMTP authentication password"
+    },
+    {
+      "key": "MAIL_ENCRYPTION",
+      "label": "Mail Encryption",
+      "default": "tls",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "TLS", "value": "tls" },
+        { "label": "SSL", "value": "ssl" },
+        { "label": "None", "value": "" }
+      ],
+      "description": "SMTP encryption method"
     }
   ],
   "ports": [

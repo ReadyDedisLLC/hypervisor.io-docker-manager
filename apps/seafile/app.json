@@ -6,6 +6,7 @@
   "category": "file-storage",
   "version": "latest",
   "website": "https://seafile.com",
+  "docs_url": "https://manual.seafile.com/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -49,6 +50,15 @@
       "required": true,
       "type": "text",
       "description": "Hostname or IP address of the Seafile server"
+    },
+    {
+      "key": "SEAFILE_SERVER_LETSENCRYPT",
+      "label": "Enable Let's Encrypt",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable automatic SSL certificate via Let's Encrypt (requires valid hostname)"
     }
   ],
   "ports": [

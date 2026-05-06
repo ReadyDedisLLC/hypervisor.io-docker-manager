@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "2",
   "website": "https://js.wiki",
+  "docs_url": "https://docs.requarks.io/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",

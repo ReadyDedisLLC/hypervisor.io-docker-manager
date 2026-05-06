@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "2",
   "website": "https://caddyserver.com",
+  "docs_url": "https://caddyserver.com/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,16 @@
   ],
   "min_ram_mb": 128,
   "min_storage_gb": 1,
-  "env": [],
+  "env": [
+    {
+      "key": "CADDY_ADMIN",
+      "label": "Admin API Address",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Address for the admin API endpoint (e.g. localhost:2019). Leave empty to use default."
+    }
+  ],
   "ports": [
     {
       "container_port": 80,

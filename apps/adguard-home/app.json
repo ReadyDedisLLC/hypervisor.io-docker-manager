@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "latest",
   "website": "https://adguard.com/adguard-home.html",
+  "docs_url": "https://github.com/AdguardTeam/AdGuardHome/wiki/Docker",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",

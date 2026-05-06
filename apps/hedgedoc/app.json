@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://hedgedoc.org",
+  "docs_url": "https://docs.hedgedoc.org",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -41,6 +42,51 @@
       "required": false,
       "type": "text",
       "description": "The domain name for your HedgeDoc instance"
+    },
+    {
+      "key": "CMD_PROTOCOL_USESSL",
+      "label": "Use SSL",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to true if your instance is served over HTTPS"
+    },
+    {
+      "key": "CMD_URL_ADDPORT",
+      "label": "Add Port to URL",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to false if using a reverse proxy on standard ports"
+    },
+    {
+      "key": "CMD_ALLOW_ANONYMOUS",
+      "label": "Allow Anonymous Access",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow anonymous users to view and create notes"
+    },
+    {
+      "key": "CMD_ALLOW_ANONYMOUS_EDITS",
+      "label": "Allow Anonymous Edits",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow anonymous users to edit existing notes"
+    },
+    {
+      "key": "CMD_ALLOW_EMAIL_REGISTER",
+      "label": "Allow Email Registration",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow users to register via email"
     }
   ],
   "ports": [

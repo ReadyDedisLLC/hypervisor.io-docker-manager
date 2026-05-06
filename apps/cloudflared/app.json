@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "latest",
   "website": "https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/",
+  "docs_url": "https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -22,7 +23,46 @@
       "default": "",
       "required": true,
       "type": "password",
-      "description": "Token from Cloudflare Zero Trust dashboard"
+      "description": "Token from Cloudflare Zero Trust dashboard (Zero Trust > Networks > Tunnels > Create)"
+    },
+    {
+      "key": "NO_AUTOUPDATE",
+      "label": "Disable Auto-Update",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes (recommended)", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Disable automatic cloudflared updates"
+    },
+    {
+      "key": "TUNNEL_LOGLEVEL",
+      "label": "Log Level",
+      "default": "info",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Debug", "value": "debug" },
+        { "label": "Info", "value": "info" },
+        { "label": "Warn", "value": "warn" },
+        { "label": "Error", "value": "error" }
+      ],
+      "description": "Logging verbosity"
+    },
+    {
+      "key": "TUNNEL_TRANSPORT_PROTOCOL",
+      "label": "Transport Protocol",
+      "default": "auto",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Auto", "value": "auto" },
+        { "label": "QUIC", "value": "quic" },
+        { "label": "HTTP/2", "value": "http2" }
+      ],
+      "description": "Transport protocol for the tunnel connection"
     }
   ],
   "ports": []

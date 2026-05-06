@@ -6,11 +6,17 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://github.com/alexjustesen/speedtest-tracker",
+  "docs_url": "https://docs.speedtest-tracker.dev",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
   "env": [
-    {"key":"APP_KEY","label":"App Key","default":"","required":true,"type":"password","generate":true,"description":"Laravel application key"}
+    {"key":"APP_KEY","label":"App Key","default":"","required":true,"type":"password","generate":true,"description":"Laravel application key (must start with 'base64:')"},
+    {"key":"PUID","label":"User ID","default":"1000","required":false,"type":"number","description":"UID for file permission mapping (run 'id -u' to find yours)"},
+    {"key":"PGID","label":"Group ID","default":"1000","required":false,"type":"number","description":"GID for file permission mapping (run 'id -g' to find yours)"},
+    {"key":"TZ","label":"Timezone","default":"Etc/UTC","required":false,"type":"text","description":"Timezone in tz database format (e.g., America/New_York)"},
+    {"key":"SPEEDTEST_SCHEDULE","label":"Speedtest Schedule","default":"","required":false,"type":"text","description":"Cron expression for scheduled speedtests (e.g., '0 */6 * * *' for every 6 hours)"},
+    {"key":"DISPLAY_TIMEZONE","label":"Display Timezone","default":"Etc/UTC","required":false,"type":"text","description":"Timezone used for displaying results in the UI"}
   ],
   "ports": [{"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
 }

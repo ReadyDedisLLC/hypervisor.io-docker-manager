@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "6.0",
   "website": "https://graylog.org",
+  "docs_url": "https://go2docs.graylog.org/current/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -41,6 +42,39 @@
       "required": true,
       "type": "text",
       "description": "Public URI of the Graylog web interface"
+    },
+    {
+      "key": "GRAYLOG_ROOT_USERNAME",
+      "label": "Root Username",
+      "default": "admin",
+      "required": false,
+      "type": "text",
+      "description": "Username for the Graylog root admin account"
+    },
+    {
+      "key": "GRAYLOG_ROOT_TIMEZONE",
+      "label": "Root Timezone",
+      "default": "UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the root user (e.g. America/New_York)"
+    },
+    {
+      "key": "GRAYLOG_HTTP_BIND_ADDRESS",
+      "label": "HTTP Bind Address",
+      "default": "0.0.0.0:9000",
+      "required": false,
+      "type": "text",
+      "description": "Network interface and port for the Graylog HTTP server"
+    },
+    {
+      "key": "GRAYLOG_IS_LEADER",
+      "label": "Is Leader Node",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Whether this node is the leader in a multi-node setup"
     }
   ],
   "ports": [

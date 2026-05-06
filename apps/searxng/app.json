@@ -6,9 +6,50 @@
   "category": "networking",
   "version": "latest",
   "website": "https://docs.searxng.org",
+  "docs_url": "https://docs.searxng.org/admin/installation-docker.html",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "SEARXNG_BASE_URL",
+      "label": "Base URL",
+      "default": "http://localhost:8080",
+      "required": false,
+      "type": "text",
+      "description": "Public URL of the SearXNG instance (e.g., https://search.example.com)"
+    },
+    {
+      "key": "SEARXNG_SECRET",
+      "label": "Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key used for cryptographic signing"
+    },
+    {
+      "key": "INSTANCE_NAME",
+      "label": "Instance Name",
+      "default": "SearXNG",
+      "required": false,
+      "type": "text",
+      "description": "Name displayed in the browser title and header"
+    },
+    {
+      "key": "AUTOCOMPLETE",
+      "label": "Autocomplete Provider",
+      "default": "",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Disabled", "value": "" },
+        { "label": "Google", "value": "google" },
+        { "label": "DuckDuckGo", "value": "duckduckgo" },
+        { "label": "Wikipedia", "value": "wikipedia" }
+      ],
+      "description": "Search autocomplete provider"
+    }
+  ],
   "ports": [{"container_port":8080,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
 }

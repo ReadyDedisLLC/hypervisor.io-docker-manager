@@ -6,9 +6,35 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://github.com/TriliumNext/Notes",
+  "docs_url": "https://triliumnext.github.io/Docs/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "TRILIUM_DATA_DIR",
+      "label": "Data Directory",
+      "default": "/home/node/trilium-data",
+      "required": false,
+      "type": "text",
+      "description": "Path inside the container where Trilium stores its data"
+    },
+    {
+      "key": "TRILIUM_PORT",
+      "label": "Internal Port",
+      "default": "8080",
+      "required": false,
+      "type": "number",
+      "description": "Port Trilium listens on inside the container"
+    },
+    {
+      "key": "NODE_ENV",
+      "label": "Node Environment",
+      "default": "production",
+      "required": false,
+      "type": "text",
+      "description": "Node.js environment mode (production recommended)"
+    }
+  ],
   "ports": [{"container_port":8080,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
 }

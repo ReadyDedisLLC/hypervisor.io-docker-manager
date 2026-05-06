@@ -6,6 +6,7 @@
   "category": "development",
   "version": "latest",
   "website": "https://about.gitlab.com",
+  "docs_url": "https://docs.gitlab.com/ee/install/docker/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -32,6 +33,23 @@
       "required": true,
       "type": "text",
       "description": "Public URL used to access GitLab"
+    },
+    {
+      "key": "GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN",
+      "label": "Runner Registration Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Token used to register GitLab CI runners"
+    },
+    {
+      "key": "GITLAB_OMNIBUS_CONFIG",
+      "label": "Omnibus Config",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional GitLab Omnibus configuration in Ruby syntax"
     }
   ],
   "ports": [

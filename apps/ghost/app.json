@@ -6,6 +6,7 @@
   "category": "cms",
   "version": "5",
   "website": "https://ghost.org",
+  "docs_url": "https://ghost.org/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,47 @@
       "type": "password",
       "generate": true,
       "description": "Root password for the MySQL database"
+    },
+    {
+      "key": "mail__transport",
+      "label": "Mail Transport",
+      "default": "Direct",
+      "required": false,
+      "type": "select",
+      "options": ["Direct", "SMTP"],
+      "description": "Email transport method (Direct or SMTP)"
+    },
+    {
+      "key": "mail__options__host",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails"
+    },
+    {
+      "key": "mail__options__port",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "mail__options__auth__user",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP authentication username"
+    },
+    {
+      "key": "mail__options__auth__pass",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "SMTP authentication password"
     }
   ],
   "ports": [

@@ -5,6 +5,10 @@ services:
     ports:
       - "${HOST_PORT_8080:-8089}:8080"
       - "${HOST_PORT_50000:-50000}:50000"
+    environment:
+      JENKINS_OPTS: ${JENKINS_OPTS:-}
+      JAVA_OPTS: ${JAVA_OPTS:-}
+      JENKINS_JAVA_OPTS: ${JENKINS_JAVA_OPTS:-}
     volumes:
       - jenkins_home:/var/jenkins_home
 

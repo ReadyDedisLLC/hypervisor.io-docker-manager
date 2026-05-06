@@ -6,6 +6,7 @@
   "category": "communication",
   "version": "latest",
   "website": "https://matrix.org",
+  "docs_url": "https://element-hq.github.io/synapse/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -32,6 +33,66 @@
       "type": "select",
       "options": ["yes", "no"],
       "description": "Whether to report anonymous usage statistics"
+    },
+    {
+      "key": "SYNAPSE_LOG_LEVEL",
+      "label": "Log Level",
+      "default": "INFO",
+      "required": false,
+      "type": "select",
+      "options": ["DEBUG", "INFO", "WARNING", "ERROR"],
+      "description": "Logging verbosity level for Synapse"
+    },
+    {
+      "key": "SYNAPSE_REGISTRATION_SHARED_SECRET",
+      "label": "Registration Shared Secret",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Shared secret for registering new users via the admin API"
+    },
+    {
+      "key": "SYNAPSE_NO_TLS",
+      "label": "Disable TLS",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable TLS on the Synapse listener (use if behind a reverse proxy)"
+    },
+    {
+      "key": "SYNAPSE_ENABLE_REGISTRATION",
+      "label": "Enable Registration",
+      "default": "no",
+      "required": false,
+      "type": "select",
+      "options": ["yes", "no"],
+      "description": "Allow new users to register accounts"
+    },
+    {
+      "key": "UID",
+      "label": "User ID",
+      "default": "991",
+      "required": false,
+      "type": "number",
+      "description": "UID for the Synapse process"
+    },
+    {
+      "key": "GID",
+      "label": "Group ID",
+      "default": "991",
+      "required": false,
+      "type": "number",
+      "description": "GID for the Synapse process"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the container (e.g. America/New_York)"
     }
   ],
   "ports": [

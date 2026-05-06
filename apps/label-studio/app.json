@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://labelstud.io",
+  "docs_url": "https://labelstud.io/guide/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -32,6 +33,49 @@
       "type": "password",
       "generate": true,
       "description": "Password for the initial admin account"
+    },
+    {
+      "key": "LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK",
+      "label": "Disable Public Signup",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable public signup; users can only register with an invitation link"
+    },
+    {
+      "key": "LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED",
+      "label": "Enable Local File Serving",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow serving local files for labeling tasks (enable if importing from local storage)"
+    },
+    {
+      "key": "LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT",
+      "label": "Local Files Root Path",
+      "default": "/label-studio/files",
+      "required": false,
+      "type": "text",
+      "description": "Root directory for local file serving (must be an absolute path inside the container)"
+    },
+    {
+      "key": "DJANGO_DB",
+      "label": "Database Backend",
+      "default": "default",
+      "required": false,
+      "type": "select",
+      "options": ["default", "postgresql"],
+      "description": "Database backend to use (default is SQLite, use postgresql for production)"
+    },
+    {
+      "key": "LABEL_STUDIO_HOST",
+      "label": "External Host URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "External URL where Label Studio is accessible (e.g. https://label-studio.example.com)"
     }
   ],
   "ports": [

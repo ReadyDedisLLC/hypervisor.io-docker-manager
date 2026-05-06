@@ -6,6 +6,7 @@
   "category": "media",
   "version": "release",
   "website": "https://immich.app",
+  "docs_url": "https://immich.app/docs/overview/introduction",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -24,6 +25,30 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Immich PostgreSQL database"
+    },
+    {
+      "key": "IMMICH_MACHINE_LEARNING_URL",
+      "label": "Machine Learning URL",
+      "default": "http://immich-machine-learning:3003",
+      "required": false,
+      "type": "text",
+      "description": "URL of the Immich machine learning service"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "America/New_York",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the container (e.g. America/New_York, Europe/London)"
+    },
+    {
+      "key": "UPLOAD_LOCATION",
+      "label": "Upload Location",
+      "default": "./library",
+      "required": false,
+      "type": "text",
+      "description": "Path on host for storing uploaded photos and videos"
     }
   ],
   "ports": [

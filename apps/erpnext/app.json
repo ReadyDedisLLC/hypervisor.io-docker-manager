@@ -1,0 +1,65 @@
+{
+  "name": "ERPNext",
+  "slug": "erpnext",
+  "description": "Open-source ERP system for accounting, CRM, HR, manufacturing, supply chain, and project management.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "v16",
+  "website": "https://erpnext.com",
+  "docs_url": "https://docs.erpnext.com",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-11",
+    "debian-12",
+    "rocky-9",
+    "almalinux-9",
+    "centos-stream-9"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "DB_PASSWORD",
+      "label": "MariaDB Root Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Root password for the MariaDB database"
+    },
+    {
+      "key": "ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "admin",
+      "required": false,
+      "type": "password",
+      "description": "Password for the Administrator account"
+    },
+    {
+      "key": "SITE_NAME",
+      "label": "Site Name",
+      "default": "erpnext",
+      "required": false,
+      "type": "text",
+      "description": "ERPNext site name (used as hostname)"
+    },
+    {
+      "key": "ERPNEXT_VERSION",
+      "label": "ERPNext Version",
+      "default": "v16.17.0",
+      "required": false,
+      "type": "text",
+      "description": "ERPNext Docker image version tag"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

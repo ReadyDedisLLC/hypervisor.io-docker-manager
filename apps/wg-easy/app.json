@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "latest",
   "website": "https://github.com/wg-easy/wg-easy",
+  "docs_url": "https://github.com/wg-easy/wg-easy/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -32,6 +33,54 @@
       "required": true,
       "type": "password",
       "description": "Bcrypt password hash for the web UI (generate with: htpasswd -nbBC 10 '' 'yourpassword' | cut -d: -f2)"
+    },
+    {
+      "key": "WG_PORT",
+      "label": "WireGuard Listen Port",
+      "default": "51820",
+      "required": false,
+      "type": "number",
+      "description": "UDP port WireGuard listens on for VPN connections"
+    },
+    {
+      "key": "WG_DEFAULT_DNS",
+      "label": "Client DNS Server",
+      "default": "1.1.1.1",
+      "required": false,
+      "type": "text",
+      "description": "DNS server assigned to VPN clients (e.g., 1.1.1.1, 8.8.8.8, or your Pi-hole IP)"
+    },
+    {
+      "key": "WG_DEFAULT_ADDRESS",
+      "label": "Client Address Range",
+      "default": "10.8.0.x",
+      "required": false,
+      "type": "text",
+      "description": "IP address range for VPN clients (x is replaced with client number)"
+    },
+    {
+      "key": "WG_ALLOWED_IPS",
+      "label": "Allowed IPs",
+      "default": "0.0.0.0/0, ::/0",
+      "required": false,
+      "type": "text",
+      "description": "Allowed IP ranges for client traffic (0.0.0.0/0 routes all traffic through VPN)"
+    },
+    {
+      "key": "WG_PERSISTENT_KEEPALIVE",
+      "label": "Persistent Keepalive",
+      "default": "0",
+      "required": false,
+      "type": "number",
+      "description": "Keepalive interval in seconds (25 recommended for NAT traversal, 0 to disable)"
+    },
+    {
+      "key": "LANG",
+      "label": "UI Language",
+      "default": "en",
+      "required": false,
+      "type": "text",
+      "description": "Web UI language code (e.g., en, de, fr, zh-tw)"
     }
   ],
   "ports": [

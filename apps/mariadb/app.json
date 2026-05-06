@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "11",
   "website": "https://mariadb.org",
+  "docs_url": "https://mariadb.com/kb/en/documentation/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -51,6 +52,41 @@
       "type": "password",
       "generate": true,
       "description": "Password for the additional user"
+    },
+    {
+      "key": "MARIADB_AUTO_UPGRADE",
+      "label": "Auto Upgrade",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Automatically run mysql_upgrade on startup when major version changes"
+    },
+    {
+      "key": "MYSQL_ALLOW_EMPTY_PASSWORD",
+      "label": "Allow Empty Password",
+      "default": "no",
+      "required": false,
+      "type": "select",
+      "options": ["yes", "no"],
+      "description": "Allow the root account to have an empty password (not recommended for production)"
+    },
+    {
+      "key": "MARIADB_INITDB_SKIP_TZINFO",
+      "label": "Skip Timezone Import",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Skip importing timezone data during initialization"
+    },
+    {
+      "key": "MYSQL_ROOT_HOST",
+      "label": "Root Host",
+      "default": "%",
+      "required": false,
+      "type": "text",
+      "description": "Hostname/IP mask for root remote access (default allows all hosts)"
     }
   ],
   "ports": [

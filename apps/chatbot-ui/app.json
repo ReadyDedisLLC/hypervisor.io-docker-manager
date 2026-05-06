@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "main",
   "website": "https://chatbotui.com",
+  "docs_url": "https://github.com/mckaywrigley/chatbot-ui#readme",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -23,6 +24,39 @@
       "required": true,
       "type": "password",
       "description": "API key from OpenAI for accessing GPT models"
+    },
+    {
+      "key": "OPENAI_API_HOST",
+      "label": "OpenAI API Host",
+      "default": "https://api.openai.com",
+      "required": false,
+      "type": "text",
+      "description": "Custom OpenAI API endpoint URL for compatible providers"
+    },
+    {
+      "key": "OPENAI_API_TYPE",
+      "label": "OpenAI API Type",
+      "default": "openai",
+      "required": false,
+      "type": "select",
+      "options": ["openai", "azure"],
+      "description": "API type to use (openai or azure for Azure OpenAI Service)"
+    },
+    {
+      "key": "OPENAI_ORGANIZATION",
+      "label": "OpenAI Organization",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "OpenAI organization ID if you belong to multiple organizations"
+    },
+    {
+      "key": "DEFAULT_MODEL",
+      "label": "Default Model",
+      "default": "gpt-4",
+      "required": false,
+      "type": "text",
+      "description": "Default OpenAI model to use for conversations (e.g. gpt-4, gpt-3.5-turbo)"
     }
   ],
   "ports": [

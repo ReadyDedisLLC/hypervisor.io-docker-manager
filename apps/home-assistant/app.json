@@ -6,6 +6,7 @@
   "category": "automation",
   "version": "stable",
   "website": "https://www.home-assistant.io",
+  "docs_url": "https://www.home-assistant.io/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -25,6 +26,15 @@
       "required": true,
       "type": "text",
       "description": "Timezone (e.g. America/New_York, Europe/London)"
+    },
+    {
+      "key": "DISABLE_JEMALLOC",
+      "label": "Disable Jemalloc",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable jemalloc memory allocator if experiencing issues"
     }
   ],
   "ports": [

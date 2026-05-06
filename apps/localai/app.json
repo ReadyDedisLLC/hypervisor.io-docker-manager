@@ -5,6 +5,8 @@
   "icon": "icon.png",
   "category": "ai",
   "version": "latest-cpu",
+  "website": "https://localai.io",
+  "docs_url": "https://localai.io/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -14,7 +16,74 @@
   ],
   "min_ram_mb": 4096,
   "min_storage_gb": 20,
-  "env": [],
+  "env": [
+    {
+      "key": "MODELS_PATH",
+      "label": "Models Path",
+      "default": "/models",
+      "required": false,
+      "type": "text",
+      "description": "Path where AI models are stored inside the container"
+    },
+    {
+      "key": "THREADS",
+      "label": "CPU Threads",
+      "default": "4",
+      "required": false,
+      "type": "number",
+      "description": "Number of CPU threads to use for inference"
+    },
+    {
+      "key": "CONTEXT_SIZE",
+      "label": "Context Size",
+      "default": "512",
+      "required": false,
+      "type": "number",
+      "description": "Default context size for loaded models"
+    },
+    {
+      "key": "DEBUG",
+      "label": "Debug Mode",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable debug logging output"
+    },
+    {
+      "key": "CORS",
+      "label": "Enable CORS",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow cross-origin requests to the API"
+    },
+    {
+      "key": "GALLERIES",
+      "label": "Model Galleries",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "JSON array of model gallery URLs for browsing and installing models"
+    },
+    {
+      "key": "PRELOAD_MODELS",
+      "label": "Preload Models",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "JSON array of model definitions to preload at startup"
+    },
+    {
+      "key": "API_KEY",
+      "label": "API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key to protect access to the LocalAI endpoints"
+    }
+  ],
   "ports": [
     {
       "container_port": 8080,

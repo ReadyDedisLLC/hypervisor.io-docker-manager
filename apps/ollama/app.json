@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://ollama.com",
+  "docs_url": "https://github.com/ollama/ollama/blob/main/docs/faq.md",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,56 @@
   ],
   "min_ram_mb": 4096,
   "min_storage_gb": 20,
-  "env": [],
+  "env": [
+    {
+      "key": "OLLAMA_HOST",
+      "label": "Listen Address",
+      "default": "0.0.0.0:11434",
+      "required": false,
+      "type": "text",
+      "description": "Address and port Ollama binds to (default 127.0.0.1:11434, set 0.0.0.0 for Docker)"
+    },
+    {
+      "key": "OLLAMA_MODELS",
+      "label": "Models Directory",
+      "default": "/root/.ollama/models",
+      "required": false,
+      "type": "text",
+      "description": "Directory path where Ollama stores downloaded models"
+    },
+    {
+      "key": "OLLAMA_NUM_PARALLEL",
+      "label": "Parallel Requests",
+      "default": "1",
+      "required": false,
+      "type": "number",
+      "description": "Maximum number of parallel inference requests"
+    },
+    {
+      "key": "OLLAMA_MAX_LOADED_MODELS",
+      "label": "Max Loaded Models",
+      "default": "1",
+      "required": false,
+      "type": "number",
+      "description": "Maximum number of models loaded concurrently in memory"
+    },
+    {
+      "key": "OLLAMA_KEEP_ALIVE",
+      "label": "Keep Alive Duration",
+      "default": "5m",
+      "required": false,
+      "type": "text",
+      "description": "How long to keep a model loaded in memory after last request (e.g. 5m, 1h, 0 to unload immediately)"
+    },
+    {
+      "key": "OLLAMA_ORIGINS",
+      "label": "Allowed Origins",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of allowed CORS origins (e.g. http://localhost:3000)"
+    }
+  ],
   "ports": [
     {
       "container_port": 11434,

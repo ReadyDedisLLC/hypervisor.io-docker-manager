@@ -6,6 +6,7 @@
   "category": "automation",
   "version": "latest",
   "website": "https://containrrr.dev/watchtower",
+  "docs_url": "https://containrrr.dev/watchtower/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -37,6 +38,74 @@
       "required": false,
       "type": "number",
       "description": "How often to check for updates in seconds (default: 24 hours)"
+    },
+    {
+      "key": "WATCHTOWER_INCLUDE_STOPPED",
+      "label": "Include Stopped Containers",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Also update stopped containers"
+    },
+    {
+      "key": "WATCHTOWER_REVIVE_STOPPED",
+      "label": "Revive Stopped Containers",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Start stopped containers after updating"
+    },
+    {
+      "key": "WATCHTOWER_SCHEDULE",
+      "label": "Cron Schedule",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Cron expression for update schedule (overrides poll interval, e.g., '0 0 4 * * *' for 4 AM daily)"
+    },
+    {
+      "key": "WATCHTOWER_NOTIFICATIONS",
+      "label": "Notification Type",
+      "default": "",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "None", "value": "" },
+        { "label": "Email", "value": "email" },
+        { "label": "Slack", "value": "slack" },
+        { "label": "Microsoft Teams", "value": "msteams" },
+        { "label": "Gotify", "value": "gotify" },
+        { "label": "Shoutrrr", "value": "shoutrrr" }
+      ],
+      "description": "Notification service to use when containers are updated"
+    },
+    {
+      "key": "WATCHTOWER_NOTIFICATION_URL",
+      "label": "Notification URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Shoutrrr notification URL (e.g., slack://token@channel, smtp://user:pass@host:port)"
+    },
+    {
+      "key": "WATCHTOWER_LABEL_ENABLE",
+      "label": "Label Filtering",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Only update containers with 'com.centurylinklabs.watchtower.enable=true' label"
     }
   ],
   "ports": [],

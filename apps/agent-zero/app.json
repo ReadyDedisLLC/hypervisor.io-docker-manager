@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://www.agent-zero.ai",
+  "docs_url": "https://github.com/frdel/agent-zero/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -53,6 +54,57 @@
       "required": false,
       "type": "password",
       "description": "Anthropic API key (required if using Anthropic provider)"
+    },
+    {
+      "key": "API_KEY_GOOGLE",
+      "label": "Google AI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Google AI API key (required if using Google provider)"
+    },
+    {
+      "key": "A0_SET_UTILITY_MODEL_PROVIDER",
+      "label": "Utility Model Provider",
+      "default": "openai",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "OpenAI", "value": "openai" },
+        { "label": "Anthropic", "value": "anthropic" },
+        { "label": "Ollama (local)", "value": "ollama" },
+        { "label": "Google", "value": "google" }
+      ],
+      "description": "LLM provider for the utility/helper model"
+    },
+    {
+      "key": "A0_SET_UTILITY_MODEL_NAME",
+      "label": "Utility Model Name",
+      "default": "gpt-4o-mini",
+      "required": false,
+      "type": "text",
+      "description": "Model name for utility tasks (e.g. gpt-4o-mini, claude-haiku)"
+    },
+    {
+      "key": "A0_SET_EMBEDDING_MODEL_PROVIDER",
+      "label": "Embedding Model Provider",
+      "default": "openai",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "OpenAI", "value": "openai" },
+        { "label": "Ollama (local)", "value": "ollama" },
+        { "label": "Hugging Face", "value": "huggingface" }
+      ],
+      "description": "Provider for the text embedding model used by memory"
+    },
+    {
+      "key": "A0_SET_EMBEDDING_MODEL_NAME",
+      "label": "Embedding Model Name",
+      "default": "text-embedding-3-small",
+      "required": false,
+      "type": "text",
+      "description": "Embedding model name (e.g. text-embedding-3-small)"
     }
   ],
   "ports": [

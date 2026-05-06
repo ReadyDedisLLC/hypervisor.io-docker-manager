@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://www.bookstackapp.com",
+  "docs_url": "https://www.bookstackapp.com/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,30 @@
       "type": "password",
       "generate": true,
       "description": "Password for the MariaDB database"
+    },
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for file permissions"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for file permissions"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the container (e.g. America/New_York)"
     }
   ],
   "ports": [

@@ -6,6 +6,7 @@
   "category": "security",
   "version": "latest",
   "website": "https://github.com/dani-garcia/vaultwarden",
+  "docs_url": "https://github.com/dani-garcia/vaultwarden/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -38,6 +39,62 @@
         { "label": "No", "value": "false" }
       ],
       "description": "Whether new users can register accounts"
+    },
+    {
+      "key": "DOMAIN",
+      "label": "Domain URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Full URL where Vaultwarden is accessible (e.g. https://vault.example.com). Required for email and WebSocket features."
+    },
+    {
+      "key": "INVITATIONS_ALLOWED",
+      "label": "Allow Invitations",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Whether existing users can invite new users even when signups are disabled"
+    },
+    {
+      "key": "WEBSOCKET_ENABLED",
+      "label": "Enable WebSocket",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Enable WebSocket notifications for real-time sync between clients"
+    },
+    {
+      "key": "SENDS_ALLOWED",
+      "label": "Allow Sends",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Whether users can use the Bitwarden Send feature to share secrets"
+    },
+    {
+      "key": "SHOW_PASSWORD_HINT",
+      "label": "Show Password Hint",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Whether to show password hints on the login page"
     }
   ],
   "ports": [

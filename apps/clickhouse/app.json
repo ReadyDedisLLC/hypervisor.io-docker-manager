@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "latest",
   "website": "https://clickhouse.com",
+  "docs_url": "https://clickhouse.com/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -40,6 +41,15 @@
       "required": true,
       "type": "text",
       "description": "Name of the default database to create"
+    },
+    {
+      "key": "CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT",
+      "label": "Enable Access Management",
+      "default": "1",
+      "required": false,
+      "type": "select",
+      "options": ["0", "1"],
+      "description": "Set to 1 to enable SQL-driven access management and user creation for the default user"
     }
   ],
   "ports": [

@@ -6,6 +6,7 @@
   "category": "media",
   "version": "latest",
   "website": "https://www.navidrome.org",
+  "docs_url": "https://www.navidrome.org/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,84 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "ND_SCANSCHEDULE",
+      "label": "Scan Schedule",
+      "default": "1h",
+      "required": false,
+      "type": "text",
+      "description": "How often to scan for new music (e.g. 1h, 30m, or 0 to disable)"
+    },
+    {
+      "key": "ND_LOGLEVEL",
+      "label": "Log Level",
+      "default": "info",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Error", "value": "error" },
+        { "label": "Warn", "value": "warn" },
+        { "label": "Info", "value": "info" },
+        { "label": "Debug", "value": "debug" },
+        { "label": "Trace", "value": "trace" }
+      ],
+      "description": "Logging verbosity level"
+    },
+    {
+      "key": "ND_SESSIONTIMEOUT",
+      "label": "Session Timeout",
+      "default": "24h",
+      "required": false,
+      "type": "text",
+      "description": "Duration before inactive sessions expire (e.g. 24h, 30m)"
+    },
+    {
+      "key": "ND_BASEURL",
+      "label": "Base URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Base URL path if running behind a reverse proxy (e.g. /music)"
+    },
+    {
+      "key": "ND_ENABLETRANSCODINGCONFIG",
+      "label": "Enable Transcoding Config",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Allow users to configure transcoding from the web UI"
+    },
+    {
+      "key": "ND_ENABLESHARING",
+      "label": "Enable Sharing",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Enable sharing tracks and albums via public links"
+    },
+    {
+      "key": "ND_DEFAULTTHEME",
+      "label": "Default Theme",
+      "default": "Dark",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Dark", "value": "Dark" },
+        { "label": "Light", "value": "Light" },
+        { "label": "Auto", "value": "Auto" }
+      ],
+      "description": "Default UI theme for new users"
+    }
+  ],
   "ports": [
     {
       "container_port": 4533,

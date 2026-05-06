@@ -6,6 +6,7 @@
   "category": "media",
   "version": "latest",
   "website": "https://www.qbittorrent.org",
+  "docs_url": "https://github.com/qbittorrent/qBittorrent/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,48 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for file permissions"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for file permissions"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone in TZ database format (e.g. America/New_York)"
+    },
+    {
+      "key": "WEBUI_PORT",
+      "label": "Web UI Port",
+      "default": "8080",
+      "required": false,
+      "type": "number",
+      "description": "Internal port for the qBittorrent web interface"
+    },
+    {
+      "key": "TORRENTING_PORT",
+      "label": "Torrenting Port",
+      "default": "6881",
+      "required": false,
+      "type": "number",
+      "description": "Port used for incoming torrent connections"
+    }
+  ],
   "ports": [
     {
       "container_port": 8080,

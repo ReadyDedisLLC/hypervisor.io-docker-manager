@@ -6,10 +6,41 @@
   "category": "media",
   "version": "latest",
   "website": "https://audiobookshelf.org",
+  "docs_url": "https://www.audiobookshelf.org/docs",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
   "min_ram_mb": 512,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York)"
+    },
+    {
+      "key": "JWT_SECRET_KEY",
+      "label": "JWT Secret Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for signing JWT tokens (auto-generated if left empty)"
+    },
+    {
+      "key": "ALLOW_CORS",
+      "label": "Allow CORS",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "No", "value": "0" },
+        { "label": "Yes", "value": "1" }
+      ],
+      "description": "Enable Cross-Origin Resource Sharing for API access from other domains"
+    }
+  ],
   "ports": [
     {
       "container_port": 80,

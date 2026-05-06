@@ -6,6 +6,7 @@
   "category": "media",
   "version": "latest",
   "website": "https://jellyfin.org",
+  "docs_url": "https://jellyfin.org/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,24 @@
   ],
   "min_ram_mb": 1024,
   "min_storage_gb": 20,
-  "env": [],
+  "env": [
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York)"
+    },
+    {
+      "key": "JELLYFIN_PublishedServerUrl",
+      "label": "Published Server URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "The public URL of your Jellyfin server, used for DLNA and client discovery (e.g. http://your-server-ip:8096)"
+    }
+  ],
   "ports": [
     {
       "container_port": 8096,

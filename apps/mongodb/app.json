@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "7",
   "website": "https://www.mongodb.com",
+  "docs_url": "https://www.mongodb.com/docs/manual/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -33,6 +34,14 @@
       "type": "password",
       "generate": true,
       "description": "MongoDB root admin password"
+    },
+    {
+      "key": "MONGO_INITDB_DATABASE",
+      "label": "Initial Database",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Name of a database to create on first startup"
     }
   ],
   "ports": [

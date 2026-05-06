@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "7",
   "website": "https://redis.io",
+  "docs_url": "https://redis.io/docs/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",

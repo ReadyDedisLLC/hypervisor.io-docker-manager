@@ -6,6 +6,7 @@
   "category": "development",
   "version": "2",
   "website": "https://docs.docker.com/registry/",
+  "docs_url": "https://distribution.github.io/distribution/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,34 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 20,
-  "env": [],
+  "env": [
+    {
+      "key": "REGISTRY_HTTP_SECRET",
+      "label": "HTTP Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for securing registry HTTP sessions and uploads"
+    },
+    {
+      "key": "REGISTRY_STORAGE_DELETE_ENABLED",
+      "label": "Enable Image Deletion",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow deletion of image blobs and manifests via the API"
+    },
+    {
+      "key": "REGISTRY_HTTP_ADDR",
+      "label": "Listen Address",
+      "default": "0.0.0.0:5000",
+      "required": false,
+      "type": "text",
+      "description": "Address and port the registry listens on"
+    }
+  ],
   "ports": [
     {
       "container_port": 5000,

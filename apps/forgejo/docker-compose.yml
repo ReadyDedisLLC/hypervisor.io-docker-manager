@@ -6,8 +6,16 @@ services:
       - "${HOST_PORT_3000:-3000}:3000"
       - "${HOST_PORT_22:-2222}:22"
     environment:
-      USER_UID: 1000
-      USER_GID: 1000
+      USER_UID: ${USER_UID:-1000}
+      USER_GID: ${USER_GID:-1000}
+      FORGEJO__database__DB_TYPE: ${FORGEJO__database__DB_TYPE:-sqlite3}
+      FORGEJO__server__ROOT_URL: ${FORGEJO__server__ROOT_URL:-http://localhost:3000}
+      FORGEJO__server__DOMAIN: ${FORGEJO__server__DOMAIN:-localhost}
+      FORGEJO__mailer__ENABLED: ${FORGEJO__mailer__ENABLED:-false}
+      FORGEJO__mailer__SMTP_ADDR: ${FORGEJO__mailer__SMTP_ADDR:-}
+      FORGEJO__mailer__SMTP_PORT: ${FORGEJO__mailer__SMTP_PORT:-587}
+      FORGEJO__mailer__FROM: ${FORGEJO__mailer__FROM:-}
+      FORGEJO__service__DISABLE_REGISTRATION: ${FORGEJO__service__DISABLE_REGISTRATION:-false}
     volumes:
       - forgejo_data:/data
       - /etc/timezone:/etc/timezone:ro

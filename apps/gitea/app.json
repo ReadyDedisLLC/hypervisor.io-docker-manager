@@ -6,6 +6,7 @@
   "category": "development",
   "version": "latest",
   "website": "https://gitea.io",
+  "docs_url": "https://docs.gitea.com/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,67 @@
   ],
   "min_ram_mb": 512,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "GITEA__server__ROOT_URL",
+      "label": "Root URL",
+      "default": "http://localhost:3000",
+      "required": true,
+      "type": "text",
+      "description": "Public URL used to access Gitea (e.g. https://git.example.com)"
+    },
+    {
+      "key": "GITEA__server__DOMAIN",
+      "label": "Server Domain",
+      "default": "localhost",
+      "required": false,
+      "type": "text",
+      "description": "Domain name of the Gitea server"
+    },
+    {
+      "key": "GITEA__database__DB_TYPE",
+      "label": "Database Type",
+      "default": "sqlite3",
+      "required": false,
+      "type": "select",
+      "options": ["sqlite3", "mysql", "postgres"],
+      "description": "Database engine to use"
+    },
+    {
+      "key": "GITEA__mailer__ENABLED",
+      "label": "Enable Mailer",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable email notifications"
+    },
+    {
+      "key": "GITEA__service__DISABLE_REGISTRATION",
+      "label": "Disable Registration",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable self-registration of new users"
+    },
+    {
+      "key": "USER_UID",
+      "label": "User UID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID of the Gitea user inside the container"
+    },
+    {
+      "key": "USER_GID",
+      "label": "User GID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID of the Gitea user inside the container"
+    }
+  ],
   "ports": [
     {
       "container_port": 3000,

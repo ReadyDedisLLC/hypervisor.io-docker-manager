@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://linkwarden.app",
+  "docs_url": "https://docs.linkwarden.app",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -41,6 +42,48 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "NEXT_PUBLIC_DISABLE_REGISTRATION",
+      "label": "Disable Registration",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable new user registration after initial setup"
+    },
+    {
+      "key": "NEXT_PUBLIC_CREDENTIALS_ENABLED",
+      "label": "Enable Credentials Auth",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable email/password authentication"
+    },
+    {
+      "key": "STORAGE_FOLDER",
+      "label": "Storage Folder",
+      "default": "data",
+      "required": false,
+      "type": "text",
+      "description": "Folder path for storing archived data"
+    },
+    {
+      "key": "NEXT_PUBLIC_MAX_FILE_SIZE",
+      "label": "Max File Size (bytes)",
+      "default": "10485760",
+      "required": false,
+      "type": "number",
+      "description": "Maximum file upload size in bytes (default 10MB)"
+    },
+    {
+      "key": "BROWSER_TIMEOUT",
+      "label": "Browser Timeout",
+      "default": "5",
+      "required": false,
+      "type": "number",
+      "description": "Timeout in seconds for the browser used to archive pages"
     }
   ],
   "ports": [

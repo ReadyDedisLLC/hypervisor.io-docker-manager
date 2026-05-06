@@ -4,6 +4,9 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_5055:-5055}:5055"
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-debug}
+      TZ: ${TZ:-Etc/UTC}
     volumes:
       - jellyseerr_config:/app/config
 

@@ -6,12 +6,111 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://www.firefly-iii.org",
+  "docs_url": "https://docs.firefly-iii.org",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 512,
   "min_storage_gb": 5,
   "env": [
     {"key":"APP_KEY","label":"Application Key","default":"","required":true,"type":"password","generate":true,"description":"32-character encryption key for Laravel (auto-generated)"},
-    {"key":"DB_PASSWORD","label":"Database Password","default":"","required":true,"type":"password","generate":true,"description":"Password for the database"}
+    {"key":"DB_PASSWORD","label":"Database Password","default":"","required":true,"type":"password","generate":true,"description":"Password for the database"},
+    {
+      "key": "APP_URL",
+      "label": "Application URL",
+      "default": "http://localhost:8080",
+      "required": false,
+      "type": "text",
+      "description": "Public URL where Firefly III is accessible"
+    },
+    {
+      "key": "TRUSTED_PROXIES",
+      "label": "Trusted Proxies",
+      "default": "**",
+      "required": false,
+      "type": "text",
+      "description": "IP addresses of trusted reverse proxies (use ** to trust all)"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Europe/Amsterdam",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the application (e.g., America/New_York)"
+    },
+    {
+      "key": "DEFAULT_LANGUAGE",
+      "label": "Default Language",
+      "default": "en_US",
+      "required": false,
+      "type": "text",
+      "description": "Default language for the interface (e.g., en_US, de_DE, fr_FR)"
+    },
+    {
+      "key": "DEFAULT_LOCALE",
+      "label": "Default Locale",
+      "default": "equal",
+      "required": false,
+      "type": "text",
+      "description": "Locale for number/date formatting (set to 'equal' to match language)"
+    },
+    {
+      "key": "MAIL_MAILER",
+      "label": "Mail Driver",
+      "default": "log",
+      "required": false,
+      "type": "select",
+      "options": ["smtp", "log", "sendmail", "mailgun"],
+      "description": "Mail transport driver for sending notifications"
+    },
+    {
+      "key": "MAIL_HOST",
+      "label": "Mail Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails"
+    },
+    {
+      "key": "MAIL_PORT",
+      "label": "Mail Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "MAIL_FROM",
+      "label": "Mail From Address",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Email address used as the sender"
+    },
+    {
+      "key": "MAIL_USERNAME",
+      "label": "Mail Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Username for SMTP authentication"
+    },
+    {
+      "key": "MAIL_PASSWORD",
+      "label": "Mail Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Password for SMTP authentication"
+    },
+    {
+      "key": "MAIL_ENCRYPTION",
+      "label": "Mail Encryption",
+      "default": "tls",
+      "required": false,
+      "type": "select",
+      "options": ["tls", "ssl", "null"],
+      "description": "Encryption method for SMTP connection"
+    }
   ],
   "ports": [{"container_port":8080,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
 }

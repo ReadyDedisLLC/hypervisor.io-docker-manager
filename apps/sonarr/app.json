@@ -6,6 +6,7 @@
   "category": "media",
   "version": "4",
   "website": "https://sonarr.tv",
+  "docs_url": "https://wiki.servarr.com/sonarr",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,32 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 5,
-  "env": [],
+  "env": [
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for file permission mapping (run 'id -u' to find yours)"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for file permission mapping (run 'id -g' to find yours)"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone in tz database format (e.g., America/New_York)"
+    }
+  ],
   "ports": [
     {
       "container_port": 8989,

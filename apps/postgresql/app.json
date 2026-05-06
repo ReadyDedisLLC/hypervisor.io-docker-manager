@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "16",
   "website": "https://www.postgresql.org",
+  "docs_url": "https://www.postgresql.org/docs/16/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -42,6 +43,22 @@
       "required": false,
       "type": "text",
       "description": "Name of the default database to create"
+    },
+    {
+      "key": "POSTGRES_INITDB_ARGS",
+      "label": "initdb Arguments",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Additional arguments to pass to postgres initdb (e.g. --data-checksums)"
+    },
+    {
+      "key": "PGDATA",
+      "label": "Data Directory",
+      "default": "/var/lib/postgresql/data",
+      "required": false,
+      "type": "text",
+      "description": "Path inside the container where PostgreSQL stores data"
     }
   ],
   "ports": [

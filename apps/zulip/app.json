@@ -6,6 +6,7 @@
   "category": "communication",
   "version": "latest",
   "website": "https://zulip.com",
+  "docs_url": "https://zulip.readthedocs.io/en/latest/production/install.html",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -22,7 +23,7 @@
       "default": "localhost",
       "required": true,
       "type": "text",
-      "description": "The external hostname for your Zulip instance"
+      "description": "The external hostname for your Zulip instance (e.g., chat.example.com)"
     },
     {
       "key": "SETTING_ZULIP_ADMINISTRATOR",
@@ -49,6 +50,68 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Zulip PostgreSQL database"
+    },
+    {
+      "key": "SECRETS_rabbitmq_password",
+      "label": "RabbitMQ Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the RabbitMQ message broker"
+    },
+    {
+      "key": "SECRETS_redis_password",
+      "label": "Redis Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Redis cache server"
+    },
+    {
+      "key": "SETTING_EMAIL_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails (e.g., smtp.gmail.com)"
+    },
+    {
+      "key": "SETTING_EMAIL_HOST_USER",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP authentication username"
+    },
+    {
+      "key": "SECRETS_email_password",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "SMTP authentication password"
+    },
+    {
+      "key": "SETTING_EMAIL_PORT",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port (587 for STARTTLS, 465 for SSL)"
+    },
+    {
+      "key": "DISABLE_HTTPS",
+      "label": "Disable HTTPS",
+      "default": "True",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes (use behind reverse proxy)", "value": "True" },
+        { "label": "No (terminate SSL in Zulip)", "value": "False" }
+      ],
+      "description": "Disable built-in HTTPS if using an external reverse proxy"
     }
   ],
   "ports": [

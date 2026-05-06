@@ -6,6 +6,7 @@
   "category": "automation",
   "version": "latest",
   "website": "https://activepieces.com",
+  "docs_url": "https://www.activepieces.com/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -42,6 +43,50 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "AP_FRONTEND_URL",
+      "label": "Frontend URL",
+      "default": "http://localhost:8098",
+      "required": true,
+      "type": "text",
+      "description": "Public URL where Activepieces is accessible (e.g. https://auto.example.com)"
+    },
+    {
+      "key": "AP_TELEMETRY_ENABLED",
+      "label": "Enable Telemetry",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Enabled", "value": "true" },
+        { "label": "Disabled", "value": "false" }
+      ],
+      "description": "Whether to send anonymous usage telemetry to Activepieces"
+    },
+    {
+      "key": "AP_SANDBOX_RUN_MODE",
+      "label": "Sandbox Run Mode",
+      "default": "UNSANDBOXED",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Unsandboxed", "value": "UNSANDBOXED" },
+        { "label": "Sandboxed", "value": "SANDBOXED" }
+      ],
+      "description": "Code execution sandbox mode for flow steps"
+    },
+    {
+      "key": "AP_EXECUTION_MODE",
+      "label": "Execution Mode",
+      "default": "UNSANDBOXED",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Unsandboxed", "value": "UNSANDBOXED" },
+        { "label": "Sandboxed", "value": "SANDBOXED" }
+      ],
+      "description": "Execution mode for running automation flows"
     }
   ],
   "ports": [

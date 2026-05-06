@@ -6,10 +6,95 @@
   "category": "development",
   "version": "9",
   "website": "https://forgejo.org",
+  "docs_url": "https://forgejo.org/docs/latest/admin/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 512,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "USER_UID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID of the Git user inside the container"
+    },
+    {
+      "key": "USER_GID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID of the Git user inside the container"
+    },
+    {
+      "key": "FORGEJO__database__DB_TYPE",
+      "label": "Database Type",
+      "default": "sqlite3",
+      "required": false,
+      "type": "select",
+      "options": ["sqlite3", "mysql", "postgres"],
+      "description": "Database backend type (sqlite3 is built-in, no extra setup)"
+    },
+    {
+      "key": "FORGEJO__server__ROOT_URL",
+      "label": "Root URL",
+      "default": "http://localhost:3000",
+      "required": false,
+      "type": "text",
+      "description": "Full public URL used to access Forgejo (e.g., https://git.example.com)"
+    },
+    {
+      "key": "FORGEJO__server__DOMAIN",
+      "label": "Server Domain",
+      "default": "localhost",
+      "required": false,
+      "type": "text",
+      "description": "Domain name of the server (e.g., git.example.com)"
+    },
+    {
+      "key": "FORGEJO__mailer__ENABLED",
+      "label": "Enable Email",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable email notifications and registration confirmation"
+    },
+    {
+      "key": "FORGEJO__mailer__SMTP_ADDR",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails"
+    },
+    {
+      "key": "FORGEJO__mailer__SMTP_PORT",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "FORGEJO__mailer__FROM",
+      "label": "Mail From",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Sender address for outgoing emails (e.g., forgejo@example.com)"
+    },
+    {
+      "key": "FORGEJO__service__DISABLE_REGISTRATION",
+      "label": "Disable Registration",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable new user self-registration"
+    }
+  ],
   "ports": [
     {"container_port":3000,"default_host_port":3000,"protocol":"tcp","label":"Web UI","configurable":true},
     {"container_port":22,"default_host_port":2222,"protocol":"tcp","label":"SSH","configurable":true}

@@ -9,6 +9,15 @@ services:
       - .env
     environment:
       SYNAPSE_CONFIG_DIR: /data
+      SYNAPSE_SERVER_NAME: ${SYNAPSE_SERVER_NAME:-localhost}
+      SYNAPSE_REPORT_STATS: ${SYNAPSE_REPORT_STATS:-no}
+      SYNAPSE_LOG_LEVEL: ${SYNAPSE_LOG_LEVEL:-INFO}
+      SYNAPSE_REGISTRATION_SHARED_SECRET: ${SYNAPSE_REGISTRATION_SHARED_SECRET:-}
+      SYNAPSE_NO_TLS: ${SYNAPSE_NO_TLS:-true}
+      SYNAPSE_ENABLE_REGISTRATION: ${SYNAPSE_ENABLE_REGISTRATION:-no}
+      UID: ${UID:-991}
+      GID: ${GID:-991}
+      TZ: ${TZ:-Etc/UTC}
     volumes:
       - synapse_data:/data
 

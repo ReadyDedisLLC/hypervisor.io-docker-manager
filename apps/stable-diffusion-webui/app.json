@@ -5,6 +5,8 @@
   "icon": "icon.png",
   "category": "ai",
   "version": "latest",
+  "website": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+  "docs_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -14,7 +16,16 @@
   ],
   "min_ram_mb": 8192,
   "min_storage_gb": 30,
-  "env": [],
+  "env": [
+    {
+      "key": "COMMANDLINE_ARGS",
+      "label": "Command Line Args",
+      "default": "--listen",
+      "required": false,
+      "type": "text",
+      "description": "Additional command line arguments (e.g., --api --xformers --medvram)"
+    }
+  ],
   "ports": [
     {
       "container_port": 7860,

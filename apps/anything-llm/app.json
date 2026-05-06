@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://anythingllm.com",
+  "docs_url": "https://docs.anythingllm.com",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,68 @@
   ],
   "min_ram_mb": 2048,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "JWT_SECRET",
+      "label": "JWT Secret",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for JWT token signing (auto-generated if not set)"
+    },
+    {
+      "key": "AUTH_TOKEN",
+      "label": "Auth Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Token for API authentication; leave empty to configure via Web UI on first launch"
+    },
+    {
+      "key": "DISABLE_TELEMETRY",
+      "label": "Disable Telemetry",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "No (allow telemetry)", "value": "false" },
+        { "label": "Yes (disable telemetry)", "value": "true" }
+      ],
+      "description": "Disable anonymous usage telemetry"
+    },
+    {
+      "key": "LLM_PROVIDER",
+      "label": "LLM Provider",
+      "default": "",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "OpenAI", "value": "openai" },
+        { "label": "Anthropic", "value": "anthropic" },
+        { "label": "Ollama", "value": "ollama" },
+        { "label": "Local AI", "value": "localai" },
+        { "label": "Configure in UI", "value": "" }
+      ],
+      "description": "LLM provider to use; can also be configured via the Web UI"
+    },
+    {
+      "key": "OPEN_AI_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "OpenAI API key (required if using OpenAI as LLM provider)"
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Anthropic API key (required if using Anthropic as LLM provider)"
+    }
+  ],
   "ports": [
     {
       "container_port": 3001,

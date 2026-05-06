@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "main-latest",
   "website": "https://litellm.ai",
+  "docs_url": "https://docs.litellm.ai",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -24,6 +25,55 @@
       "type": "password",
       "generate": true,
       "description": "Master API key for authenticating with the LiteLLM proxy"
+    },
+    {
+      "key": "DATABASE_URL",
+      "label": "Database URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "PostgreSQL connection string for persistent storage (e.g. postgresql://user:pass@host:5432/dbname)"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for OpenAI models — get from platform.openai.com"
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Anthropic Claude models — get from console.anthropic.com"
+    },
+    {
+      "key": "AZURE_API_KEY",
+      "label": "Azure OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Azure OpenAI deployments"
+    },
+    {
+      "key": "AZURE_API_BASE",
+      "label": "Azure API Base URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Base URL for your Azure OpenAI resource (e.g. https://your-resource.openai.azure.com)"
+    },
+    {
+      "key": "LITELLM_LOG",
+      "label": "Log Level",
+      "default": "INFO",
+      "required": false,
+      "type": "select",
+      "options": ["DEBUG", "INFO", "WARNING", "ERROR"],
+      "description": "Logging verbosity level"
     }
   ],
   "ports": [

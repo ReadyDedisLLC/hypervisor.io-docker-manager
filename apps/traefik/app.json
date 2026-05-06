@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "v3.0",
   "website": "https://traefik.io",
+  "docs_url": "https://doc.traefik.io/traefik/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,42 @@
   ],
   "min_ram_mb": 128,
   "min_storage_gb": 1,
-  "env": [],
+  "env": [
+    {
+      "key": "TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_EMAIL",
+      "label": "Let's Encrypt Email",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Email address for Let's Encrypt certificate registration and notifications"
+    },
+    {
+      "key": "TRAEFIK_API_DASHBOARD",
+      "label": "Enable Dashboard",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Enable or disable the Traefik web dashboard"
+    },
+    {
+      "key": "TRAEFIK_LOG_LEVEL",
+      "label": "Log Level",
+      "default": "ERROR",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "DEBUG", "value": "DEBUG" },
+        { "label": "INFO", "value": "INFO" },
+        { "label": "WARN", "value": "WARN" },
+        { "label": "ERROR", "value": "ERROR" }
+      ],
+      "description": "Logging level for Traefik"
+    }
+  ],
   "ports": [
     {
       "container_port": 80,

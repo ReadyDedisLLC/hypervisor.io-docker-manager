@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://grafana.com",
+  "docs_url": "https://grafana.com/docs/grafana/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,56 @@
       "type": "password",
       "generate": true,
       "description": "Grafana admin password"
+    },
+    {
+      "key": "GF_SERVER_ROOT_URL",
+      "label": "Root URL",
+      "default": "http://localhost:3000",
+      "required": false,
+      "type": "text",
+      "description": "Full public URL used to access Grafana (e.g. https://grafana.example.com)"
+    },
+    {
+      "key": "GF_SERVER_DOMAIN",
+      "label": "Server Domain",
+      "default": "localhost",
+      "required": false,
+      "type": "text",
+      "description": "Domain name of the Grafana server"
+    },
+    {
+      "key": "GF_INSTALL_PLUGINS",
+      "label": "Install Plugins",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of plugins to install on startup (e.g. grafana-clock-panel,grafana-piechart-panel)"
+    },
+    {
+      "key": "GF_SMTP_ENABLED",
+      "label": "Enable SMTP",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable SMTP for email alerting and notifications"
+    },
+    {
+      "key": "GF_SMTP_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server host and port (e.g. smtp.example.com:587)"
+    },
+    {
+      "key": "GF_USERS_ALLOW_SIGN_UP",
+      "label": "Allow Sign Up",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow users to create accounts via the login page"
     }
   ],
   "ports": [

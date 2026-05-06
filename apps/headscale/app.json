@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "latest",
   "website": "https://headscale.net",
+  "docs_url": "https://headscale.net/stable/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -23,6 +24,47 @@
       "required": true,
       "type": "text",
       "description": "Public URL of the Headscale server"
+    },
+    {
+      "key": "HEADSCALE_LISTEN_ADDR",
+      "label": "Listen Address",
+      "default": "0.0.0.0:8080",
+      "required": false,
+      "type": "text",
+      "description": "Address and port the Headscale server listens on"
+    },
+    {
+      "key": "HEADSCALE_METRICS_LISTEN_ADDR",
+      "label": "Metrics Listen Address",
+      "default": "0.0.0.0:9090",
+      "required": false,
+      "type": "text",
+      "description": "Address and port for the Prometheus metrics endpoint"
+    },
+    {
+      "key": "HEADSCALE_DERP_SERVER_ENABLED",
+      "label": "Enable DERP Server",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable the built-in DERP relay server"
+    },
+    {
+      "key": "HEADSCALE_DNS_BASE_DOMAIN",
+      "label": "DNS Base Domain",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Base domain for MagicDNS (e.g. example.com)"
+    },
+    {
+      "key": "HEADSCALE_PREFIXES_V4",
+      "label": "IPv4 Prefix",
+      "default": "100.64.0.0/10",
+      "required": false,
+      "type": "text",
+      "description": "IPv4 prefix for the Tailnet address space"
     }
   ],
   "ports": [

@@ -6,6 +6,7 @@
   "category": "file-storage",
   "version": "latest",
   "website": "https://min.io",
+  "docs_url": "https://min.io/docs/minio/container/index.html",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,42 @@
       "type": "password",
       "generate": true,
       "description": "MinIO root password (secret key, minimum 8 characters)"
+    },
+    {
+      "key": "MINIO_BROWSER",
+      "label": "Web Console",
+      "default": "on",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Enabled", "value": "on" },
+        { "label": "Disabled", "value": "off" }
+      ],
+      "description": "Enable or disable the MinIO web console"
+    },
+    {
+      "key": "MINIO_SERVER_URL",
+      "label": "Server URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Public URL for the MinIO S3 API endpoint (e.g. https://minio.example.com:9000)"
+    },
+    {
+      "key": "MINIO_BROWSER_REDIRECT_URL",
+      "label": "Console Redirect URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Public URL for the MinIO web console (e.g. https://console.example.com)"
+    },
+    {
+      "key": "MINIO_REGION_NAME",
+      "label": "Region",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Region name for the MinIO server (e.g. us-east-1)"
     }
   ],
   "ports": [

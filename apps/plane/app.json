@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://plane.so",
+  "docs_url": "https://docs.plane.so/self-hosting/overview",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -33,6 +34,40 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "WEB_URL",
+      "label": "Web URL",
+      "default": "http://localhost:3000",
+      "required": false,
+      "type": "text",
+      "description": "Public URL where Plane will be accessible"
+    },
+    {
+      "key": "ENABLE_SIGNUP",
+      "label": "Enable Signup",
+      "default": "1",
+      "required": false,
+      "type": "select",
+      "options": ["1", "0"],
+      "description": "Allow new user registrations (1 = enabled, 0 = disabled)"
+    },
+    {
+      "key": "ENABLE_EMAIL_PASSWORD",
+      "label": "Enable Email/Password Login",
+      "default": "1",
+      "required": false,
+      "type": "select",
+      "options": ["1", "0"],
+      "description": "Allow email/password authentication (1 = enabled, 0 = disabled)"
+    },
+    {
+      "key": "CORS_ALLOWED_ORIGINS",
+      "label": "CORS Allowed Origins",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of allowed CORS origins (leave empty for default)"
     }
   ],
   "ports": [

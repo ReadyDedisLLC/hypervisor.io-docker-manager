@@ -6,6 +6,7 @@
   "category": "automation",
   "version": "latest",
   "website": "https://nodered.org",
+  "docs_url": "https://nodered.org/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,42 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "NODE_RED_CREDENTIAL_SECRET",
+      "label": "Credential Secret",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Encryption key for securing credentials stored in flows. Set this before first use."
+    },
+    {
+      "key": "NODE_RED_ENABLE_PROJECTS",
+      "label": "Enable Projects",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable the projects feature for version-controlled flow management"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York, Europe/London)"
+    },
+    {
+      "key": "FLOWS",
+      "label": "Flows File",
+      "default": "flows.json",
+      "required": false,
+      "type": "text",
+      "description": "Name of the flows file to use"
+    }
+  ],
   "ports": [
     {
       "container_port": 1880,

@@ -4,6 +4,11 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_1880:-1880}:1880"
+    environment:
+      NODE_RED_CREDENTIAL_SECRET: ${NODE_RED_CREDENTIAL_SECRET:-}
+      NODE_RED_ENABLE_PROJECTS: ${NODE_RED_ENABLE_PROJECTS:-false}
+      TZ: ${TZ:-UTC}
+      FLOWS: ${FLOWS:-flows.json}
     volumes:
       - node_red_data:/data
 

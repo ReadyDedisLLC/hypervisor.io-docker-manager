@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://grafana.com/oss/loki/",
+  "docs_url": "https://grafana.com/docs/loki/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,34 @@
   ],
   "min_ram_mb": 512,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "LOKI_LOG_LEVEL",
+      "label": "Log Level",
+      "default": "info",
+      "required": false,
+      "type": "select",
+      "options": ["debug", "info", "warn", "error"],
+      "description": "Logging verbosity level for Loki"
+    },
+    {
+      "key": "LOKI_AUTH_ENABLED",
+      "label": "Enable Auth",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable multi-tenancy authentication"
+    },
+    {
+      "key": "LOKI_RETENTION_PERIOD",
+      "label": "Retention Period",
+      "default": "744h",
+      "required": false,
+      "type": "text",
+      "description": "How long to retain log data (e.g. 744h for 31 days)"
+    }
+  ],
   "ports": [
     {
       "container_port": 3100,

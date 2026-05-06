@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://documenso.com",
+  "docs_url": "https://documenso.com/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -50,6 +51,54 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "NEXT_PRIVATE_SMTP_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails (e.g., smtp.gmail.com)"
+    },
+    {
+      "key": "NEXT_PRIVATE_SMTP_PORT",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port (587 for TLS, 465 for SSL)"
+    },
+    {
+      "key": "NEXT_PRIVATE_SMTP_USERNAME",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Username for SMTP authentication"
+    },
+    {
+      "key": "NEXT_PRIVATE_SMTP_PASSWORD",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Password for SMTP authentication"
+    },
+    {
+      "key": "NEXT_PRIVATE_SMTP_FROM_ADDRESS",
+      "label": "SMTP From Address",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Email address used as the sender for outgoing emails"
+    },
+    {
+      "key": "NEXT_PRIVATE_SMTP_FROM_NAME",
+      "label": "SMTP From Name",
+      "default": "Documenso",
+      "required": false,
+      "type": "text",
+      "description": "Display name used as the sender for outgoing emails"
     }
   ],
   "ports": [

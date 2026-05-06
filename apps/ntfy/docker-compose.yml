@@ -5,6 +5,13 @@ services:
     command: serve
     ports:
       - "${HOST_PORT_80:-8080}:80"
+    environment:
+      NTFY_BASE_URL: ${NTFY_BASE_URL:-}
+      NTFY_UPSTREAM_BASE_URL: ${NTFY_UPSTREAM_BASE_URL:-https://ntfy.sh}
+      NTFY_BEHIND_PROXY: ${NTFY_BEHIND_PROXY:-false}
+      NTFY_AUTH_DEFAULT_ACCESS: ${NTFY_AUTH_DEFAULT_ACCESS:-read-write}
+      NTFY_ENABLE_LOGIN: ${NTFY_ENABLE_LOGIN:-false}
+      NTFY_ENABLE_SIGNUP: ${NTFY_ENABLE_SIGNUP:-false}
     volumes:
       - ntfy_cache:/var/cache/ntfy
       - ntfy_etc:/etc/ntfy

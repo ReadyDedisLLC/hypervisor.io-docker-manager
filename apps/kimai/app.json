@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://kimai.org",
+  "docs_url": "https://www.kimai.org/documentation/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -41,6 +42,22 @@
       "type": "password",
       "generate": true,
       "description": "Password for the MySQL database"
+    },
+    {
+      "key": "TRUSTED_HOSTS",
+      "label": "Trusted Hosts",
+      "default": "localhost",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of trusted hostnames (e.g. kimai.example.com,localhost)"
+    },
+    {
+      "key": "memory_limit",
+      "label": "PHP Memory Limit",
+      "default": "256M",
+      "required": false,
+      "type": "text",
+      "description": "PHP memory limit for Kimai (e.g. 256M, 512M)"
     }
   ],
   "ports": [

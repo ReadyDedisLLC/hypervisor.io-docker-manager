@@ -6,6 +6,7 @@
   "category": "development",
   "version": "latest",
   "website": "https://coder.com",
+  "docs_url": "https://coder.com/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -32,6 +33,31 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "CODER_WILDCARD_ACCESS_URL",
+      "label": "Wildcard Access URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Wildcard URL for port-forwarding (e.g. *.coder.mydomain.com)"
+    },
+    {
+      "key": "CODER_HTTP_ADDRESS",
+      "label": "HTTP Listen Address",
+      "default": "0.0.0.0:7080",
+      "required": false,
+      "type": "text",
+      "description": "HTTP bind address of the Coder server"
+    },
+    {
+      "key": "CODER_TLS_ENABLE",
+      "label": "Enable TLS",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable TLS for the Coder server"
     }
   ],
   "ports": [

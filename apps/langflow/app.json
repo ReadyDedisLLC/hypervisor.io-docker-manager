@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://langflow.org",
+  "docs_url": "https://docs.langflow.org/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -21,7 +22,8 @@
       "label": "Auto Login",
       "default": "true",
       "required": false,
-      "type": "text",
+      "type": "select",
+      "options": ["true", "false"],
       "description": "Enable automatic login without authentication (set to false to require login)"
     },
     {
@@ -40,6 +42,31 @@
       "type": "password",
       "generate": true,
       "description": "Superuser password (used when auto login is disabled)"
+    },
+    {
+      "key": "LANGFLOW_SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for encrypting sensitive data and signing tokens"
+    },
+    {
+      "key": "LANGFLOW_DATABASE_URL",
+      "label": "Database URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Database connection URL (defaults to local SQLite; use postgresql:// for production)"
+    },
+    {
+      "key": "LANGFLOW_CONFIG_DIR",
+      "label": "Config Directory",
+      "default": "/app/langflow",
+      "required": false,
+      "type": "text",
+      "description": "Directory for Langflow configuration and data storage"
     }
   ],
   "ports": [

@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://dashy.to",
+  "docs_url": "https://dashy.to/docs",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,33 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 1,
-  "env": [],
+  "env": [
+    {
+      "key": "NODE_ENV",
+      "label": "Node Environment",
+      "default": "production",
+      "required": false,
+      "type": "select",
+      "options": ["production", "development"],
+      "description": "Set the Node.js environment mode"
+    },
+    {
+      "key": "GH_ACCESS_TOKEN",
+      "label": "GitHub Access Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "GitHub token for backing up config to a gist"
+    },
+    {
+      "key": "VUE_APP_DOMAIN",
+      "label": "App Domain",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Domain where Dashy is served (used for authentication)"
+    }
+  ],
   "ports": [
     {
       "container_port": 8080,

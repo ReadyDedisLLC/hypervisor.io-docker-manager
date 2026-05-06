@@ -6,6 +6,7 @@
   "category": "cms",
   "version": "latest",
   "website": "https://directus.io",
+  "docs_url": "https://docs.directus.io",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -59,6 +60,49 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "PUBLIC_URL",
+      "label": "Public URL",
+      "default": "http://localhost:8055",
+      "required": false,
+      "type": "text",
+      "description": "URL where Directus is publicly accessible"
+    },
+    {
+      "key": "CACHE_ENABLED",
+      "label": "Enable Cache",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable Directus data cache for improved performance"
+    },
+    {
+      "key": "RATE_LIMITER_ENABLED",
+      "label": "Enable Rate Limiter",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable rate limiting on API requests"
+    },
+    {
+      "key": "CORS_ENABLED",
+      "label": "Enable CORS",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable Cross-Origin Resource Sharing"
+    },
+    {
+      "key": "CORS_ORIGIN",
+      "label": "CORS Origin",
+      "default": "*",
+      "required": false,
+      "type": "text",
+      "description": "Allowed CORS origins (use comma-separated values or * for all)"
     }
   ],
   "ports": [

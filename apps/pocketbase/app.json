@@ -6,9 +6,45 @@
   "category": "development",
   "version": "latest",
   "website": "https://pocketbase.io",
+  "docs_url": "https://pocketbase.io/docs/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 128,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "PB_ADMIN_EMAIL",
+      "label": "Admin Email",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Email for automatic superuser creation on first run"
+    },
+    {
+      "key": "PB_ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Password for automatic superuser creation on first run"
+    },
+    {
+      "key": "PB_ENCRYPTION_KEY",
+      "label": "Encryption Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "32-character encryption key for securing settings"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York)"
+    }
+  ],
   "ports": [{"container_port":8090,"default_host_port":8090,"protocol":"tcp","label":"API / Admin UI","configurable":true}]
 }

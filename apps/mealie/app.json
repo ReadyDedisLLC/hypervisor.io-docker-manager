@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://mealie.io",
+  "docs_url": "https://nightly.mealie.io/documentation/getting-started/introduction/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,50 @@
       "type": "password",
       "generate": true,
       "description": "Default admin password for initial login"
+    },
+    {
+      "key": "ALLOW_SIGNUP",
+      "label": "Allow Signup",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Allow new users to register accounts"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York)"
+    },
+    {
+      "key": "BASE_URL",
+      "label": "Base URL",
+      "default": "http://localhost:9925",
+      "required": false,
+      "type": "text",
+      "description": "External URL used for links in emails and notifications"
+    },
+    {
+      "key": "MAX_WORKERS",
+      "label": "Max Workers",
+      "default": "1",
+      "required": false,
+      "type": "number",
+      "description": "Number of Gunicorn worker processes"
+    },
+    {
+      "key": "TOKEN_TIME",
+      "label": "Token Lifetime (hours)",
+      "default": "48",
+      "required": false,
+      "type": "number",
+      "description": "Duration in hours before login tokens expire"
     }
   ],
   "ports": [

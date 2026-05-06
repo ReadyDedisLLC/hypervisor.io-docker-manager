@@ -5,6 +5,8 @@ services:
     ports:
       - "${HOST_PORT_7860:-7860}:7860"
       - "${HOST_PORT_5000:-5000}:5000"
+    env_file:
+      - .env
     volumes:
       - tgwebui_data:/app
 

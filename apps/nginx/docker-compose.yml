@@ -5,6 +5,10 @@ services:
     ports:
       - "${HOST_PORT_80:-80}:80"
       - "${HOST_PORT_443:-443}:443"
+    environment:
+      NGINX_ENVSUBST_TEMPLATE_DIR: ${NGINX_ENVSUBST_TEMPLATE_DIR:-/etc/nginx/templates}
+      NGINX_ENVSUBST_TEMPLATE_SUFFIX: ${NGINX_ENVSUBST_TEMPLATE_SUFFIX:-.template}
+      NGINX_ENVSUBST_OUTPUT_DIR: ${NGINX_ENVSUBST_OUTPUT_DIR:-/etc/nginx/conf.d}
     volumes:
       - nginx_conf:/etc/nginx
       - nginx_html:/usr/share/nginx/html

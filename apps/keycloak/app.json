@@ -6,6 +6,7 @@
   "category": "security",
   "version": "latest",
   "website": "https://keycloak.org",
+  "docs_url": "https://www.keycloak.org/documentation",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -41,6 +42,32 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "KC_HOSTNAME",
+      "label": "Hostname",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Public hostname for Keycloak (e.g. auth.example.com). Required for production mode."
+    },
+    {
+      "key": "KC_PROXY_HEADERS",
+      "label": "Proxy Headers",
+      "default": "xforwarded",
+      "required": false,
+      "type": "select",
+      "options": ["xforwarded", "forwarded"],
+      "description": "Type of proxy headers to parse when behind a reverse proxy"
+    },
+    {
+      "key": "KC_LOG_LEVEL",
+      "label": "Log Level",
+      "default": "info",
+      "required": false,
+      "type": "select",
+      "options": ["all", "debug", "info", "warn", "error", "fatal", "off"],
+      "description": "Logging verbosity level for Keycloak"
     }
   ],
   "ports": [

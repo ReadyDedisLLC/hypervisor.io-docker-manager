@@ -6,6 +6,7 @@
   "category": "development",
   "version": "latest",
   "website": "https://www.portainer.io",
+  "docs_url": "https://docs.portainer.io/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,16 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "TRUSTED_ORIGINS",
+      "label": "Trusted Origins",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of domains when Portainer is behind a reverse proxy (e.g. https://portainer.example.com)"
+    }
+  ],
   "ports": [
     {
       "container_port": 9443,

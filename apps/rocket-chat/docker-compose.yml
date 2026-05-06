@@ -14,6 +14,7 @@ services:
       ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
       ADMIN_PASS: ${ADMIN_PASS}
       ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@example.com}
+      OVERWRITE_SETTING_Show_Setup_Wizard: ${OVERWRITE_SETTING_Show_Setup_Wizard:-completed}
     depends_on:
       - mongodb
 

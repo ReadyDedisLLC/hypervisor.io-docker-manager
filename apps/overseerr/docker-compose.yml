@@ -4,6 +4,11 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_5055:-5056}:5055"
+    environment:
+      TZ: ${TZ:-UTC}
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
     volumes:
       - overseerr_config:/config
 

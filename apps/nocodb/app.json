@@ -6,11 +6,86 @@
   "category": "development",
   "version": "latest",
   "website": "https://nocodb.com",
+  "docs_url": "https://docs.nocodb.com/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 512,
   "min_storage_gb": 5,
   "env": [
-    {"key":"NC_AUTH_JWT_SECRET","label":"JWT Secret","default":"","required":true,"type":"password","generate":true,"description":"Secret for JWT authentication tokens"}
+    {
+      "key": "NC_AUTH_JWT_SECRET",
+      "label": "JWT Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret for JWT authentication tokens"
+    },
+    {
+      "key": "NC_PUBLIC_URL",
+      "label": "Public URL",
+      "default": "http://localhost:8080",
+      "required": false,
+      "type": "text",
+      "description": "Public URL of your NocoDB instance, used for generating invite links"
+    },
+    {
+      "key": "NC_INVITE_ONLY_SIGNUP",
+      "label": "Invite-Only Signup",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "When true, only invited users can sign up"
+    },
+    {
+      "key": "NC_DISABLE_TELE",
+      "label": "Disable Telemetry",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to true to disable anonymous telemetry data collection"
+    },
+    {
+      "key": "NC_SMTP_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending email notifications"
+    },
+    {
+      "key": "NC_SMTP_PORT",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "NC_SMTP_USERNAME",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Username for SMTP authentication"
+    },
+    {
+      "key": "NC_SMTP_PASSWORD",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Password for SMTP authentication"
+    },
+    {
+      "key": "NC_SMTP_FROM",
+      "label": "SMTP From Address",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Email address used as the sender for outgoing emails"
+    }
   ],
   "ports": [{"container_port":8080,"default_host_port":8080,"protocol":"tcp","label":"Web UI","configurable":true}]
 }

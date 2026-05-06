@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://tandoor.dev",
+  "docs_url": "https://docs.tandoor.dev",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -33,6 +34,50 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "ENABLE_SIGNUP",
+      "label": "Enable Signup",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Disabled", "value": "0" },
+        { "label": "Enabled", "value": "1" }
+      ],
+      "description": "Allow new users to register accounts"
+    },
+    {
+      "key": "TANDOOR_PORT",
+      "label": "Internal Port",
+      "default": "8080",
+      "required": false,
+      "type": "number",
+      "description": "Port the application listens on inside the container"
+    },
+    {
+      "key": "FRACTION_PREF_DEFAULT",
+      "label": "Default Fraction Display",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Decimals", "value": "0" },
+        { "label": "Fractions", "value": "1" }
+      ],
+      "description": "Default display preference for recipe amounts"
+    },
+    {
+      "key": "COMMENT_PREF_DEFAULT",
+      "label": "Default Comment Setting",
+      "default": "1",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Disabled", "value": "0" },
+        { "label": "Enabled", "value": "1" }
+      ],
+      "description": "Default setting for allowing comments on recipes"
     }
   ],
   "ports": [

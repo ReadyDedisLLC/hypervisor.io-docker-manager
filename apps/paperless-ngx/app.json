@@ -6,6 +6,7 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://docs.paperless-ngx.com",
+  "docs_url": "https://docs.paperless-ngx.com/configuration/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -51,6 +52,46 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Paperless PostgreSQL database"
+    },
+    {
+      "key": "PAPERLESS_URL",
+      "label": "Application URL",
+      "default": "http://localhost:8000",
+      "required": false,
+      "type": "text",
+      "description": "Public URL of your Paperless-ngx instance (used for links in emails)"
+    },
+    {
+      "key": "PAPERLESS_TIME_ZONE",
+      "label": "Timezone",
+      "default": "America/New_York",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the application (e.g. America/New_York, Europe/London)"
+    },
+    {
+      "key": "PAPERLESS_OCR_LANGUAGE",
+      "label": "OCR Language",
+      "default": "eng",
+      "required": false,
+      "type": "text",
+      "description": "OCR language (e.g. eng, deu, fra). Install additional packages for more languages."
+    },
+    {
+      "key": "PAPERLESS_FILENAME_FORMAT",
+      "label": "Filename Format",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Template for naming stored files (e.g. {created_year}/{correspondent}/{title})"
+    },
+    {
+      "key": "PAPERLESS_CONSUMER_POLLING",
+      "label": "Consumer Polling Interval",
+      "default": "0",
+      "required": false,
+      "type": "number",
+      "description": "Polling interval in seconds for new files in the consume folder (0 uses inotify)"
     }
   ],
   "ports": [

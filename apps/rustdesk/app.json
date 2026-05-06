@@ -6,10 +6,29 @@
   "category": "networking",
   "version": "latest",
   "website": "https://rustdesk.com",
+  "docs_url": "https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9"],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "RELAY",
+      "label": "Relay Server",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "IP address or hostname of the relay server (hbbr) if running on a different host"
+    },
+    {
+      "key": "ENCRYPTED_ONLY",
+      "label": "Encrypted Only",
+      "default": "1",
+      "required": false,
+      "type": "select",
+      "options": ["0", "1"],
+      "description": "Set to 1 to only allow encrypted connections"
+    }
+  ],
   "ports": [
     {"container_port":21115,"default_host_port":21115,"protocol":"tcp","label":"NAT Test","configurable":false},
     {"container_port":21116,"default_host_port":21116,"protocol":"tcp","label":"ID/Relay TCP","configurable":false},

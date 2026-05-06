@@ -6,6 +6,7 @@
   "category": "development",
   "version": "latest",
   "website": "https://github.com/coder/code-server",
+  "docs_url": "https://coder.com/docs/code-server",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -35,6 +36,38 @@
       "type": "password",
       "generate": true,
       "description": "Password for sudo access inside the container"
+    },
+    {
+      "key": "HASHED_PASSWORD",
+      "label": "Hashed Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Argon2 hashed password for code-server access (overrides PASSWORD if set)"
+    },
+    {
+      "key": "SUDO_PASSWORD_HASH",
+      "label": "Hashed Sudo Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Argon2 hashed sudo password (overrides SUDO_PASSWORD if set)"
+    },
+    {
+      "key": "DEFAULT_WORKSPACE",
+      "label": "Default Workspace",
+      "default": "/config/workspace",
+      "required": false,
+      "type": "text",
+      "description": "Default directory to open when code-server starts"
+    },
+    {
+      "key": "PROXY_DOMAIN",
+      "label": "Proxy Domain",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Domain to proxy requests for (e.g. code-server.mydomain.com)"
     }
   ],
   "ports": [

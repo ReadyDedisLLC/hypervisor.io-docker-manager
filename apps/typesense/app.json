@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "latest",
   "website": "https://typesense.org",
+  "docs_url": "https://typesense.org/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -24,6 +25,18 @@
       "type": "password",
       "generate": true,
       "description": "API key for authenticating requests to Typesense"
+    },
+    {
+      "key": "TYPESENSE_ENABLE_CORS",
+      "label": "Enable CORS",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "true" },
+        { "label": "No", "value": "false" }
+      ],
+      "description": "Enable cross-origin resource sharing for browser-based search"
     }
   ],
   "ports": [

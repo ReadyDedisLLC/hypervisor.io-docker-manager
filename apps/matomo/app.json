@@ -6,6 +6,7 @@
   "category": "analytics",
   "version": "latest",
   "website": "https://matomo.org",
+  "docs_url": "https://matomo.org/guides/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -49,6 +50,31 @@
       "required": true,
       "type": "text",
       "description": "Database username for Matomo"
+    },
+    {
+      "key": "MATOMO_DATABASE_ADAPTER",
+      "label": "Database Adapter",
+      "default": "mysql",
+      "required": false,
+      "type": "select",
+      "options": ["mysql", "pdo_mysql"],
+      "description": "Database adapter to use for Matomo"
+    },
+    {
+      "key": "MATOMO_DATABASE_TABLES_PREFIX",
+      "label": "Table Prefix",
+      "default": "matomo_",
+      "required": false,
+      "type": "text",
+      "description": "Prefix for Matomo database tables"
+    },
+    {
+      "key": "MATOMO_DATABASE_PORT",
+      "label": "Database Port",
+      "default": "3306",
+      "required": false,
+      "type": "number",
+      "description": "Port number for the database connection"
     }
   ],
   "ports": [

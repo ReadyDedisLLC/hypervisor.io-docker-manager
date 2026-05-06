@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://gethomepage.dev",
+  "docs_url": "https://gethomepage.dev/configs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,32 @@
   ],
   "min_ram_mb": 128,
   "min_storage_gb": 1,
-  "env": [],
+  "env": [
+    {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for file permissions on mounted volumes"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for file permissions on mounted volumes"
+    },
+    {
+      "key": "HOMEPAGE_ALLOWED_HOSTS",
+      "label": "Allowed Hosts",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of allowed hostnames for the dashboard"
+    }
+  ],
   "ports": [
     {
       "container_port": 3000,

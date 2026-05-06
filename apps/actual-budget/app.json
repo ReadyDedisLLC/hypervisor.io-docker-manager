@@ -6,9 +6,35 @@
   "category": "productivity",
   "version": "latest",
   "website": "https://actualbudget.org",
+  "docs_url": "https://actualbudget.org/docs",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "ACTUAL_UPLOAD_FILE_SYNC_SIZE_LIMIT_MB",
+      "label": "Upload Size Limit (MB)",
+      "default": "20",
+      "required": false,
+      "type": "number",
+      "description": "Maximum file upload size in megabytes for budget sync"
+    },
+    {
+      "key": "ACTUAL_UPLOAD_SYNC_ENCRYPTED_FILE_SYNC_SIZE_LIMIT_MB",
+      "label": "Encrypted Upload Size Limit (MB)",
+      "default": "50",
+      "required": false,
+      "type": "number",
+      "description": "Maximum encrypted file upload size in megabytes for budget sync"
+    },
+    {
+      "key": "ACTUAL_UPLOAD_FILE_SIZE_LIMIT_MB",
+      "label": "File Import Size Limit (MB)",
+      "default": "20",
+      "required": false,
+      "type": "number",
+      "description": "Maximum file size in megabytes for file imports"
+    }
+  ],
   "ports": [{"container_port":5006,"default_host_port":5006,"protocol":"tcp","label":"Web UI","configurable":true}]
 }

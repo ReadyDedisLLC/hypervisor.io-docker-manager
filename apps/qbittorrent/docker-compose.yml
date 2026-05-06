@@ -7,10 +7,11 @@ services:
       - "${HOST_PORT_6881:-6881}:6881"
       - "${HOST_PORT_6881:-6881}:6881/udp"
     environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: Etc/UTC
-      WEBUI_PORT: 8080
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      TZ: ${TZ:-Etc/UTC}
+      WEBUI_PORT: ${WEBUI_PORT:-8080}
+      TORRENTING_PORT: ${TORRENTING_PORT:-6881}
     volumes:
       - qbittorrent_config:/config
       - qbittorrent_downloads:/downloads

@@ -5,7 +5,14 @@ services:
     ports:
       - "${HOST_PORT_8080:-8080}:8080"
     environment:
-      MODELS_PATH: /models
+      MODELS_PATH: ${MODELS_PATH:-/models}
+      THREADS: ${THREADS:-4}
+      CONTEXT_SIZE: ${CONTEXT_SIZE:-512}
+      DEBUG: ${DEBUG:-false}
+      CORS: ${CORS:-true}
+      GALLERIES: ${GALLERIES:-}
+      PRELOAD_MODELS: ${PRELOAD_MODELS:-}
+      API_KEY: ${API_KEY:-}
     volumes:
       - localai_models:/models
 

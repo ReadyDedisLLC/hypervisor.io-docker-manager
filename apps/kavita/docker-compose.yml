@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_5000:-5000}:5000"
+    environment:
+      TZ: ${TZ:-Etc/UTC}
     volumes:
       - kavita_config:/kavita/config
       - kavita_data:/manga

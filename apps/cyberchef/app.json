@@ -6,6 +6,7 @@
   "category": "security",
   "version": "latest",
   "website": "https://gchq.github.io/CyberChef",
+  "docs_url": "https://github.com/gchq/CyberChef/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",

@@ -6,6 +6,7 @@
   "category": "communication",
   "version": "latest",
   "website": "https://rocket.chat",
+  "docs_url": "https://docs.rocket.chat/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -48,6 +49,15 @@
       "required": true,
       "type": "text",
       "description": "Email address for the initial admin account"
+    },
+    {
+      "key": "OVERWRITE_SETTING_Show_Setup_Wizard",
+      "label": "Show Setup Wizard",
+      "default": "completed",
+      "required": false,
+      "type": "select",
+      "options": ["pending", "completed"],
+      "description": "Set to 'completed' to skip the setup wizard on first launch"
     }
   ],
   "ports": [

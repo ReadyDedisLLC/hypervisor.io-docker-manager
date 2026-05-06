@@ -6,6 +6,7 @@
   "category": "file-storage",
   "version": "latest",
   "website": "https://syncthing.net",
+  "docs_url": "https://docs.syncthing.net",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,24 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "STGUIADDRESS",
+      "label": "GUI Listen Address",
+      "default": "0.0.0.0:8384",
+      "required": false,
+      "type": "text",
+      "description": "Address and port for the web GUI to listen on"
+    },
+    {
+      "key": "PCAP",
+      "label": "Capture CPU Profile",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Write CPU profile to specified file (for debugging)"
+    }
+  ],
   "ports": [
     {
       "container_port": 8384,

@@ -6,6 +6,7 @@
   "category": "development",
   "version": "latest",
   "website": "https://drone.io",
+  "docs_url": "https://docs.drone.io",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -65,6 +66,32 @@
       "type": "select",
       "options": ["http", "https"],
       "description": "Protocol used to access Drone"
+    },
+    {
+      "key": "DRONE_USER_CREATE",
+      "label": "Admin User",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Create an admin user on first run (e.g., username:admin,machine:false,admin:true)"
+    },
+    {
+      "key": "DRONE_DATABASE_DRIVER",
+      "label": "Database Driver",
+      "default": "sqlite3",
+      "required": false,
+      "type": "select",
+      "options": ["sqlite3", "postgres", "mysql"],
+      "description": "Database driver to use for persistent storage"
+    },
+    {
+      "key": "DRONE_LOGS_DEBUG",
+      "label": "Debug Logging",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable debug-level logging for troubleshooting"
     }
   ],
   "ports": [

@@ -6,6 +6,7 @@
   "category": "automation",
   "version": "latest",
   "website": "https://changedetection.io",
+  "docs_url": "https://changedetection.io/docs/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,41 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "BASE_URL",
+      "label": "Base URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Base URL for the application when behind a reverse proxy (e.g. https://changes.example.com)"
+    },
+    {
+      "key": "PLAYWRIGHT_DRIVER_URL",
+      "label": "Playwright Driver URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "URL of a Playwright browser instance for JavaScript-rendered pages (e.g. ws://playwright-chrome:3000)"
+    },
+    {
+      "key": "WEBDRIVER_URL",
+      "label": "WebDriver URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "URL of a Selenium WebDriver instance for browser-based fetching (e.g. http://selenium:4444/wd/hub)"
+    },
+    {
+      "key": "HIDE_REFERER",
+      "label": "Hide Referer",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Whether to hide the referer header when fetching pages"
+    }
+  ],
   "ports": [
     {
       "container_port": 5000,

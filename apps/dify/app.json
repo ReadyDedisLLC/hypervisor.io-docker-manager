@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://dify.ai",
+  "docs_url": "https://docs.dify.ai",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -50,6 +51,32 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Redis instance"
+    },
+    {
+      "key": "LOG_LEVEL",
+      "label": "Log Level",
+      "default": "INFO",
+      "required": false,
+      "type": "select",
+      "options": ["DEBUG", "INFO", "WARNING", "ERROR"],
+      "description": "Application log verbosity level"
+    },
+    {
+      "key": "STORAGE_TYPE",
+      "label": "Storage Type",
+      "default": "local",
+      "required": false,
+      "type": "select",
+      "options": ["local", "s3", "azure-blob"],
+      "description": "File storage backend type"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for OpenAI models (can also be added via the web UI)"
     }
   ],
   "ports": [

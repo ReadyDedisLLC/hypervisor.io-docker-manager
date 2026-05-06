@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://healthchecks.io",
+  "docs_url": "https://healthchecks.io/docs/self_hosted_configuration/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -57,6 +58,72 @@
       "type": "password",
       "generate": true,
       "description": "Password for the superuser account"
+    },
+    {
+      "key": "SITE_NAME",
+      "label": "Site Name",
+      "default": "Healthchecks",
+      "required": false,
+      "type": "text",
+      "description": "Display name shown in the web UI and email notifications"
+    },
+    {
+      "key": "DEFAULT_FROM_EMAIL",
+      "label": "From Email",
+      "default": "healthchecks@example.com",
+      "required": false,
+      "type": "text",
+      "description": "Sender email address for outgoing notifications"
+    },
+    {
+      "key": "EMAIL_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending email alerts"
+    },
+    {
+      "key": "EMAIL_PORT",
+      "label": "SMTP Port",
+      "default": "587",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
+    },
+    {
+      "key": "EMAIL_HOST_USER",
+      "label": "SMTP Username",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP authentication username"
+    },
+    {
+      "key": "EMAIL_HOST_PASSWORD",
+      "label": "SMTP Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "SMTP authentication password"
+    },
+    {
+      "key": "EMAIL_USE_TLS",
+      "label": "SMTP Use TLS",
+      "default": "True",
+      "required": false,
+      "type": "select",
+      "options": ["True", "False"],
+      "description": "Use TLS for SMTP connection"
+    },
+    {
+      "key": "REGISTRATION_OPEN",
+      "label": "Open Registration",
+      "default": "True",
+      "required": false,
+      "type": "select",
+      "options": ["True", "False"],
+      "description": "Allow new user registrations"
     }
   ],
   "ports": [

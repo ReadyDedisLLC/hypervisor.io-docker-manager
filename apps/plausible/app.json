@@ -6,6 +6,7 @@
   "category": "analytics",
   "version": "v2.1",
   "website": "https://plausible.io",
+  "docs_url": "https://plausible.io/docs/self-hosting-configuration",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -50,6 +51,39 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Plausible PostgreSQL database"
+    },
+    {
+      "key": "DISABLE_REGISTRATION",
+      "label": "Disable Registration",
+      "default": "invite_only",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false", "invite_only"],
+      "description": "Control user registration: true (disabled), false (open), invite_only"
+    },
+    {
+      "key": "MAILER_EMAIL",
+      "label": "Mailer From Email",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "From address for transactional emails (e.g. plausible@yourdomain.com)"
+    },
+    {
+      "key": "SMTP_HOST_ADDR",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails"
+    },
+    {
+      "key": "SMTP_HOST_PORT",
+      "label": "SMTP Port",
+      "default": "25",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port (25, 465, or 587)"
     }
   ],
   "ports": [

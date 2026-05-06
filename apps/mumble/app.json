@@ -6,6 +6,7 @@
   "category": "communication",
   "version": "latest",
   "website": "https://mumble.info",
+  "docs_url": "https://wiki.mumble.info/wiki/Main_Page",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -24,6 +25,46 @@
       "type": "password",
       "generate": true,
       "description": "Password for the Mumble superuser account"
+    },
+    {
+      "key": "MUMBLE_CONFIG_WELCOMETEXT",
+      "label": "Welcome Text",
+      "default": "Welcome to this Mumble server!",
+      "required": false,
+      "type": "text",
+      "description": "Message displayed to users when they connect"
+    },
+    {
+      "key": "MUMBLE_CONFIG_SERVERPASSWORD",
+      "label": "Server Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Password required to connect to the server (leave empty for no password)"
+    },
+    {
+      "key": "MUMBLE_CONFIG_USERS",
+      "label": "Max Users",
+      "default": "100",
+      "required": false,
+      "type": "number",
+      "description": "Maximum number of concurrent users"
+    },
+    {
+      "key": "MUMBLE_CONFIG_BANDWIDTH",
+      "label": "Max Bandwidth",
+      "default": "72000",
+      "required": false,
+      "type": "number",
+      "description": "Maximum bandwidth per client in bits per second"
+    },
+    {
+      "key": "MUMBLE_CONFIG_REGISTERNAME",
+      "label": "Server Name",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Server name shown in the public server list and client"
     }
   ],
   "ports": [

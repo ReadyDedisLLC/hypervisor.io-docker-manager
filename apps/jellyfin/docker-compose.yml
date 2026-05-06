@@ -4,6 +4,10 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_8096:-8096}:8096"
+    env_file:
+      - .env
+    environment:
+      JELLYFIN_PublishedServerUrl: ${JELLYFIN_PublishedServerUrl:-}
     volumes:
       - jellyfin_config:/config
       - jellyfin_cache:/cache

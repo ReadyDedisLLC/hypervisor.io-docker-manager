@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "1",
   "website": "https://github.com/louislam/uptime-kuma",
+  "docs_url": "https://github.com/louislam/uptime-kuma/wiki",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,44 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "UPTIME_KUMA_DISABLE_FRAME_SAMEORIGIN",
+      "label": "Allow iFrame Embedding",
+      "default": "0",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "No", "value": "0" },
+        { "label": "Yes", "value": "1" }
+      ],
+      "description": "Set to 1 to allow embedding the status page in iframes on other sites"
+    },
+    {
+      "key": "NODE_EXTRA_CA_CERTS",
+      "label": "Extra CA Certificates",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Path to file with extra CA certificates for monitoring HTTPS endpoints with custom CAs"
+    },
+    {
+      "key": "UPTIME_KUMA_CLOUDFLARED_TOKEN",
+      "label": "Cloudflare Tunnel Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Cloudflare Tunnel token for exposing Uptime Kuma via Cloudflare Tunnel"
+    },
+    {
+      "key": "NOTIFICATION_PROXY",
+      "label": "Notification Proxy URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Proxy URL for outgoing notification requests (e.g. http://proxy:8080)"
+    }
+  ],
   "ports": [
     {
       "container_port": 3001,

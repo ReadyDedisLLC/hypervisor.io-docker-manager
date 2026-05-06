@@ -3,6 +3,10 @@ services:
     image: grafana/loki:latest
     restart: unless-stopped
     command: -config.file=/etc/loki/local-config.yaml
+    environment:
+      LOKI_LOG_LEVEL: ${LOKI_LOG_LEVEL:-info}
+      LOKI_AUTH_ENABLED: ${LOKI_AUTH_ENABLED:-false}
+      LOKI_RETENTION_PERIOD: ${LOKI_RETENTION_PERIOD:-744h}
     ports:
       - "${HOST_PORT_3100:-3100}:3100"
     volumes:

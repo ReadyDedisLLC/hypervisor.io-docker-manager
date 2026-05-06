@@ -6,6 +6,7 @@
   "category": "databases",
   "version": "latest",
   "website": "https://cassandra.apache.org",
+  "docs_url": "https://cassandra.apache.org/doc/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -31,6 +32,39 @@
       "required": true,
       "type": "text",
       "description": "Name of the datacenter for this node"
+    },
+    {
+      "key": "CASSANDRA_RACK",
+      "label": "Rack Name",
+      "default": "rack1",
+      "required": false,
+      "type": "text",
+      "description": "Name of the rack within the datacenter"
+    },
+    {
+      "key": "CASSANDRA_ENDPOINT_SNITCH",
+      "label": "Endpoint Snitch",
+      "default": "SimpleSnitch",
+      "required": false,
+      "type": "select",
+      "options": ["SimpleSnitch", "GossipingPropertyFileSnitch", "PropertyFileSnitch", "Ec2Snitch", "Ec2MultiRegionSnitch", "GoogleCloudSnitch"],
+      "description": "Snitch type used for locating nodes and routing requests"
+    },
+    {
+      "key": "CASSANDRA_SEEDS",
+      "label": "Seed Nodes",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of seed node IP addresses for cluster discovery"
+    },
+    {
+      "key": "CASSANDRA_NUM_TOKENS",
+      "label": "Number of Tokens",
+      "default": "256",
+      "required": false,
+      "type": "number",
+      "description": "Number of virtual nodes (tokens) assigned to this node"
     }
   ],
   "ports": [

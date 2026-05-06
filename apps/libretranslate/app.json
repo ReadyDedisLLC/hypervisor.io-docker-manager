@@ -6,9 +6,62 @@
   "category": "ai",
   "version": "latest",
   "website": "https://libretranslate.com",
+  "docs_url": "https://github.com/LibreTranslate/LibreTranslate#readme",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-12","rocky-9","almalinux-9"],
   "min_ram_mb": 2048,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "LT_API_KEYS",
+      "label": "Enable API Keys",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Require API keys for requests (enable to restrict access)"
+    },
+    {
+      "key": "LT_LOAD_ONLY",
+      "label": "Languages to Load",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Comma-separated list of language codes to load (e.g. en,es,fr). Leave empty to load all languages."
+    },
+    {
+      "key": "LT_CHAR_LIMIT",
+      "label": "Character Limit",
+      "default": "",
+      "required": false,
+      "type": "number",
+      "description": "Maximum number of characters per translation request (leave empty for no limit)"
+    },
+    {
+      "key": "LT_REQ_LIMIT",
+      "label": "Request Rate Limit",
+      "default": "",
+      "required": false,
+      "type": "number",
+      "description": "Maximum number of requests per minute per client (leave empty for no limit)"
+    },
+    {
+      "key": "LT_SUGGESTIONS",
+      "label": "Enable Suggestions",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow users to submit translation suggestions"
+    },
+    {
+      "key": "LT_DISABLE_WEB_UI",
+      "label": "Disable Web UI",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable the web interface and only expose the API"
+    }
+  ],
   "ports": [{"container_port":5000,"default_host_port":5000,"protocol":"tcp","label":"API / Web UI","configurable":true}]
 }

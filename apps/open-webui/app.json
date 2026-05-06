@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://openwebui.com",
+  "docs_url": "https://docs.openwebui.com/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -24,6 +25,57 @@
       "type": "password",
       "generate": true,
       "description": "Secret key for session encryption"
+    },
+    {
+      "key": "OLLAMA_BASE_URL",
+      "label": "Ollama Base URL",
+      "default": "http://ollama:11434",
+      "required": false,
+      "type": "text",
+      "description": "URL of the Ollama API server"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for OpenAI-compatible endpoints. Leave empty if only using Ollama."
+    },
+    {
+      "key": "OPENAI_API_BASE_URL",
+      "label": "OpenAI API Base URL",
+      "default": "https://api.openai.com/v1",
+      "required": false,
+      "type": "text",
+      "description": "Base URL for OpenAI-compatible API. Change for third-party providers."
+    },
+    {
+      "key": "ENABLE_SIGNUP",
+      "label": "Enable Signup",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Allow new users to register accounts"
+    },
+    {
+      "key": "DEFAULT_USER_ROLE",
+      "label": "Default User Role",
+      "default": "pending",
+      "required": false,
+      "type": "select",
+      "options": ["pending", "user", "admin"],
+      "description": "Default role assigned to new users upon registration"
+    },
+    {
+      "key": "WEBUI_AUTH",
+      "label": "Enable Authentication",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Enable or disable authentication. Disable only for local-only setups."
     }
   ],
   "ports": [

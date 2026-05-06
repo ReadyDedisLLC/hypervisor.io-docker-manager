@@ -6,6 +6,7 @@
   "category": "monitoring",
   "version": "latest",
   "website": "https://homarr.dev",
+  "docs_url": "https://homarr.dev/docs/getting-started",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -18,7 +19,41 @@
   "min_ram_mb": 256,
   "min_storage_gb": 2,
   "env": [
-    {"key":"SECRET_ENCRYPTION_KEY","label":"Encryption Key","default":"","required":true,"type":"password","generate":true,"description":"Secret key for encrypting Homarr data"}
+    {
+      "key": "SECRET_ENCRYPTION_KEY",
+      "label": "Encryption Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key for encrypting Homarr data"
+    },
+    {
+      "key": "AUTH_PROVIDER",
+      "label": "Auth Provider",
+      "default": "credentials",
+      "required": false,
+      "type": "select",
+      "options": ["credentials", "ldap", "oidc"],
+      "description": "Authentication provider to use for user login"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "America/New_York",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for the container (e.g. America/New_York, Europe/London)"
+    },
+    {
+      "key": "DEFAULT_COLOR_SCHEME",
+      "label": "Default Color Scheme",
+      "default": "dark",
+      "required": false,
+      "type": "select",
+      "options": ["light", "dark"],
+      "description": "Default color scheme for the dashboard"
+    }
   ],
   "ports": [
     {

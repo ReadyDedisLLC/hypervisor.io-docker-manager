@@ -6,6 +6,7 @@
   "category": "ai",
   "version": "latest",
   "website": "https://flowiseai.com",
+  "docs_url": "https://docs.flowiseai.com",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -32,6 +33,41 @@
       "type": "password",
       "generate": true,
       "description": "Password for Flowise web interface login"
+    },
+    {
+      "key": "FLOWISE_SECRETKEY_OVERWRITE",
+      "label": "Encryption Secret Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key used to encrypt credentials stored in the database"
+    },
+    {
+      "key": "DATABASE_TYPE",
+      "label": "Database Type",
+      "default": "sqlite",
+      "required": false,
+      "type": "select",
+      "options": ["sqlite", "mysql", "postgres"],
+      "description": "Database backend to use for Flowise data storage"
+    },
+    {
+      "key": "LOG_LEVEL",
+      "label": "Log Level",
+      "default": "info",
+      "required": false,
+      "type": "select",
+      "options": ["debug", "info", "warn", "error"],
+      "description": "Application log verbosity level"
+    },
+    {
+      "key": "APIKEY_PATH",
+      "label": "API Key Storage Path",
+      "default": "/root/.flowise",
+      "required": false,
+      "type": "text",
+      "description": "Path where API keys are stored"
     }
   ],
   "ports": [

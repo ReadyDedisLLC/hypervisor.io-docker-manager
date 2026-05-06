@@ -6,6 +6,7 @@
   "category": "gaming",
   "version": "latest",
   "website": "https://github.com/itzg/docker-minecraft-server",
+  "docs_url": "https://docker-minecraft-server.readthedocs.io/en/latest/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -78,6 +79,76 @@
       "required": false,
       "type": "number",
       "description": "Maximum number of players that can join"
+    },
+    {
+      "key": "VERSION",
+      "label": "Minecraft Version",
+      "default": "LATEST",
+      "required": false,
+      "type": "text",
+      "description": "Minecraft version to use (e.g. 1.20.4, LATEST, or SNAPSHOT)"
+    },
+    {
+      "key": "MOTD",
+      "label": "Message of the Day",
+      "default": "A Minecraft Server",
+      "required": false,
+      "type": "text",
+      "description": "Server message shown in the multiplayer server list"
+    },
+    {
+      "key": "GAMEMODE",
+      "label": "Game Mode",
+      "default": "survival",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Survival", "value": "survival" },
+        { "label": "Creative", "value": "creative" },
+        { "label": "Adventure", "value": "adventure" },
+        { "label": "Spectator", "value": "spectator" }
+      ],
+      "description": "Default game mode for new players"
+    },
+    {
+      "key": "PVP",
+      "label": "PvP",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Enabled", "value": "true" },
+        { "label": "Disabled", "value": "false" }
+      ],
+      "description": "Enable or disable player vs player combat"
+    },
+    {
+      "key": "ONLINE_MODE",
+      "label": "Online Mode",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Enabled", "value": "true" },
+        { "label": "Disabled", "value": "false" }
+      ],
+      "description": "Require players to authenticate with Mojang servers"
+    },
+    {
+      "key": "SEED",
+      "label": "World Seed",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Seed for world generation (leave empty for random)"
+    },
+    {
+      "key": "VIEW_DISTANCE",
+      "label": "View Distance",
+      "default": "10",
+      "required": false,
+      "type": "number",
+      "description": "Maximum view distance in chunks (3-32)"
     }
   ],
   "ports": [

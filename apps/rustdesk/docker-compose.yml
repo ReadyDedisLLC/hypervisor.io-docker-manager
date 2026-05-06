@@ -3,6 +3,9 @@ services:
     image: rustdesk/rustdesk-server:latest
     restart: unless-stopped
     command: hbbs
+    environment:
+      RELAY: ${RELAY:-}
+      ENCRYPTED_ONLY: ${ENCRYPTED_ONLY:-1}
     ports:
       - "${HOST_PORT_21115:-21115}:21115"
       - "${HOST_PORT_21116:-21116}:21116"

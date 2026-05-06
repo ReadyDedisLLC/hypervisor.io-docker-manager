@@ -6,6 +6,7 @@
   "category": "analytics",
   "version": "latest",
   "website": "https://posthog.com",
+  "docs_url": "https://posthog.com/docs/self-host",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -33,6 +34,48 @@
       "type": "password",
       "generate": true,
       "description": "Password for the PostgreSQL database"
+    },
+    {
+      "key": "SITE_URL",
+      "label": "Site URL",
+      "default": "http://localhost:8000",
+      "required": false,
+      "type": "text",
+      "description": "Public URL where PostHog will be accessible"
+    },
+    {
+      "key": "IS_BEHIND_PROXY",
+      "label": "Behind Proxy",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to true if PostHog is running behind a reverse proxy"
+    },
+    {
+      "key": "DISABLE_SECURE_SSL_REDIRECT",
+      "label": "Disable SSL Redirect",
+      "default": "true",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Disable automatic redirect to HTTPS (set to true if handling SSL at proxy level)"
+    },
+    {
+      "key": "EMAIL_HOST",
+      "label": "SMTP Host",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "SMTP server hostname for sending emails"
+    },
+    {
+      "key": "EMAIL_PORT",
+      "label": "SMTP Port",
+      "default": "25",
+      "required": false,
+      "type": "number",
+      "description": "SMTP server port"
     }
   ],
   "ports": [

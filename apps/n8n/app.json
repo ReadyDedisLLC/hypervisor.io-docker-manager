@@ -6,6 +6,7 @@
   "category": "automation",
   "version": "latest",
   "website": "https://n8n.io",
+  "docs_url": "https://docs.n8n.io/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -34,6 +35,45 @@
       "type": "password",
       "generate": true,
       "description": "Password for basic auth on the web interface"
+    },
+    {
+      "key": "N8N_ENCRYPTION_KEY",
+      "label": "Encryption Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Key used to encrypt saved credentials. Must remain the same across restarts."
+    },
+    {
+      "key": "WEBHOOK_URL",
+      "label": "Webhook URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Public URL for receiving webhooks (e.g. https://n8n.example.com/)"
+    },
+    {
+      "key": "GENERIC_TIMEZONE",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Timezone for scheduling workflows (e.g. America/New_York)"
+    },
+    {
+      "key": "N8N_LOG_LEVEL",
+      "label": "Log Level",
+      "default": "info",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "Info", "value": "info" },
+        { "label": "Warn", "value": "warn" },
+        { "label": "Error", "value": "error" },
+        { "label": "Debug", "value": "debug" }
+      ],
+      "description": "Logging verbosity level"
     }
   ],
   "ports": [

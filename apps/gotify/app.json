@@ -6,6 +6,7 @@
   "category": "communication",
   "version": "latest",
   "website": "https://gotify.net",
+  "docs_url": "https://gotify.net/docs/",
   "supported_distros": ["ubuntu-22.04","ubuntu-24.04","debian-11","debian-12","rocky-9","almalinux-9","centos-stream-9"],
   "min_ram_mb": 64,
   "min_storage_gb": 1,
@@ -26,6 +27,30 @@
       "type": "password",
       "generate": true,
       "description": "Password for the default admin account"
+    },
+    {
+      "key": "GOTIFY_SERVER_PORT",
+      "label": "Server Port",
+      "default": "80",
+      "required": false,
+      "type": "number",
+      "description": "Port the Gotify server listens on inside the container"
+    },
+    {
+      "key": "GOTIFY_SERVER_KEEPALIVEPERIODSECONDS",
+      "label": "Keep-Alive Period",
+      "default": "25",
+      "required": false,
+      "type": "number",
+      "description": "WebSocket keep-alive period in seconds"
+    },
+    {
+      "key": "TZ",
+      "label": "Timezone",
+      "default": "Etc/UTC",
+      "required": false,
+      "type": "text",
+      "description": "Container timezone (e.g. America/New_York)"
     }
   ],
   "ports": [{"container_port":80,"default_host_port":8080,"protocol":"tcp","label":"Web UI / API","configurable":true}]

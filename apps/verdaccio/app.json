@@ -6,6 +6,7 @@
   "category": "development",
   "version": "latest",
   "website": "https://verdaccio.org",
+  "docs_url": "https://verdaccio.org/docs/what-is-verdaccio",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -15,7 +16,36 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 10,
-  "env": [],
+  "env": [
+    {
+      "key": "VERDACCIO_PORT",
+      "label": "Listen Port",
+      "default": "4873",
+      "required": false,
+      "type": "number",
+      "description": "Port Verdaccio listens on inside the container"
+    },
+    {
+      "key": "VERDACCIO_PROTOCOL",
+      "label": "Protocol",
+      "default": "http",
+      "required": false,
+      "type": "select",
+      "options": [
+        { "label": "HTTP", "value": "http" },
+        { "label": "HTTPS", "value": "https" }
+      ],
+      "description": "Protocol used by Verdaccio (use https if behind a TLS-terminating proxy)"
+    },
+    {
+      "key": "VERDACCIO_PUBLIC_URL",
+      "label": "Public URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Full public URL of the registry (e.g. https://npm.example.com)"
+    }
+  ],
   "ports": [
     {
       "container_port": 4873,

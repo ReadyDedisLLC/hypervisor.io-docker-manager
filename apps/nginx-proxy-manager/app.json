@@ -6,6 +6,7 @@
   "category": "networking",
   "version": "latest",
   "website": "https://nginxproxymanager.com",
+  "docs_url": "https://nginxproxymanager.com/guide/",
   "supported_distros": [
     "ubuntu-22.04",
     "ubuntu-24.04",
@@ -17,7 +18,25 @@
   ],
   "min_ram_mb": 256,
   "min_storage_gb": 2,
-  "env": [],
+  "env": [
+    {
+      "key": "DISABLE_IPV6",
+      "label": "Disable IPv6",
+      "default": "false",
+      "required": false,
+      "type": "select",
+      "options": ["true", "false"],
+      "description": "Set to true to disable IPv6 in Nginx if your environment does not support it"
+    },
+    {
+      "key": "X_FRAME_OPTIONS",
+      "label": "X-Frame-Options",
+      "default": "deny",
+      "required": false,
+      "type": "text",
+      "description": "X-Frame-Options header value for the admin interface (e.g. deny, sameorigin)"
+    }
+  ],
   "ports": [
     {
       "container_port": 80,
