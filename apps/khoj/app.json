@@ -1,0 +1,87 @@
+{
+  "name": "Khoj",
+  "slug": "khoj",
+  "description": "Self-hosted AI second brain. A personal RAG assistant that lets you chat with your notes, documents, and the web using local or cloud LLMs.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://khoj.dev",
+  "docs_url": "https://docs.khoj.dev",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "KHOJ_DJANGO_SECRET_KEY",
+      "label": "Django Secret Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret key used by the Khoj Django backend to sign sessions and tokens"
+    },
+    {
+      "key": "POSTGRES_USER",
+      "label": "Database User",
+      "default": "postgres",
+      "required": true,
+      "type": "text",
+      "description": "PostgreSQL username for the Khoj database"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Khoj PostgreSQL (pgvector) database"
+    },
+    {
+      "key": "POSTGRES_DB",
+      "label": "Database Name",
+      "default": "khoj",
+      "required": true,
+      "type": "text",
+      "description": "Name of the Khoj PostgreSQL database"
+    },
+    {
+      "key": "KHOJ_ADMIN_EMAIL",
+      "label": "Admin Email",
+      "default": "admin@example.com",
+      "required": true,
+      "type": "text",
+      "description": "Email address for the Khoj admin account used to log into the web UI"
+    },
+    {
+      "key": "KHOJ_ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Khoj admin account used to log into the web UI"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Optional; or configure a local/Ollama model in the UI"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 42110,
+      "default_host_port": 42110,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

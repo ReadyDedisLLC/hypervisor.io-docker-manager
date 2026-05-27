@@ -1,0 +1,54 @@
+{
+  "name": "Twenty",
+  "slug": "twenty",
+  "description": "Open-source CRM and modern Salesforce alternative for managing contacts, companies, and pipelines.",
+  "icon": "icon.png",
+  "category": "productivity",
+  "version": "latest",
+  "website": "https://twenty.com",
+  "docs_url": "https://twenty.com/developers/section/self-hosting/docker-compose",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "APP_SECRET",
+      "label": "Application Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Random secret used to sign tokens (base64-encoded 32-byte string, e.g. openssl rand -base64 32)"
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the internal PostgreSQL database (used to compose PG_DATABASE_URL)"
+    },
+    {
+      "key": "SERVER_URL",
+      "label": "Server URL",
+      "default": "http://localhost:3000",
+      "required": true,
+      "type": "text",
+      "description": "External URL Twenty is served at"
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3000,
+      "default_host_port": 3000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

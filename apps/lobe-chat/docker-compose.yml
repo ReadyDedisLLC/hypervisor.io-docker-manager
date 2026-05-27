@@ -1,0 +1,14 @@
+services:
+  lobe-chat:
+    image: lobehub/lobe-chat:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_3210:-3210}:3210"
+    env_file: .env
+    environment:
+      ACCESS_CODE: ${ACCESS_CODE:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_PROXY_URL: ${OPENAI_PROXY_URL:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}

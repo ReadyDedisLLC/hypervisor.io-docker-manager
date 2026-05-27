@@ -1,0 +1,63 @@
+{
+  "name": "Infisical",
+  "slug": "infisical",
+  "description": "Open-source secrets management platform for securely storing, syncing, and managing application secrets, configs, and certificates across teams and infrastructure.",
+  "icon": "icon.png",
+  "category": "security",
+  "version": "latest",
+  "website": "https://infisical.com",
+  "docs_url": "https://infisical.com/docs/self-hosting/deployment-options/docker-compose",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12"
+  ],
+  "min_ram_mb": 1024,
+  "min_storage_gb": 5,
+  "env": [
+    {
+      "key": "ENCRYPTION_KEY",
+      "label": "Encryption Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Key used to encrypt and decrypt secrets at rest. Must be a 16-byte hex string (32 hex chars). If the generated value is not valid hex, generate one with: openssl rand -hex 16. Losing this key makes stored secrets unrecoverable."
+    },
+    {
+      "key": "AUTH_SECRET",
+      "label": "Auth Secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secret used to sign JWT auth tokens. Should be a 32-byte base64 string. If the generated value is unsuitable, generate one with: openssl rand -base64 32."
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "PostgreSQL Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the internal PostgreSQL database. The DB connection string is built from this automatically."
+    },
+    {
+      "key": "SITE_URL",
+      "label": "Site URL",
+      "default": "http://localhost:8080",
+      "required": true,
+      "type": "text",
+      "description": "External URL users access Infisical at, including protocol (e.g. https://secrets.example.com)."
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8080,
+      "default_host_port": 8080,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

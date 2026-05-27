@@ -14115,5 +14115,418 @@
         "configurable": true
       }
     ]
+  },
+  {
+    "name": "Infisical",
+    "slug": "infisical",
+    "description": "Open-source secrets management platform for securely storing, syncing, and managing application secrets, configs, and certificates across teams and infrastructure.",
+    "icon": "icon.png",
+    "category": "security",
+    "version": "latest",
+    "website": "https://infisical.com",
+    "docs_url": "https://infisical.com/docs/self-hosting/deployment-options/docker-compose",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12"
+    ],
+    "min_ram_mb": 1024,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "ENCRYPTION_KEY",
+        "label": "Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Key used to encrypt and decrypt secrets at rest. Must be a 16-byte hex string (32 hex chars). If the generated value is not valid hex, generate one with: openssl rand -hex 16. Losing this key makes stored secrets unrecoverable."
+      },
+      {
+        "key": "AUTH_SECRET",
+        "label": "Auth Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret used to sign JWT auth tokens. Should be a 32-byte base64 string. If the generated value is unsuitable, generate one with: openssl rand -base64 32."
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the internal PostgreSQL database. The DB connection string is built from this automatically."
+      },
+      {
+        "key": "SITE_URL",
+        "label": "Site URL",
+        "default": "http://localhost:8080",
+        "required": true,
+        "type": "text",
+        "description": "External URL users access Infisical at, including protocol (e.g. https://secrets.example.com)."
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8080,
+        "default_host_port": 8080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Khoj",
+    "slug": "khoj",
+    "description": "Self-hosted AI second brain. A personal RAG assistant that lets you chat with your notes, documents, and the web using local or cloud LLMs.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://khoj.dev",
+    "docs_url": "https://docs.khoj.dev",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "KHOJ_DJANGO_SECRET_KEY",
+        "label": "Django Secret Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret key used by the Khoj Django backend to sign sessions and tokens"
+      },
+      {
+        "key": "POSTGRES_USER",
+        "label": "Database User",
+        "default": "postgres",
+        "required": true,
+        "type": "text",
+        "description": "PostgreSQL username for the Khoj database"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Khoj PostgreSQL (pgvector) database"
+      },
+      {
+        "key": "POSTGRES_DB",
+        "label": "Database Name",
+        "default": "khoj",
+        "required": true,
+        "type": "text",
+        "description": "Name of the Khoj PostgreSQL database"
+      },
+      {
+        "key": "KHOJ_ADMIN_EMAIL",
+        "label": "Admin Email",
+        "default": "admin@example.com",
+        "required": true,
+        "type": "text",
+        "description": "Email address for the Khoj admin account used to log into the web UI"
+      },
+      {
+        "key": "KHOJ_ADMIN_PASSWORD",
+        "label": "Admin Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the Khoj admin account used to log into the web UI"
+      },
+      {
+        "key": "OPENAI_API_KEY",
+        "label": "OpenAI API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "Optional; or configure a local/Ollama model in the UI"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 42110,
+        "default_host_port": 42110,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "LibreChat",
+    "slug": "librechat",
+    "description": "Enhanced, open-source ChatGPT-style web UI supporting many AI providers (OpenAI, Anthropic, Google, Azure, and local models) with conversation search, multi-user auth, and a plugins ecosystem. Self-contained stack with MongoDB and Meilisearch.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://www.librechat.ai",
+    "docs_url": "https://www.librechat.ai/docs",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 5,
+    "env": [
+      {
+        "key": "CREDS_KEY",
+        "label": "Credentials Encryption Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "description": "32-byte key in hex (exactly 64 hex characters) used to encrypt stored provider credentials. Generate with: openssl rand -hex 32"
+      },
+      {
+        "key": "CREDS_IV",
+        "label": "Credentials Encryption IV",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "description": "16-byte initialization vector in hex (exactly 32 hex characters) used with the credentials key. Generate with: openssl rand -hex 16"
+      },
+      {
+        "key": "JWT_SECRET",
+        "label": "JWT Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret used to sign access tokens. A random value is generated automatically; recommended length is 32 bytes (64 hex chars), e.g. openssl rand -hex 32."
+      },
+      {
+        "key": "JWT_REFRESH_SECRET",
+        "label": "JWT Refresh Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Secret used to sign refresh tokens. A random value is generated automatically; recommended length is 32 bytes (64 hex chars), e.g. openssl rand -hex 32."
+      },
+      {
+        "key": "MEILI_MASTER_KEY",
+        "label": "Meilisearch Master Key",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Master key for the Meilisearch full-text search engine. Must be at least 16 bytes of valid UTF-8. Auto-generated; shared between the LibreChat app and the Meilisearch service."
+      },
+      {
+        "key": "OPENAI_API_KEY",
+        "label": "OpenAI API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "API key for OpenAI; optional, can also be set in the UI."
+      },
+      {
+        "key": "ANTHROPIC_API_KEY",
+        "label": "Anthropic API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "API key for Anthropic; optional, can also be set in the UI."
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3080,
+        "default_host_port": 3080,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Lobe Chat",
+    "slug": "lobe-chat",
+    "description": "Open-source, modern-design AI chat framework supporting multiple providers (OpenAI, Anthropic, Google Gemini, Groq and more), multi-modal input, and a plugin system. This is the lightweight single-container edition for a true one-click private ChatGPT-style application.",
+    "icon": "icon.png",
+    "category": "ai",
+    "version": "latest",
+    "website": "https://lobehub.com",
+    "docs_url": "https://lobehub.com/docs/self-hosting/platform/docker",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12"
+    ],
+    "min_ram_mb": 512,
+    "min_storage_gb": 2,
+    "env": [
+      {
+        "key": "ACCESS_CODE",
+        "label": "Access Code",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "generate": true,
+        "description": "Password that gates access to this Lobe Chat instance. Use a long value to prevent brute-force attacks."
+      },
+      {
+        "key": "OPENAI_API_KEY",
+        "label": "OpenAI API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "OpenAI API key. Can also be set in the UI."
+      },
+      {
+        "key": "OPENAI_PROXY_URL",
+        "label": "OpenAI Proxy URL",
+        "default": "",
+        "required": false,
+        "type": "text",
+        "description": "Optional. Override the default OpenAI API base URL (e.g. https://api-proxy.com/v1)."
+      },
+      {
+        "key": "ANTHROPIC_API_KEY",
+        "label": "Anthropic API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "Anthropic (Claude) API key. Can also be set in the UI."
+      },
+      {
+        "key": "GOOGLE_API_KEY",
+        "label": "Google Gemini API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "Google Gemini API key. Can also be set in the UI."
+      },
+      {
+        "key": "GROQ_API_KEY",
+        "label": "Groq API Key",
+        "default": "",
+        "required": false,
+        "type": "password",
+        "description": "Groq API key. Can also be set in the UI."
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3210,
+        "default_host_port": 3210,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Twenty",
+    "slug": "twenty",
+    "description": "Open-source CRM and modern Salesforce alternative for managing contacts, companies, and pipelines.",
+    "icon": "icon.png",
+    "category": "productivity",
+    "version": "latest",
+    "website": "https://twenty.com",
+    "docs_url": "https://twenty.com/developers/section/self-hosting/docker-compose",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "APP_SECRET",
+        "label": "Application Secret",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Random secret used to sign tokens (base64-encoded 32-byte string, e.g. openssl rand -base64 32)"
+      },
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "PostgreSQL Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the internal PostgreSQL database (used to compose PG_DATABASE_URL)"
+      },
+      {
+        "key": "SERVER_URL",
+        "label": "Server URL",
+        "default": "http://localhost:3000",
+        "required": true,
+        "type": "text",
+        "description": "External URL Twenty is served at"
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 3000,
+        "default_host_port": 3000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
+  },
+  {
+    "name": "Windmill",
+    "slug": "windmill",
+    "description": "Open-source developer platform to turn scripts into workflows, webhooks, cron jobs, and internal UIs. Run Python, TypeScript, Go, Bash, and SQL with a built-in editor and orchestration engine. The first user to sign up becomes the superadmin; if not created during setup, log in with admin@windmill.dev / changeme and change the password immediately.",
+    "icon": "icon.png",
+    "category": "automation",
+    "version": "latest",
+    "website": "https://www.windmill.dev",
+    "docs_url": "https://www.windmill.dev/docs/advanced/self_host",
+    "supported_distros": [
+      "ubuntu-22.04",
+      "ubuntu-24.04",
+      "debian-12"
+    ],
+    "min_ram_mb": 2048,
+    "min_storage_gb": 10,
+    "env": [
+      {
+        "key": "POSTGRES_PASSWORD",
+        "label": "Database Password",
+        "default": "",
+        "required": true,
+        "type": "password",
+        "generate": true,
+        "description": "Password for the internal PostgreSQL database. The DATABASE_URL is composed from this automatically."
+      },
+      {
+        "key": "BASE_URL",
+        "label": "Base URL",
+        "default": "http://localhost:8000",
+        "required": false,
+        "type": "text",
+        "description": "External URL Windmill is served at (e.g. https://windmill.example.com). Used for generating links and webhooks."
+      }
+    ],
+    "ports": [
+      {
+        "container_port": 8000,
+        "default_host_port": 8000,
+        "protocol": "tcp",
+        "label": "Web UI",
+        "configurable": true
+      }
+    ]
   }
 ]

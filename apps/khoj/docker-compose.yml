@@ -1,0 +1,49 @@
+services:
+  database:
+    image: pgvector/pgvector:pg15
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - khoj_db:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  server:
+    image: ghcr.io/khoj-ai/khoj:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT_42110:-42110}:42110"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: database
+      POSTGRES_PORT: "5432"
+      KHOJ_DJANGO_SECRET_KEY: ${KHOJ_DJANGO_SECRET_KEY}
+      KHOJ_DEBUG: "False"
+      KHOJ_NO_HTTPS: "True"
+      KHOJ_ADMIN_EMAIL: ${KHOJ_ADMIN_EMAIL}
+      KHOJ_ADMIN_PASSWORD: ${KHOJ_ADMIN_PASSWORD}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    command: --host="0.0.0.0" --port=42110 -vv --anonymous-mode --non-interactive
+    volumes:
+      - khoj_config:/root/.khoj/
+      - khoj_models:/root/.cache
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  khoj_db:
+  khoj_config:
+  khoj_models:

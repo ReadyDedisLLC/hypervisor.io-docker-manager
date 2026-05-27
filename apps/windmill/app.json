@@ -1,0 +1,45 @@
+{
+  "name": "Windmill",
+  "slug": "windmill",
+  "description": "Open-source developer platform to turn scripts into workflows, webhooks, cron jobs, and internal UIs. Run Python, TypeScript, Go, Bash, and SQL with a built-in editor and orchestration engine. The first user to sign up becomes the superadmin; if not created during setup, log in with admin@windmill.dev / changeme and change the password immediately.",
+  "icon": "icon.png",
+  "category": "automation",
+  "version": "latest",
+  "website": "https://www.windmill.dev",
+  "docs_url": "https://www.windmill.dev/docs/advanced/self_host",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12"
+  ],
+  "min_ram_mb": 2048,
+  "min_storage_gb": 10,
+  "env": [
+    {
+      "key": "POSTGRES_PASSWORD",
+      "label": "Database Password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the internal PostgreSQL database. The DATABASE_URL is composed from this automatically."
+    },
+    {
+      "key": "BASE_URL",
+      "label": "Base URL",
+      "default": "http://localhost:8000",
+      "required": false,
+      "type": "text",
+      "description": "External URL Windmill is served at (e.g. https://windmill.example.com). Used for generating links and webhooks."
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 8000,
+      "default_host_port": 8000,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Lobe Chat",
+  "slug": "lobe-chat",
+  "description": "Open-source, modern-design AI chat framework supporting multiple providers (OpenAI, Anthropic, Google Gemini, Groq and more), multi-modal input, and a plugin system. This is the lightweight single-container edition for a true one-click private ChatGPT-style application.",
+  "icon": "icon.png",
+  "category": "ai",
+  "version": "latest",
+  "website": "https://lobehub.com",
+  "docs_url": "https://lobehub.com/docs/self-hosting/platform/docker",
+  "supported_distros": [
+    "ubuntu-22.04",
+    "ubuntu-24.04",
+    "debian-12"
+  ],
+  "min_ram_mb": 512,
+  "min_storage_gb": 2,
+  "env": [
+    {
+      "key": "ACCESS_CODE",
+      "label": "Access Code",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Password that gates access to this Lobe Chat instance. Use a long value to prevent brute-force attacks."
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "OpenAI API key. Can also be set in the UI."
+    },
+    {
+      "key": "OPENAI_PROXY_URL",
+      "label": "OpenAI Proxy URL",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "Optional. Override the default OpenAI API base URL (e.g. https://api-proxy.com/v1)."
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Anthropic (Claude) API key. Can also be set in the UI."
+    },
+    {
+      "key": "GOOGLE_API_KEY",
+      "label": "Google Gemini API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Google Gemini API key. Can also be set in the UI."
+    },
+    {
+      "key": "GROQ_API_KEY",
+      "label": "Groq API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Groq API key. Can also be set in the UI."
+    }
+  ],
+  "ports": [
+    {
+      "container_port": 3210,
+      "default_host_port": 3210,
+      "protocol": "tcp",
+      "label": "Web UI",
+      "configurable": true
+    }
+  ]
+}
