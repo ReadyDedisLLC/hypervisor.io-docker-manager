@@ -63,6 +63,24 @@
       "description": "Disable self-registration of new users"
     },
     {
+      "key": "GITEA__security__SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Global secret key used to encrypt sensitive data; keep stable across reinstalls"
+    },
+    {
+      "key": "GITEA__security__INTERNAL_TOKEN",
+      "label": "Internal Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Token used to validate internal API communication"
+    },
+    {
       "key": "USER_UID",
       "label": "User UID",
       "default": "1000",

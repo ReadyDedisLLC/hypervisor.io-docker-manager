@@ -27,6 +27,24 @@
       "description": "Secret key for JWT token signing (auto-generated if not set)"
     },
     {
+      "key": "SIG_KEY",
+      "label": "Signature Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Signing key for persisted secrets (auto-generated; at least 32 chars)"
+    },
+    {
+      "key": "SIG_SALT",
+      "label": "Signature Salt",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Signing salt for persisted secrets (auto-generated; at least 32 chars)"
+    },
+    {
       "key": "AUTH_TOKEN",
       "label": "Auth Token",
       "default": "",
@@ -55,6 +73,11 @@
       "options": [
         { "label": "OpenAI", "value": "openai" },
         { "label": "Anthropic", "value": "anthropic" },
+        { "label": "Gemini", "value": "gemini" },
+        { "label": "Groq", "value": "groq" },
+        { "label": "Mistral", "value": "mistral" },
+        { "label": "OpenRouter", "value": "openrouter" },
+        { "label": "Hugging Face", "value": "huggingface" },
         { "label": "Ollama", "value": "ollama" },
         { "label": "Local AI", "value": "localai" },
         { "label": "Configure in UI", "value": "" }
@@ -67,7 +90,7 @@
       "default": "",
       "required": false,
       "type": "password",
-      "description": "OpenAI API key (required if using OpenAI as LLM provider)"
+      "description": "OpenAI API key (required if using OpenAI as LLM provider); can also be configured in the Web UI"
     },
     {
       "key": "ANTHROPIC_API_KEY",
@@ -75,7 +98,47 @@
       "default": "",
       "required": false,
       "type": "password",
-      "description": "Anthropic API key (required if using Anthropic as LLM provider)"
+      "description": "Anthropic API key (required if using Anthropic as LLM provider); can also be configured in the Web UI"
+    },
+    {
+      "key": "GEMINI_API_KEY",
+      "label": "Google Gemini API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Google Gemini API key; can also be configured in the Web UI"
+    },
+    {
+      "key": "GROQ_API_KEY",
+      "label": "Groq API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Groq API key; can also be configured in the Web UI"
+    },
+    {
+      "key": "MISTRAL_API_KEY",
+      "label": "Mistral API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Mistral API key; can also be configured in the Web UI"
+    },
+    {
+      "key": "OPENROUTER_API_KEY",
+      "label": "OpenRouter API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "OpenRouter API key; can also be configured in the Web UI"
+    },
+    {
+      "key": "HUGGING_FACE_LLM_API_KEY",
+      "label": "Hugging Face API Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Hugging Face access token; can also be configured in the Web UI"
     }
   ],
   "ports": [

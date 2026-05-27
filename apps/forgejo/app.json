@@ -93,6 +93,24 @@
       "type": "select",
       "options": ["true", "false"],
       "description": "Disable new user self-registration"
+    },
+    {
+      "key": "FORGEJO__security__SECRET_KEY",
+      "label": "Secret Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Global secret key used to encrypt sensitive data; keep stable across reinstalls"
+    },
+    {
+      "key": "FORGEJO__security__INTERNAL_TOKEN",
+      "label": "Internal Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Token used to validate internal API communication"
     }
   ],
   "ports": [

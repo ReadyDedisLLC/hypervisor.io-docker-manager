@@ -6,6 +6,8 @@ services:
       - "${HOST_PORT_9000:-9002}:9000"
       - "${HOST_PORT_1514:-1514}:1514/tcp"
       - "${HOST_PORT_12201:-12201}:12201/udp"
+    env_file:
+      - .env
     environment:
       GRAYLOG_PASSWORD_SECRET: ${GRAYLOG_PASSWORD_SECRET}
       GRAYLOG_ROOT_PASSWORD_SHA2: ${GRAYLOG_ROOT_PASSWORD_SHA2}

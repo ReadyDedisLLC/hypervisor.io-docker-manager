@@ -29,10 +29,10 @@
     {
       "key": "NEXTAUTH_URL",
       "label": "Application URL",
-      "default": "http://localhost:3000",
+      "default": "http://localhost:3000/api/v1/auth",
       "required": true,
       "type": "text",
-      "description": "Public URL where Linkwarden will be accessible"
+      "description": "NextAuth base URL. Must include the /api/v1/auth suffix so auth and OAuth callbacks resolve (e.g. https://links.example.com/api/v1/auth)"
     },
     {
       "key": "POSTGRES_PASSWORD",

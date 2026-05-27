@@ -29,6 +29,14 @@
       "description": "Secret key for JWT token signing"
     },
     {
+      "key": "VIKUNJA_SERVICE_PUBLICURL",
+      "label": "Public URL",
+      "default": "http://localhost:3456",
+      "required": true,
+      "type": "text",
+      "description": "Public URL where Vikunja is reachable (include port if non-standard, e.g. https://tasks.example.com). Required to avoid 'unauthorized' errors."
+    },
+    {
       "key": "VIKUNJA_SERVICE_FRONTENDURL",
       "label": "Frontend URL",
       "default": "http://localhost:3456",

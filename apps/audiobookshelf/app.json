@@ -12,6 +12,22 @@
   "min_storage_gb": 10,
   "env": [
     {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for file permissions"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for file permissions"
+    },
+    {
       "key": "TZ",
       "label": "Timezone",
       "default": "Etc/UTC",

@@ -50,6 +50,24 @@
       "required": false,
       "type": "text",
       "description": "Additional command-line arguments to pass to Duplicati server"
+    },
+    {
+      "key": "DUPLICATI__WEBSERVICE_PASSWORD",
+      "label": "Web UI Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Password to access the Duplicati web interface"
+    },
+    {
+      "key": "SETTINGS_ENCRYPTION_KEY",
+      "label": "Settings Encryption Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Encryption key for the Duplicati settings database (minimum 8 alphanumeric characters)"
     }
   ],
   "ports": [

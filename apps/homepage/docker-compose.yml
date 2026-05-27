@@ -4,9 +4,12 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
     environment:
-      PUID: 1000
-      PGID: 1000
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS:-*}
     volumes:
       - homepage_config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro

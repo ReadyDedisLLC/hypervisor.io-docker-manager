@@ -4,7 +4,12 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_8108:-8108}:8108"
-    command: --data-dir /data --api-key=${TYPESENSE_API_KEY}
+    command: --data-dir /data
+    env_file:
+      - .env
+    environment:
+      TYPESENSE_API_KEY: ${TYPESENSE_API_KEY}
+      TYPESENSE_ENABLE_CORS: ${TYPESENSE_ENABLE_CORS}
     volumes:
       - typesense_data:/data
 

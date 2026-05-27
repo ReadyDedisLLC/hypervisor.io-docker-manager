@@ -4,6 +4,12 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_8080:-8080}:8080"
+    env_file:
+      - .env
+    environment:
+      TRILIUM_DATA_DIR: ${TRILIUM_DATA_DIR:-/home/node/trilium-data}
+      TRILIUM_PORT: ${TRILIUM_PORT:-8080}
+      NODE_ENV: ${NODE_ENV:-production}
     volumes:
       - trilium_data:/home/node/trilium-data
 

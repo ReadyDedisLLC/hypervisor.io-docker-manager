@@ -6,6 +6,11 @@ services:
       - "${HOST_PORT_8384:-8384}:8384"
       - "${HOST_PORT_22000:-22000}:22000/tcp"
       - "${HOST_PORT_22000_UDP:-22000}:22000/udp"
+    env_file:
+      - .env
+    environment:
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
     volumes:
       - syncthing_data:/var/syncthing
 

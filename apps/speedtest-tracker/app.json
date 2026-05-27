@@ -12,6 +12,7 @@
   "min_storage_gb": 2,
   "env": [
     {"key":"APP_KEY","label":"App Key","default":"","required":true,"type":"password","generate":true,"description":"Laravel application key (must start with 'base64:')"},
+    {"key":"APP_URL","label":"App URL","default":"http://localhost:8080","required":false,"type":"text","description":"Public URL used to access Speedtest Tracker (e.g. https://speedtest.example.com)"},
     {"key":"PUID","label":"User ID","default":"1000","required":false,"type":"number","description":"UID for file permission mapping (run 'id -u' to find yours)"},
     {"key":"PGID","label":"Group ID","default":"1000","required":false,"type":"number","description":"GID for file permission mapping (run 'id -g' to find yours)"},
     {"key":"TZ","label":"Timezone","default":"Etc/UTC","required":false,"type":"text","description":"Timezone in tz database format (e.g., America/New_York)"},

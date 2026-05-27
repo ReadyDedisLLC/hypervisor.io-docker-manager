@@ -41,7 +41,16 @@
       "required": true,
       "type": "password",
       "generate": true,
-      "description": "Key used to encrypt sensitive document data"
+      "description": "Key used to encrypt sensitive document data (min 32 chars)"
+    },
+    {
+      "key": "NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY",
+      "label": "Secondary Encryption Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Secondary key used to encrypt sensitive document data (min 32 chars)"
     },
     {
       "key": "POSTGRES_PASSWORD",

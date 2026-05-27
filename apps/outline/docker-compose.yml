@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
     environment:
       SECRET_KEY: ${SECRET_KEY}
       UTILS_SECRET: ${UTILS_SECRET}
@@ -15,6 +17,12 @@ services:
       FORCE_HTTPS: ${FORCE_HTTPS:-false}
       DEFAULT_LANGUAGE: ${DEFAULT_LANGUAGE:-en_US}
       ENABLE_UPDATES: ${ENABLE_UPDATES:-true}
+      OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-}
+      OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET:-}
+      OIDC_AUTH_URI: ${OIDC_AUTH_URI:-}
+      OIDC_TOKEN_URI: ${OIDC_TOKEN_URI:-}
+      OIDC_USERINFO_URI: ${OIDC_USERINFO_URI:-}
+      OIDC_DISPLAY_NAME: ${OIDC_DISPLAY_NAME:-OpenID}
       SMTP_HOST: ${SMTP_HOST:-}
       SMTP_PORT: ${SMTP_PORT:-587}
       SMTP_USERNAME: ${SMTP_USERNAME:-}

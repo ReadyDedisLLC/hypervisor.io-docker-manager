@@ -6,6 +6,8 @@ services:
     ports:
       - "${HOST_PORT_8080:-8093}:8080"
       - "${HOST_PORT_3478:-3478}:3478/udp"
+    env_file:
+      - .env
     environment:
       HEADSCALE_SERVER_URL: ${HEADSCALE_SERVER_URL}
     volumes:

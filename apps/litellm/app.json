@@ -67,6 +67,71 @@
       "description": "Base URL for your Azure OpenAI resource (e.g. https://your-resource.openai.azure.com)"
     },
     {
+      "key": "GEMINI_API_KEY",
+      "label": "Gemini API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Google Gemini (AI Studio) models; can also be configured in the Web UI"
+    },
+    {
+      "key": "GROQ_API_KEY",
+      "label": "Groq API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Groq models; can also be configured in the Web UI"
+    },
+    {
+      "key": "MISTRAL_API_KEY",
+      "label": "Mistral API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Mistral models; can also be configured in the Web UI"
+    },
+    {
+      "key": "COHERE_API_KEY",
+      "label": "Cohere API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Cohere models; can also be configured in the Web UI"
+    },
+    {
+      "key": "OPENROUTER_API_KEY",
+      "label": "OpenRouter API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for OpenRouter models; can also be configured in the Web UI"
+    },
+    {
+      "key": "DEEPSEEK_API_KEY",
+      "label": "DeepSeek API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for DeepSeek models; can also be configured in the Web UI"
+    },
+    {
+      "key": "XAI_API_KEY",
+      "label": "xAI (Grok) API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for xAI Grok models; can also be configured in the Web UI"
+    },
+    {
+      "key": "STORE_MODEL_IN_DB",
+      "label": "Store Models in Database",
+      "default": "True",
+      "required": false,
+      "type": "select",
+      "options": ["True", "False"],
+      "description": "Persist models added through the admin UI to the database (requires Database URL)"
+    },
+    {
       "key": "LITELLM_LOG",
       "label": "Log Level",
       "default": "INFO",

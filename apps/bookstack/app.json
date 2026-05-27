@@ -28,6 +28,15 @@
       "description": "Public URL of your BookStack instance"
     },
     {
+      "key": "APP_KEY",
+      "label": "Application Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Base64 encryption key for sessions and encrypted data (auto-generated)"
+    },
+    {
       "key": "DB_PASS",
       "label": "Database Password",
       "default": "",

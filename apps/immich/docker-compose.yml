@@ -12,6 +12,8 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE_NAME: immich
       REDIS_HOSTNAME: redis
+      IMMICH_MACHINE_LEARNING_URL: ${IMMICH_MACHINE_LEARNING_URL:-http://immich-machine-learning:3003}
+      TZ: ${TZ:-America/New_York}
     volumes:
       - upload_data:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro

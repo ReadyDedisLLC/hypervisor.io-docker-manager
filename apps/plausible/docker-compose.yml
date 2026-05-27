@@ -10,6 +10,11 @@ services:
     environment:
       DATABASE_URL: postgres://plausible:${POSTGRES_PASSWORD}@db:5432/plausible
       CLICKHOUSE_DATABASE_URL: http://clickhouse:8123/plausible
+      MAILER_EMAIL: ${MAILER_EMAIL:-}
+      SMTP_HOST_ADDR: ${SMTP_HOST_ADDR:-}
+      SMTP_HOST_PORT: ${SMTP_HOST_PORT:-25}
+      SMTP_USER_NAME: ${SMTP_USER_NAME:-}
+      SMTP_USER_PWD: ${SMTP_USER_PWD:-}
     depends_on:
       - db
       - clickhouse
@@ -17,6 +22,8 @@ services:
   db:
     image: postgres:16
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
       POSTGRES_USER: plausible
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

@@ -36,6 +36,14 @@
       "description": "Root directory to browse files from"
     },
     {
+      "key": "FB_DATABASE",
+      "label": "Database Path",
+      "default": "/database/filebrowser.db",
+      "required": false,
+      "type": "text",
+      "description": "Path to the File Browser database file (stored on the persistent database volume)"
+    },
+    {
       "key": "FB_NOAUTH",
       "label": "Disable Authentication",
       "default": "false",

@@ -11,9 +11,6 @@ services:
       PUID: 1000
       PGID: 1000
       PORT: 8211
-      COMMUNITY: "false"
-      UPDATE_ON_BOOT: "true"
-      BACKUP_ENABLED: "true"
     volumes:
       - palworld_data:/palworld
 

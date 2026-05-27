@@ -20,13 +20,21 @@
   "min_storage_gb": 2,
   "env": [
     {
-      "key": "WEBPASSWORD",
+      "key": "FTLCONF_webserver_api_password",
       "label": "Admin Password",
       "default": "",
       "required": true,
       "type": "password",
       "generate": true,
-      "description": "Password for the Pi-hole admin dashboard"
+      "description": "Password for the Pi-hole v6 admin dashboard (replaces legacy WEBPASSWORD)"
+    },
+    {
+      "key": "WEBPASSWORD",
+      "label": "Admin Password (legacy)",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Legacy v5 admin password variable; ignored on Pi-hole v6. Use Admin Password above."
     },
     {
       "key": "TZ",

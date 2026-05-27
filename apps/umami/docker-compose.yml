@@ -4,16 +4,22 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgresql://umami:${DB_PASSWORD}@db:5432/umami
       DATABASE_TYPE: postgresql
       APP_SECRET: ${APP_SECRET}
+      TRACKER_SCRIPT_NAME: ${TRACKER_SCRIPT_NAME:-script.js}
+      DISABLE_LOGIN: ${DISABLE_LOGIN:-0}
     depends_on:
       - db
 
   db:
     image: postgres:16
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
       POSTGRES_DB: umami
       POSTGRES_USER: umami

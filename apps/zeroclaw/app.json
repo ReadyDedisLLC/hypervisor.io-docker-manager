@@ -18,34 +18,44 @@
   "min_storage_gb": 2,
   "env": [
     {
-      "key": "API_KEY",
-      "label": "LLM API Key",
+      "key": "ZEROCLAW_providers__models__anthropic__default__api_key",
+      "label": "Anthropic API Key",
       "default": "",
-      "required": true,
+      "required": false,
       "type": "password",
-      "description": "API key for your LLM provider (OpenRouter, OpenAI, Anthropic, etc.)"
+      "description": "API key for Anthropic Claude models (get from console.anthropic.com); can also be configured in config.toml"
     },
     {
-      "key": "PROVIDER",
-      "label": "LLM Provider",
-      "default": "openrouter",
-      "required": true,
-      "type": "select",
-      "options": [
-        { "label": "OpenRouter", "value": "openrouter" },
-        { "label": "OpenAI", "value": "openai" },
-        { "label": "Anthropic", "value": "anthropic" },
-        { "label": "Ollama (local)", "value": "ollama" }
-      ],
-      "description": "LLM provider to use for agent inference"
+      "key": "ZEROCLAW_providers__models__openai__default__api_key",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for OpenAI models (get from platform.openai.com); can also be configured in config.toml"
     },
     {
-      "key": "MODEL",
-      "label": "Model Name",
+      "key": "ZEROCLAW_providers__models__openrouter__default__api_key",
+      "label": "OpenRouter API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for OpenRouter models (get from openrouter.ai/keys); can also be configured in config.toml"
+    },
+    {
+      "key": "ZEROCLAW_providers__models__openrouter__default__model",
+      "label": "OpenRouter Model",
       "default": "",
       "required": false,
       "type": "text",
-      "description": "Specific model name to use (e.g., gpt-4o, claude-sonnet-4-20250514, llama3)"
+      "description": "Model identifier for the OpenRouter default alias (e.g. anthropic/claude-sonnet-4-6)"
+    },
+    {
+      "key": "ZEROCLAW_DATA_DIR",
+      "label": "Data Directory",
+      "default": "/data",
+      "required": false,
+      "type": "text",
+      "description": "Directory where ZeroClaw stores config and persistent data inside the container"
     },
     {
       "key": "LOG_LEVEL",

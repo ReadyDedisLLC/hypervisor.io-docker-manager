@@ -35,6 +35,15 @@
       "description": "Public URL where Hoarder will be accessible"
     },
     {
+      "key": "MEILI_MASTER_KEY",
+      "label": "Meilisearch Master Key",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Master key securing the Meilisearch full-text search index"
+    },
+    {
       "key": "OPENAI_API_KEY",
       "label": "OpenAI API Key",
       "default": "",

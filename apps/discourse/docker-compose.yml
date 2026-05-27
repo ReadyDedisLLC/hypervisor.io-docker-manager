@@ -12,10 +12,13 @@ services:
       DISCOURSE_DATABASE_USER: bn_discourse
       DISCOURSE_DATABASE_NAME: bitnami_discourse
       DISCOURSE_DATABASE_PASSWORD: ${POSTGRESQL_PASSWORD}
+      DISCOURSE_REDIS_HOST: ${DISCOURSE_REDIS_HOST:-redis}
+      DISCOURSE_REDIS_PORT_NUMBER: ${DISCOURSE_REDIS_PORT_NUMBER:-6379}
     volumes:
       - discourse_data:/bitnami/discourse
     depends_on:
       - postgresql
+      - redis
 
   postgresql:
     image: bitnami/postgresql:16
@@ -27,6 +30,15 @@ services:
     volumes:
       - pgdata:/bitnami/postgresql
 
+  redis:
+    image: bitnami/redis:7.4
+    restart: unless-stopped
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - redis_data:/bitnami/redis
+
 volumes:
   discourse_data:
   pgdata:
+  redis_data:

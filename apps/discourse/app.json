@@ -106,6 +106,14 @@
       "required": false,
       "type": "text",
       "description": "Redis server hostname (required if using external Redis)"
+    },
+    {
+      "key": "DISCOURSE_REDIS_PORT_NUMBER",
+      "label": "Redis Port",
+      "default": "6379",
+      "required": false,
+      "type": "number",
+      "description": "Port number of the Redis server"
     }
   ],
   "ports": [

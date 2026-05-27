@@ -8,6 +8,7 @@ services:
       - .env
     environment:
       MEILI_ADDR: http://meilisearch:7700
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
       DATA_DIR: /data
     volumes:
       - hoarder_data:/data
@@ -19,6 +20,7 @@ services:
     restart: unless-stopped
     environment:
       MEILI_NO_ANALYTICS: "true"
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
     volumes:
       - meilisearch_data:/meili_data
 

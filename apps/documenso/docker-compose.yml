@@ -4,10 +4,13 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_3000:-3000}:3000"
+    env_file:
+      - .env
     environment:
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
       NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
       NEXT_PRIVATE_ENCRYPTION_KEY: ${NEXT_PRIVATE_ENCRYPTION_KEY}
+      NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY: ${NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY}
       NEXT_PRIVATE_DATABASE_URL: postgresql://documenso:${POSTGRES_PASSWORD}@db:5432/documenso
       NEXT_PUBLIC_WEBAPP_URL: ${NEXTAUTH_URL:-http://localhost:3000}
       NEXT_PRIVATE_SMTP_HOST: ${NEXT_PRIVATE_SMTP_HOST:-}

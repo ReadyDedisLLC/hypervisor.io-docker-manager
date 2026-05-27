@@ -30,6 +30,15 @@
       "description": "Password for the default admin user"
     },
     {
+      "key": "LLDAP_KEY_SEED",
+      "label": "Key Seed",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "generate": true,
+      "description": "Seed used to derive the private key that encrypts stored passwords. Keep stable; changing it invalidates stored secrets."
+    },
+    {
       "key": "LLDAP_LDAP_BASE_DN",
       "label": "Base DN",
       "default": "dc=example,dc=com",

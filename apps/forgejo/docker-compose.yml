@@ -5,6 +5,8 @@ services:
     ports:
       - "${HOST_PORT_3000:-3000}:3000"
       - "${HOST_PORT_22:-2222}:22"
+    env_file:
+      - .env
     environment:
       USER_UID: ${USER_UID:-1000}
       USER_GID: ${USER_GID:-1000}
@@ -16,6 +18,8 @@ services:
       FORGEJO__mailer__SMTP_PORT: ${FORGEJO__mailer__SMTP_PORT:-587}
       FORGEJO__mailer__FROM: ${FORGEJO__mailer__FROM:-}
       FORGEJO__service__DISABLE_REGISTRATION: ${FORGEJO__service__DISABLE_REGISTRATION:-false}
+      FORGEJO__security__SECRET_KEY: ${FORGEJO__security__SECRET_KEY:-}
+      FORGEJO__security__INTERNAL_TOKEN: ${FORGEJO__security__INTERNAL_TOKEN:-}
     volumes:
       - forgejo_data:/data
       - /etc/timezone:/etc/timezone:ro

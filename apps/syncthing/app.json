@@ -18,6 +18,22 @@
   "min_storage_gb": 10,
   "env": [
     {
+      "key": "PUID",
+      "label": "User ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "UID for the container user to match host file permissions"
+    },
+    {
+      "key": "PGID",
+      "label": "Group ID",
+      "default": "1000",
+      "required": false,
+      "type": "number",
+      "description": "GID for the container user to match host file permissions"
+    },
+    {
       "key": "STGUIADDRESS",
       "label": "GUI Listen Address",
       "default": "0.0.0.0:8384",

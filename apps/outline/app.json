@@ -73,6 +73,54 @@
       "description": "Allow Outline to check for new version availability"
     },
     {
+      "key": "OIDC_CLIENT_ID",
+      "label": "OIDC Client ID",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "OpenID Connect client ID. Outline has no built-in login, so an auth provider (OIDC, Google, or Slack) must be configured to sign in."
+    },
+    {
+      "key": "OIDC_CLIENT_SECRET",
+      "label": "OIDC Client Secret",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "OpenID Connect client secret from your identity provider"
+    },
+    {
+      "key": "OIDC_AUTH_URI",
+      "label": "OIDC Authorization URI",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "OIDC authorization endpoint (e.g. https://accounts.google.com/o/oauth2/v2/auth)"
+    },
+    {
+      "key": "OIDC_TOKEN_URI",
+      "label": "OIDC Token URI",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "OIDC token endpoint (e.g. https://oauth2.googleapis.com/token)"
+    },
+    {
+      "key": "OIDC_USERINFO_URI",
+      "label": "OIDC Userinfo URI",
+      "default": "",
+      "required": false,
+      "type": "text",
+      "description": "OIDC userinfo endpoint (e.g. https://openidconnect.googleapis.com/v1/userinfo)"
+    },
+    {
+      "key": "OIDC_DISPLAY_NAME",
+      "label": "OIDC Display Name",
+      "default": "OpenID",
+      "required": false,
+      "type": "text",
+      "description": "Name shown on the sign-in button for the OIDC provider"
+    },
+    {
       "key": "SMTP_HOST",
       "label": "SMTP Host",
       "default": "",

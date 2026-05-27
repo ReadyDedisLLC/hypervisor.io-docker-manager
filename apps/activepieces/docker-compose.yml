@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_80:-8098}:80"
+    env_file:
+      - .env
     environment:
       AP_ENGINE_EXECUTABLE_PATH: dist/packages/engine/main.js
       AP_POSTGRES_DATABASE: activepieces
@@ -15,8 +17,10 @@ services:
       AP_REDIS_PORT: "6379"
       AP_ENCRYPTION_KEY: ${AP_ENCRYPTION_KEY}
       AP_JWT_SECRET: ${AP_JWT_SECRET}
-      AP_FRONTEND_URL: http://localhost:8098
-      AP_SANDBOX_RUN_MODE: UNSANDBOXED
+      AP_FRONTEND_URL: ${AP_FRONTEND_URL:-http://localhost:8098}
+      AP_SANDBOX_RUN_MODE: ${AP_SANDBOX_RUN_MODE:-UNSANDBOXED}
+      AP_EXECUTION_MODE: ${AP_EXECUTION_MODE:-UNSANDBOXED}
+      AP_TELEMETRY_ENABLED: ${AP_TELEMETRY_ENABLED:-false}
     depends_on:
       - db
       - redis
@@ -24,6 +28,8 @@ services:
   db:
     image: postgres:16-alpine
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
       POSTGRES_DB: activepieces
       POSTGRES_USER: activepieces

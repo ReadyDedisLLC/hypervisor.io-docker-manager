@@ -7,9 +7,13 @@ services:
     env_file:
       - .env
     environment:
-      ALLOW_SIGNUP: "true"
-      TZ: Etc/UTC
-      BASE_URL: http://localhost:9925
+      ALLOW_SIGNUP: ${ALLOW_SIGNUP:-true}
+      TZ: ${TZ:-Etc/UTC}
+      BASE_URL: ${BASE_URL:-http://localhost:9925}
+      DEFAULT_EMAIL: ${DEFAULT_EMAIL:-admin@example.com}
+      DEFAULT_PASSWORD: ${DEFAULT_PASSWORD}
+      MAX_WORKERS: ${MAX_WORKERS:-1}
+      TOKEN_TIME: ${TOKEN_TIME:-48}
     volumes:
       - mealie_data:/app/data
 

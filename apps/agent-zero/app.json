@@ -64,6 +64,46 @@
       "description": "Google AI API key (required if using Google provider)"
     },
     {
+      "key": "API_KEY_GROQ",
+      "label": "Groq API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Groq API key; can also be configured in the Web UI under Settings"
+    },
+    {
+      "key": "API_KEY_MISTRAL",
+      "label": "Mistral API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Mistral AI API key; can also be configured in the Web UI under Settings"
+    },
+    {
+      "key": "API_KEY_OPENROUTER",
+      "label": "OpenRouter API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "OpenRouter API key; can also be configured in the Web UI under Settings"
+    },
+    {
+      "key": "API_KEY_DEEPSEEK",
+      "label": "DeepSeek API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "DeepSeek API key; can also be configured in the Web UI under Settings"
+    },
+    {
+      "key": "API_KEY_HUGGINGFACE",
+      "label": "Hugging Face API Token",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Hugging Face access token; can also be configured in the Web UI under Settings"
+    },
+    {
       "key": "A0_SET_UTILITY_MODEL_PROVIDER",
       "label": "Utility Model Provider",
       "default": "openai",

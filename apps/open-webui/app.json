@@ -51,6 +51,22 @@
       "description": "Base URL for OpenAI-compatible API. Change for third-party providers."
     },
     {
+      "key": "ANTHROPIC_API_KEY",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Anthropic Claude models; can also be configured in the Web UI"
+    },
+    {
+      "key": "GOOGLE_API_KEY",
+      "label": "Google Gemini API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "API key for Google Gemini models; can also be configured in the Web UI"
+    },
+    {
       "key": "ENABLE_SIGNUP",
       "label": "Enable Signup",
       "default": "true",

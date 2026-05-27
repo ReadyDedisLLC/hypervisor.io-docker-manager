@@ -38,10 +38,10 @@
     {
       "key": "HOMEPAGE_ALLOWED_HOSTS",
       "label": "Allowed Hosts",
-      "default": "",
+      "default": "*",
       "required": false,
       "type": "text",
-      "description": "Comma-separated list of allowed hostnames for the dashboard"
+      "description": "Comma-separated list of allowed hostnames for the dashboard (required as of v1.0; use * to allow all, or e.g. homepage.example.com,192.168.1.2:3000)"
     }
   ],
   "ports": [

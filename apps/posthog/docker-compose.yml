@@ -4,11 +4,18 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_8000:-8097}:8000"
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgresql://posthog:${POSTHOG_DB_PASSWORD}@db:5432/posthog
       REDIS_URL: redis://redis:6379
       SECRET_KEY: ${SECRET_KEY}
       CLICKHOUSE_HOST: clickhouse
+      SITE_URL: ${SITE_URL:-http://localhost:8000}
+      IS_BEHIND_PROXY: ${IS_BEHIND_PROXY:-false}
+      DISABLE_SECURE_SSL_REDIRECT: ${DISABLE_SECURE_SSL_REDIRECT:-true}
+      EMAIL_HOST: ${EMAIL_HOST:-}
+      EMAIL_PORT: ${EMAIL_PORT:-25}
     depends_on:
       - db
       - redis
@@ -17,6 +24,8 @@ services:
   db:
     image: postgres:16-alpine
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
       POSTGRES_USER: posthog
       POSTGRES_PASSWORD: ${POSTHOG_DB_PASSWORD}

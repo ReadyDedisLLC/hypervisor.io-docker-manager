@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_2368:-2368}:2368"
+    env_file:
+      - .env
     environment:
       url: ${GHOST_URL:-http://localhost:2368}
       database__client: mysql
@@ -11,6 +13,11 @@ services:
       database__connection__user: root
       database__connection__password: ${MYSQL_ROOT_PASSWORD}
       database__connection__database: ghost
+      mail__transport: ${mail__transport:-Direct}
+      mail__options__host: ${mail__options__host:-}
+      mail__options__port: ${mail__options__port:-587}
+      mail__options__auth__user: ${mail__options__auth__user:-}
+      mail__options__auth__pass: ${mail__options__auth__pass:-}
     volumes:
       - ghost_data:/var/lib/ghost/content
     depends_on:

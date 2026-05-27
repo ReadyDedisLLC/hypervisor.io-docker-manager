@@ -53,6 +53,46 @@
       "description": "Secret key for encrypting sensitive data and signing tokens"
     },
     {
+      "key": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "OpenAI API key; exposed as a global variable in flows and can also be configured in the Web UI"
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Anthropic API key; exposed as a global variable in flows and can also be configured in the Web UI"
+    },
+    {
+      "key": "GOOGLE_API_KEY",
+      "label": "Google AI API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Google AI / Gemini API key; exposed as a global variable in flows and can also be configured in the Web UI"
+    },
+    {
+      "key": "GROQ_API_KEY",
+      "label": "Groq API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Groq API key; exposed as a global variable in flows and can also be configured in the Web UI"
+    },
+    {
+      "key": "MISTRAL_API_KEY",
+      "label": "Mistral API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Mistral API key; exposed as a global variable in flows and can also be configured in the Web UI"
+    },
+    {
       "key": "LANGFLOW_DATABASE_URL",
       "label": "Database URL",
       "default": "",

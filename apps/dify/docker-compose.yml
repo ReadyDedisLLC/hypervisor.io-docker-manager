@@ -15,6 +15,8 @@ services:
       REDIS_PORT: 6379
       REDIS_PASSWORD: ${REDIS_PASSWORD}
       SECRET_KEY: ${SECRET_KEY}
+      INIT_PASSWORD: ${INIT_PASSWORD:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
     volumes:
       - dify_storage:/app/api/storage
     depends_on:
@@ -37,6 +39,7 @@ services:
       REDIS_PORT: 6379
       REDIS_PASSWORD: ${REDIS_PASSWORD}
       SECRET_KEY: ${SECRET_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
     volumes:
       - dify_storage:/app/api/storage
     depends_on:

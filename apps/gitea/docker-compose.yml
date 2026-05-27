@@ -5,9 +5,18 @@ services:
     ports:
       - "${HOST_PORT_3000:-3000}:3000"
       - "${HOST_PORT_22:-2222}:22"
+    env_file:
+      - .env
     environment:
-      USER_UID: 1000
-      USER_GID: 1000
+      USER_UID: ${USER_UID:-1000}
+      USER_GID: ${USER_GID:-1000}
+      GITEA__server__ROOT_URL: ${GITEA__server__ROOT_URL:-http://localhost:3000}
+      GITEA__server__DOMAIN: ${GITEA__server__DOMAIN:-localhost}
+      GITEA__database__DB_TYPE: ${GITEA__database__DB_TYPE:-sqlite3}
+      GITEA__mailer__ENABLED: ${GITEA__mailer__ENABLED:-false}
+      GITEA__service__DISABLE_REGISTRATION: ${GITEA__service__DISABLE_REGISTRATION:-false}
+      GITEA__security__SECRET_KEY: ${GITEA__security__SECRET_KEY:-}
+      GITEA__security__INTERNAL_TOKEN: ${GITEA__security__INTERNAL_TOKEN:-}
     volumes:
       - gitea_data:/data
       - /etc/timezone:/etc/timezone:ro

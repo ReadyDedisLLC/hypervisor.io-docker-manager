@@ -70,6 +70,15 @@
       "description": "Password for the Redis cache server"
     },
     {
+      "key": "SECRETS_memcached_password",
+      "label": "Memcached Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "generate": true,
+      "description": "Password for the Memcached cache server"
+    },
+    {
       "key": "SETTING_EMAIL_HOST",
       "label": "SMTP Host",
       "default": "",

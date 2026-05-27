@@ -4,6 +4,11 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_8080:-8080}:8080"
+    env_file:
+      - .env
+    environment:
+      SEARXNG_BASE_URL: ${SEARXNG_BASE_URL:-http://localhost:8080}
+      SEARXNG_SECRET: ${SEARXNG_SECRET}
     volumes:
       - searxng_data:/etc/searxng
 

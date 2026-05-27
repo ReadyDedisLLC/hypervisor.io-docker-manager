@@ -6,6 +6,8 @@ services:
     ports:
       - "${HOST_PORT_9000:-9001}:9000"
       - "${HOST_PORT_9443:-9443}:9443"
+    env_file:
+      - .env
     environment:
       AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY}
       AUTHENTIK_REDIS__HOST: redis
@@ -23,6 +25,8 @@ services:
     image: ghcr.io/goauthentik/server:latest
     restart: unless-stopped
     command: worker
+    env_file:
+      - .env
     environment:
       AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY}
       AUTHENTIK_REDIS__HOST: redis
@@ -30,6 +34,9 @@ services:
       AUTHENTIK_POSTGRESQL__USER: authentik
       AUTHENTIK_POSTGRESQL__NAME: authentik
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
+      AUTHENTIK_BOOTSTRAP_PASSWORD: ${AUTHENTIK_BOOTSTRAP_PASSWORD}
+      AUTHENTIK_BOOTSTRAP_EMAIL: ${AUTHENTIK_BOOTSTRAP_EMAIL}
+      AUTHENTIK_BOOTSTRAP_TOKEN: ${AUTHENTIK_BOOTSTRAP_TOKEN}
     depends_on:
       - db
       - redis

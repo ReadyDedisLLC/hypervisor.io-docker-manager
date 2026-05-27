@@ -26,6 +26,22 @@
       "description": "API key from OpenAI for accessing GPT models"
     },
     {
+      "key": "ANTHROPIC_API_KEY",
+      "label": "Anthropic API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Anthropic API key for Claude models; can also be configured in the Web UI"
+    },
+    {
+      "key": "GOOGLE_GEMINI_API_KEY",
+      "label": "Google Gemini API Key",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Google Gemini API key; can also be configured in the Web UI"
+    },
+    {
       "key": "OPENAI_API_HOST",
       "label": "OpenAI API Host",
       "default": "https://api.openai.com",

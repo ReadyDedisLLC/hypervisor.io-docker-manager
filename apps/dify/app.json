@@ -53,6 +53,14 @@
       "description": "Password for the Redis instance"
     },
     {
+      "key": "INIT_PASSWORD",
+      "label": "Setup Password",
+      "default": "",
+      "required": false,
+      "type": "password",
+      "description": "Optional password gate for the first-time /install setup page (prevents unauthorized admin creation if exposed)"
+    },
+    {
       "key": "LOG_LEVEL",
       "label": "Log Level",
       "default": "INFO",

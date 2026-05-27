@@ -7,8 +7,8 @@ services:
     env_file:
       - .env
     environment:
-      TZ: Etc/UTC
-      CRON_MIN: "2,32"
+      TZ: ${TZ:-Etc/UTC}
+      CRON_MIN: ${CRON_MIN:-2,32}
       FRESHRSS_INSTALL: "1"
     volumes:
       - freshrss_data:/var/www/FreshRSS/data

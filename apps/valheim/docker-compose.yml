@@ -10,7 +10,6 @@ services:
     env_file:
       - .env
     environment:
-      BACKUPS_MAX_AGE: 3
       BACKUPS_DIRECTORY: /config/backups
     volumes:
       - valheim_config:/config

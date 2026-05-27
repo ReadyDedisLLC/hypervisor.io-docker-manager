@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - "${HOST_PORT_80:-8095}:80"
+    env_file:
+      - .env
     environment:
       MATOMO_DATABASE_HOST: db
       MATOMO_DATABASE_DBNAME: ${MYSQL_DATABASE}
