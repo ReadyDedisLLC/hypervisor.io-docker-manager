@@ -21,7 +21,7 @@ services:
       - redis
 
   postgresql:
-    image: bitnami/postgresql:16
+    image: soldevelo/postgresql:16
     restart: unless-stopped
     environment:
       POSTGRESQL_DATABASE: bitnami_discourse
@@ -31,7 +31,7 @@ services:
       - pgdata:/bitnami/postgresql
 
   redis:
-    image: bitnami/redis:7.4
+    image: soldevelo/redis:7.4
     restart: unless-stopped
     environment:
       ALLOW_EMPTY_PASSWORD: "yes"
